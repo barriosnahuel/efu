@@ -22,8 +22,8 @@ sudo add-apt-repository ppa:upubuntu-com/chat
 #Add repositories for JDownloader.
 sudo add-apt-repository ppa:jd-team/jdownloader
 
-#Add repositories for Sublime Text 2.
-sudo add-apt-repository ppa:webupd8team/sublime-text-2
+#Add repositories for Sublime Text 3.
+sudo add-apt-repository ppa:webupd8team/sublime-text-3
 
 #Add repositories for RabbitVCS integration with Nautilus. Like TortoiseSVN.
 sudo add-apt-repository ppa:rabbitvcs/ppa
@@ -69,8 +69,8 @@ sudo apt-get install unity-lens-photo
 sudo apt-get install unity-scope-piratebay python-lxml
 sudo apt-get install unity-lens-torrents
 
-#Install Sublime Text 2 editor.
-sudo apt-get install sublime-text-2-beta
+#Install Sublime Text 3 editor (beta).
+sudo apt-get install sublime-text-installer
 
 #Install GitHub len (the following 2 lines)
 sudo apt-get -t quantal-backports install python-unity-singlet
