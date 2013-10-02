@@ -48,6 +48,9 @@ sudo apt-get purge openjdk*
 sudo apt-get install software-properties-common
 sudo apt-get install google-chrome-stable
 
+#Install dependencies to rar/unrar files.
+sudo apt-get install unrar rar
+
 #Install Java JDK and set as default.
 sudo apt-get install oracle-jdk7-installer oracle-java7-set-default
 
