@@ -11,6 +11,9 @@ sudo add-apt-repository ppa:webupd8team/java
 #Add repositories for the WebApps and Lens.
 sudo add-apt-repository ppa:scopes-packagers/ppa
 
+#Add repositories for Grive (a Google Drive unofficial client)
+sudo apt-add-repository ppa:thefanclub/grive-tools
+
 #Add repositories for Skype.
 sudo add-apt-repository ppa:upubuntu-com/chat
 
@@ -22,7 +25,6 @@ sudo add-apt-repository ppa:webupd8team/sublime-text-3
 
 #Add repositories for RabbitVCS integration with Nautilus. Like TortoiseSVN.
 sudo add-apt-repository ppa:rabbitvcs/ppa
-#   Andan: bbc.co.uk/news
 
 #Add repositories for Mixxx DJ software.
 sudo add-apt-repository ppa:mixxx/mixxx
@@ -45,6 +47,9 @@ sudo apt-get install oracle-jdk7-installer oracle-java7-set-default
 
 #Install FreeMind to make and view mind maps.
 sudo apt-get install freemind
+
+#Install a Google Drive unofficial client
+sudo apt-get install -y grive-tools
 
 #Install Skype.
 sudo apt-get install skype skype-bin
