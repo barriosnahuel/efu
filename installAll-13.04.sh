@@ -23,6 +23,10 @@ sudo add-apt-repository ppa:jd-team/jdownloader
 #Add repositories for Sublime Text 3.
 sudo add-apt-repository ppa:webupd8team/sublime-text-3
 
+#Add repositories and dependencies for NodeJS.
+sudo apt-get install python-software-properties python g++ make
+sudo add-apt-repository ppa:chris-lea/node.js
+
 #Add repositories for RabbitVCS integration with Nautilus. Like TortoiseSVN.
 sudo add-apt-repository ppa:rabbitvcs/ppa
 
@@ -91,8 +95,17 @@ sudo add-apt-repository ppa:canonical-qt5-edgers/qt5-beta1 && sudo apt-get updat
 #Install Ubuntu QML Toolkit preview
 sudo add-apt-repository ppa:ui-toolkit/ppa && sudo apt-get update && sudo apt-get install qt-components-ubuntu qt-components-ubuntu-demos qt-components-ubuntu-examples qt-components-ubuntu-doc notepad-qml
 
-#install NPM for NODE JS coding.
-sudo apt-get install npm
+#Install NodeJS and NPM
+#   It installs current stable Node on the current stable Ubuntu. Quantal (12.10) users may need to install the
+#   software-properties-common package for the add-apt-repository command to work: sudo apt-get install software-properties-common
+#   As of Node.js v0.10.0, the nodejs package from Chris Lea's repo includes both npm and nodejs-dev.
+sudo apt-get install nodejs
+
+#Install PhoneGap
+sudo npm install -g phonegap
+
+#Install Apache Cordova (required for PhoneGap)
+sudo npm install -g cordova
 
 #Intall MonoDevelop to develop .NET applications.
 sudo apt-get install monodevelop*
