@@ -73,6 +73,9 @@ sudo apt-get install sublime-text-installer
 #Install Wine to run some Windows programs
 sudo apt-get install wine
 
+#Install GIMP images editor
+sudo apt-get install gimp
+
 
 ##############################  Install development software ##############################
 
