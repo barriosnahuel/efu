@@ -110,6 +110,9 @@ sudo npm install -g phonegap
 #Install Apache Cordova (required for PhoneGap)
 sudo npm install -g cordova
 
+#Install MongoDB
+sudo apt-get install mongodb
+
 #Intall MonoDevelop to develop .NET applications.
 sudo apt-get install monodevelop*
 
