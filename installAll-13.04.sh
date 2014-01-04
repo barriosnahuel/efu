@@ -110,6 +110,9 @@ sudo npm install -g phonegap
 #Install Apache Cordova (required for PhoneGap)
 sudo npm install -g cordova
 
+#Install Plugman, a command line tool to install and uninstall plugins for use with Apache Cordova projects. (https://github.com/apache/cordova-plugman)
+sudo npm install -g plugman
+
 #Install MongoDB
 sudo apt-get install mongodb
 
