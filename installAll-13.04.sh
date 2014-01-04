@@ -113,6 +113,9 @@ sudo npm install -g cordova
 #Install Plugman, a command line tool to install and uninstall plugins for use with Apache Cordova projects. (https://github.com/apache/cordova-plugman)
 sudo npm install -g plugman
 
+#Install RubyGems, a package management application for Ruby that is used to quickly and easily distribute Ruby/Rails applications and libraries.
+sudo apt-get install rubygems
+
 #Install MongoDB
 sudo apt-get install mongodb
 
