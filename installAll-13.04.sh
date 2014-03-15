@@ -55,11 +55,14 @@ sudo apt-get install freemind
 #Install a Google Drive unofficial client
 sudo apt-get install -y grive-tools
 
+#Install JDownloader.
+sudo apt-get install jdownloader
+
 #Install Skype.
 sudo apt-get install skype skype-bin
 
-#Install JDownloader.
-sudo apt-get install jdownloader
+#Install Dropbox.
+sudo apt-get install dropbox
 
 #Install GMount ISO.
 sudo apt-get install gmountiso
