@@ -33,6 +33,9 @@ sudo add-apt-repository ppa:rabbitvcs/ppa
 #Add repositories for Mixxx DJ software.
 sudo add-apt-repository ppa:mixxx/mixxx
 
+#Add repositories for WineHQ.
+sudo add-apt-repository ppa:ubuntu-wine/ppa
+
 #Update software sources. Required after adding a ppa repository.
 sudo apt-get update
 
@@ -74,7 +77,7 @@ sudo apt-get install unity-scope-piratebay python-lxml
 sudo apt-get install sublime-text-installer
 
 #Install Wine to run some Windows programs
-sudo apt-get install wine
+sudo apt-get install wine1.6
 
 #Install Subdownloader
 sudp apt-get install subdownloader
