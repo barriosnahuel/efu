@@ -1,3 +1,4 @@
+#!/bin/sh
 #Script created by Nahuel Barrios: barrios.nahuel@gmail.com
 #Just comment the undesired software at the: "sudo apt-get install" line to skip installing specific software.
 
