@@ -86,8 +86,8 @@ sudo apt-get install oracle-jdk7-installer oracle-java7-set-default
 sudo apt-get install -y grive-tools
 
 #Install JDownloader
-# Dropbox, Freemind (mind maps editor), GMountISO, Steam client (will update on first usage)
-sudo apt-get install jdownloader freemind gmountiso steam
+# Dropbox, Freemind (mind maps editor), GMountISO, Mixxx dj software, Steam client (will update on first usage)
+sudo apt-get install jdownloader freemind gmountiso mixxx steam
 
 ##############################      Run final commands      ##############################
 
