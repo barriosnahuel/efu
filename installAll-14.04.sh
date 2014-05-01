@@ -89,6 +89,13 @@ sudo apt-get install -y grive-tools
 # Dropbox, Freemind (mind maps editor), GMountISO, Mixxx dj software, Steam client (will update on first usage)
 sudo apt-get install jdownloader freemind gmountiso mixxx steam
 
+#Install TeamViewer
+wget http://www.teamviewer.com/download/teamviewer_linux.deb
+sudo apt-get install gdebi
+sudo gdebi teamviewer_linux.deb
+rm teamviewer_linux.deb
+
+
 ##############################      Run final commands      ##############################
 
 #Remove packages that are not neccessary
