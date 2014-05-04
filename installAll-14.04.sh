@@ -69,7 +69,10 @@ npm install -g mocha
 
 #Install Heroku toolbelt to run Heroku commands from command line.
 wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+#Login against Heroku with your account.
 heroku login
+#Add existent public keys to Heroku to be able to run commands.
+heroku keys:add
 
 #Install
 # Wine
