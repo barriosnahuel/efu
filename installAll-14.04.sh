@@ -19,10 +19,6 @@ sudo add-apt-repository ppa:jd-team/jdownloader
 #Add repositories for Sublime Text 3.
 sudo add-apt-repository ppa:webupd8team/sublime-text-3
 
-#Add repositories and dependencies for NodeJS.
-sudo apt-get install python-software-properties python g++ make
-sudo add-apt-repository ppa:chris-lea/node.js
-
 #Add repositories for RabbitVCS integration with Nautilus. Like TortoiseSVN.
 sudo add-apt-repository ppa:rabbitvcs/ppa
 
@@ -70,6 +66,10 @@ npm install -g plugman
 
 #Install Mocha (for testing)
 npm install -g mocha
+
+#Install Heroku toolbelt to run Heroku commands from command line.
+wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+heroku login
 
 #Install
 # Wine
