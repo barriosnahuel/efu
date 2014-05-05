@@ -7,9 +7,6 @@
 #Add Oracle JDK repository
 sudo add-apt-repository ppa:webupd8team/java
 
-#Add repositories for the WebApps and Lens.
-sudo add-apt-repository ppa:scopes-packagers/ppa
-
 #Add repositories for Grive (a Google Drive unofficial client)
 sudo apt-add-repository ppa:thefanclub/grive-tools
 
