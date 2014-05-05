@@ -85,9 +85,9 @@ sudo apt-get install oracle-jdk7-installer oracle-java7-set-default
 #Install a Google Drive unofficial client
 sudo apt-get install -y grive-tools
 
-#Install JDownloader
+#Install JDownloader,
 # Dropbox, Freemind (mind maps editor), GMountISO, Mixxx dj software, Steam client (will update on first usage)
-sudo apt-get install jdownloader freemind gmountiso mixxx steam
+sudo apt-get install jdownloader nautilus-dropbox freemind gmountiso mixxx steam
 
 #Install TeamViewer
 wget http://www.teamviewer.com/download/teamviewer_linux.deb
