@@ -95,6 +95,10 @@ sudo apt-get install gdebi
 sudo gdebi teamviewer_linux.deb
 rm teamviewer_linux.deb
 
+#Install RoboMongo (A MongoDB GUI)
+wget http://robomongo.org/files/linux/robomongo-0.8.4-x86_64.deb
+sudo gdebi robomongo-0.8.4-x86_64.deb
+rm robomongo-0.8.4-x86_64.deb
 
 ##############################      Run final commands      ##############################
 
