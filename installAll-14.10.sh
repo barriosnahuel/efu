@@ -113,8 +113,8 @@ heroku keys:add
 echo "==> - NB: Installing Gimp..."
 sudo apt-get install gimp gimp-data gimp-plugin-registry gimp-data-extras
 
-echo "==> - NB: Installing JDownloader, Subdownloader, GMountISO, Freemind (a mind maps editor), and a Steam client (will update on first run)..."
-sudo apt-get install jdownloader subdownloader gmountiso freemind steam
+echo "==> - NB: Installing XClip (to copy into clipboard from terminal), JDownloader, Subdownloader, GMountISO, Freemind (a mind maps editor), and a Steam client (will update on first run)..."
+sudo apt-get install xclip jdownloader subdownloader gmountiso freemind steam
 
 echo "==> - NB: Installing TeamViewer..." &&
 wget http://www.teamviewer.com/download/teamviewer_linux.deb &&
