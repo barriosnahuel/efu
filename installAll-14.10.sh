@@ -63,7 +63,7 @@ sudo apt-get install oracle-java8-installer oracle-java8-set-default
 echo "==> - NB: Instaling Sublime Text 3, GIT, MongoDB and Curl..."
 sudo apt-get install sublime-text-installer git-core mongodb curl
 
-echo "==> - NB: Installing packages to compress and extract different kind of filez..."
+echo "==> - NB: Installing packages to compress and extract different kind of files..."
 sudo apt-get install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract
 
 echo "==> - NB: Installing Grive: a Google Drive unofficial client..."
