@@ -32,6 +32,10 @@ sudo apt-add-repository ppa:thefanclub/grive-tools
 echo "==> - NB: Adding repositories for JDownloader..."
 sudo add-apt-repository ppa:jd-team/jdownloader
 
+echo "==> - NB: Adding repositories for Rhythmbox and its plugins..."
+sudo add-apt-repository ppa:fossfreedom/rhythmbox
+sudo add-apt-repository ppa:fossfreedom/rhythmbox-plugins
+
 echo "==> - NB: Updating software sources. Required after adding ppa repositories."
 sudo apt-get update
 
@@ -59,6 +63,9 @@ fi
 
 echo "==> - NB: Installing Java JDK and setting default..."
 sudo apt-get install oracle-java8-installer oracle-java8-set-default
+
+echo "==> - NB: Instaling latest Rhythmbox and its plugins..."
+sudo apt-get install rhythmbox rhythmbox-plugin-rhythmweb rhythmbox-plugin-equalizer rhythmbox-plugin-opencontainingfolder rhythmbox-plugin-llyrics
 
 echo "==> - NB: Instaling Sublime Text 3, GIT, MongoDB and Curl..."
 sudo apt-get install sublime-text-installer git-core mongodb curl
@@ -112,6 +119,33 @@ heroku login &&
 echo "==> - NB: Adding existent public keys to Heroku to be able to run commands..." &&
 heroku keys:add
 #	END NODE JS and NPM
+
+echo "==> - NB: Installing Ant..." &&
+wget http://mirrors.dcarsat.com.ar/apache//ant/binaries/apache-ant-1.9.4-bin.zip &&
+unzip apache-ant-1.9.4-bin.zip &&
+mv apache-ant-1.9.4 ~/Coding/xDKs &&
+mv apache-ant-1.9.4-bin.zip ~/Coding/xDKs &&
+echo 'export ANT_HOME=$HOME/Coding/xDKs/apache-ant-1.9.4' >> ~/.bashrc &&
+echo 'export PATH=$ANT_HOME/bin:$PATH' >> ~/.bashrc &&
+echo "==> - NB: Successfully added Ant to path environment variable."
+
+echo "==> - NB: Installing Maven..." &&
+wget http://mirrors.dcarsat.com.ar/apache/maven/maven-3/3.2.3/binaries/apache-maven-3.2.3-bin.zip &&
+unzip apache-maven-3.2.3-bin.zip &&
+mv apache-maven-3.2.3 ~/Coding/xDKs &&
+mv apache-maven-3.2.3-bin.zip ~/Coding/xDKs &&
+echo 'export M2_HOME=$HOME/Coding/xDKs/apache-maven-3.2.3' >> ~/.bashrc &&
+echo 'export PATH=$M2_HOME/bin:$PATH' >> ~/.bashrc &&
+echo "==> - NB: Successfully added Maven to path environment variable."
+
+echo "==> - NB: Installing Gradle..." &&
+wget https://services.gradle.org/distributions/gradle-2.2-bin.zip &&
+unzip gradle-2.2-bin.zip &&
+mv gradle-2.2 ~/Coding/xDKs &&
+mv gradle-2.2-bin.zip ~/Coding/xDKs &&
+echo 'export GRADLE_HOME=$HOME/Coding/xDKs/gradle-2.2' >> ~/.bashrc &&
+echo 'export PATH=$GRADLE_HOME/bin:$PATH' >> ~/.bashrc &&
+echo "==> - NB: Successfully added Gradle to path environment variable."
 
 echo "==> - NB: Installing Gimp..."
 sudo apt-get install gimp gimp-data gimp-plugin-registry gimp-data-extras
