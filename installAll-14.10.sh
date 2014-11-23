@@ -2,6 +2,7 @@
 # Script created by Nahuel Barrios: barrios.nahuel@gmail.com
 # Just comment the undesired software at the: "sudo apt-get install" line to skip installing specific software.
 
+echo "==> - NB: ############################## Creating directories tree ##############################"
 echo "==> - NB: Creating directories tree..."
 cd ~/ &&
 mkdir Coding &&
@@ -19,7 +20,8 @@ cd .. &&
 mkdir workspace-work &&
 cd ../../ &&
 mkdir Software &&
-mkdir VMs
+mkdir VMs &&
+echo "==> - NB: Directories tree successfully created."
 
 echo "==> - NB: ############################## Adding particular software repositories ##############################"
 
@@ -221,4 +223,4 @@ sudo apt-get -y clean
 echo "==> - NB: Updating installed packages..."
 sudo apt-get upgrade
 
-echo "==> - NB: Thanks for using this script! --- Fork it on Github: http://github.com/barriosnahuel/efu"
+echo "==> - NB: Thanks for using me! --- Don't forget to fork me on Github: http://github.com/barriosnahuel/efu"
