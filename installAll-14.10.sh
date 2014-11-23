@@ -2,6 +2,25 @@
 # Script created by Nahuel Barrios: barrios.nahuel@gmail.com
 # Just comment the undesired software at the: "sudo apt-get install" line to skip installing specific software.
 
+echo "==> - NB: Creating directories tree..."
+cd ~/ &&
+mkdir Coding &&
+cd Coding &&
+mkdir IDEs &&
+cd .. &&
+mkdir xDKs &&
+cd .. &&
+mkdir servers &&
+cd .. &&
+mkdir workspace &&
+cd .. &&
+mkdir workspace-test &&
+cd .. &&
+mkdir workspace-work &&
+cd ../../ &&
+mkdir Software &&
+mkdir VMs
+
 echo "==> - NB: ############################## Adding particular software repositories ##############################"
 
 echo "==> - NB: Downloading GetDeb and PlayDeb..." &&
@@ -109,8 +128,8 @@ curl http://nodejs.org/dist/node-latest.tar.gz | tar xz --strip-components=1 &&
 make install &&
 curl https://www.npmjs.org/install.sh | sh
 
-echo "==> - NB: Installing via the NPM package manager: Apache Cordova and Plugman (a command line tool to install and uninstall plugins for use with Apache Cordova projects), and Mocha (for testing)..." &&
-npm install -g cordova plugman mocha &&
+echo "==> - NB: Installing via the NPM package manager: Apache Cordova and Plugman (a command line tool to install and uninstall plugins for use with Apache Cordova projects), Mocha (for testing) and Bower..." &&
+npm install -g cordova plugman mocha bower &&
 
 echo "==> - NB: Installing Heroku toolbelt to run Heroku commands from command line..." &&
 wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh &&
@@ -147,6 +166,29 @@ echo 'export GRADLE_HOME=$HOME/Coding/xDKs/gradle-2.2' >> ~/.bashrc &&
 echo 'export PATH=$GRADLE_HOME/bin:$PATH' >> ~/.bashrc &&
 echo "==> - NB: Successfully added Gradle to path environment variable."
 
+echo "==> - NB: Installing Intellij IDEA..." &&
+wget http://download.jetbrains.com/idea/ideaIU-139.463.4.tar.gz &&
+tar -zxf ideaIU-139.463.4.tar.gz &&
+mv idea-IU-139.463.4 ~/Coding/IDEs &&
+mv ideaIU-139.463.4.tar.gz ~/Coding/IDEs
+
+echo "==> - NB: Installing Android Studio..." &&
+wget https://dl.google.com/dl/android/studio/ide-zips/0.8.14/android-studio-ide-135.1538390-linux.zip &&
+unzip android-studio-ide-135.1538390-linux.zip &&
+mv android-studio ~/Coding/IDEs &&
+mv android-studio-ide-135.1538390-linux.zip ~/Coding/IDEs
+
+echo "==> - NB: Installing VirtualBox (Genymotion dependency)..." &&
+wget http://download.virtualbox.org/virtualbox/4.3.20/virtualbox-4.3_4.3.20-96996~Ubuntu~raring_amd64.deb &&
+sudo dpkg -i virtualbox-4.3_4.3.20-96996~Ubuntu~raring_amd64.deb &&
+rm virtualbox-4.3_4.3.20-96996~Ubuntu~raring_amd64.deb
+
+echo "==> - NB: Installing Genymotion Android emulator..." &&
+wget http://files2.genymotion.com/genymotion/genymotion-2.3.1/genymotion-2.3.1_x64.bin &&
+chmod +x genymotion-2.3.1_x64.bin &&
+mv genymotion-2.3.1_x64.bin ~/Coding/xDKs &&
+echo "==> - NB: [IMPORTANT] Genymotion was not installed. You must go to ~/Coding/xDKs and install it manually."
+
 echo "==> - NB: Installing Gimp..."
 sudo apt-get install gimp gimp-data gimp-plugin-registry gimp-data-extras
 
@@ -163,6 +205,12 @@ echo "==> - NB: Installing RoboMongo (A MongoDB GUI)..." &&
 wget http://robomongo.org/files/linux/robomongo-0.8.4-x86_64.deb &&
 sudo gdebi robomongo-0.8.4-x86_64.deb &&
 rm robomongo-0.8.4-x86_64.deb &&
+
+echo "==> - NB: Installing VMWare Player..." &&
+wget https://download3.vmware.com/software/player/file/VMware-Player-6.0.4-2249910.x86_64.bundle?HashKey=0c4f11cf5f2bc7f4f6090d0d7ec2d847&params=%7B%22sourcefilesize%22%3A%22191+MB%22%2C%22dlgcode%22%3A%22PLAYER-604%22%2C%22languagecode%22%3A%22en%22%2C%22source%22%3A%22DOWNLOADS%22%2C%22downloadtype%22%3A%22manual%22%2C%22eula%22%3A%22N%22%2C%22downloaduuid%22%3A%2292ccddb2-9d30-49fe-950a-c1dd15e798a1%22%2C%22purchased%22%3A%22N%22%2C%22dlgtype%22%3A%22Product+Binaries%22%2C%22productversion%22%3A%226.0.4%22%2C%22productfamily%22%3A%22VMware+Player%22%7D&AuthKey=1416532138_7f8342052e7d7d7dc710351300285fc8 &&
+chmod +x VMware-Player-6.0.4-2249910.x86_64.bundle && 
+gksudo bash VMware-Player-6.0.4-2249910.x86_64.bundle &&
+mv VMware-Player-6.0.4-2249910.x86_64.bundle ~/VMs
 
 echo "==> - NB: Cleaning up..." &&
 sudo apt-get -f install &&
