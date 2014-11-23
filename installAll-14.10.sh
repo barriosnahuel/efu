@@ -5,6 +5,7 @@
 echo "==> - NB: ############################## Creating directories tree ##############################"
 echo "==> - NB: Creating directories tree..."
 cd ~/ &&
+mkdir .gradle
 mkdir Coding &&
 cd Coding &&
 mkdir IDEs &&
