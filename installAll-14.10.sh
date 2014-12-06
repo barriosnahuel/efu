@@ -89,8 +89,8 @@ sudo apt-get install oracle-java8-installer oracle-java8-set-default
 echo "==> - NB: Instaling latest Rhythmbox and its plugins..."
 sudo apt-get install rhythmbox rhythmbox-plugin-rhythmweb rhythmbox-plugin-equalizer rhythmbox-plugin-opencontainingfolder rhythmbox-plugin-llyrics
 
-echo "==> - NB: Instaling Sublime Text 3, GIT, MongoDB and Curl..."
-sudo apt-get install sublime-text-installer git-core mongodb curl
+echo "==> - NB: Instaling Sublime Text 3, GIT, MongoDB, Curl and WebP command line tools..."
+sudo apt-get install sublime-text-installer git-core mongodb curl webp
 
 echo "==> - NB: Installing packages to compress and extract different kind of files..."
 sudo apt-get install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract
