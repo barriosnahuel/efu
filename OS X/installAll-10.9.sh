@@ -36,8 +36,10 @@ curl -O http://download-cf.jetbrains.com/idea/ideaIC-14.0.2.dmg
 
 curl -O https://dl.google.com/dl/android/studio/install/1.0.0/android-studio-ide-135.1629389.dmg
 
-echo "org.gradle.daemon=true" >> ~/.gradle/gradle.properties
-echo "org.gradle.parallel=true" >> ~/.gradle/gradle.properties
+echo 'export ANDROID_HOME=$HOME/Coding/xDKs/android-sdk-macosx' >> ~/.bash_profile &&
+echo 'export PATH=$ANDROID_HOME/tools:$PATH' >> ~/.bash_profile &&
+echo 'export PATH=$ANDROID_HOME/platform-tools:$PATH' >> ~/.bash_profile &&
+echo "==> - NB: Successfully added Android path environment variables."
 
 echo "==> - NB: Installing Gradle..."
 curl -O https://downloads.gradle.org/distributions/gradle-2.2.1-bin.zip &&
@@ -45,7 +47,11 @@ unzip gradle-2.2.1-bin.zip &&
 mv gradle-2.2.1 ~/Coding/xDKs &&
 mv gradle-2.2.1-bin.zip ~/Coding/xDKs &&
 
-echo "==> - NB: Updating PATH variables..." &&
+echo "==> - NB: Configuring Gradle global properties into file= ~/.gradle/gradle.properties..."
+echo "org.gradle.daemon=true" >> ~/.gradle/gradle.properties
+echo "org.gradle.parallel=true" >> ~/.gradle/gradle.properties
+
+echo "==> - NB: Updating Gradle PATH variables..." &&
 echo 'export GRADLE_HOME=$HOME/Coding/xDKs/gradle-2.2.1' >> ~/.bash_profile &&
 echo 'export PATH=$GRADLE_HOME/bin:$PATH' >> ~/.bash_profile
 echo "==> - NB: Successfully added Gradle to path environment variable."
