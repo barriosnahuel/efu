@@ -98,21 +98,17 @@ sudo apt-get install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uu
 echo "==> - NB: Installing Grive: a Google Drive unofficial client..."
 sudo apt-get install -y grive-tools
 
+#	Mega
 echo "==> - NB: Downloading Mega Nautilus extension..." &&
 wget https://mega.co.nz/linux/MEGAsync/xUbuntu_14.04/amd64/megasync-xUbuntu_14.04_amd64.deb &&
-
 echo "==> - NB: Installing Mega sync client..."
 sudo gdebi megasync-xUbuntu_14.04_amd64.deb &&
-
 echo "==> - NB: Deleting Mega Sync client downloaded file..." &&
 rm -f megasync-xUbuntu_14.04_amd64.deb &&
-
 echo "==> - NB: Downloading Mega Nautilus extension..." &&
 wget https://mega.co.nz/linux/MEGAsync/xUbuntu_14.04/amd64/nautilus-megasync-xUbuntu_14.04_amd64.deb &&
-
 echo "==> - NB: Installing Mega Nautilus extension..." &&
 sudo dpkg -i nautilus-megasync-xUbuntu_14.04_amd64.deb &&
-
 echo "==> - NB: Deleting Mega Nautilus extension downloaded file after successfull installation..." &&
 rm -f nautilus-megasync-xUbuntu_14.04_amd64.deb
 
@@ -197,8 +193,8 @@ echo "==> - NB: [IMPORTANT] Genymotion was not installed. You must go to ~/Codin
 echo "==> - NB: Installing Gimp..."
 sudo apt-get install gimp gimp-data gimp-plugin-registry gimp-data-extras
 
-echo "==> - NB: Installing XClip (to copy into clipboard from terminal), JDownloader, Subdownloader, GMountISO, Freemind (a mind maps editor), and a Steam client (will update on first run)..."
-sudo apt-get install xclip jdownloader subdownloader gmountiso freemind steam
+echo "==> - NB: Installing XClip (to copy into clipboard from terminal), JDownloader, Subdownloader, GMountISO, Freemind (a mind maps editor), Gnac (to convert audio files), and a Steam client (will update on first run)..."
+sudo apt-get install xclip jdownloader subdownloader gmountiso freemind gnac steam
 
 echo "==> - NB: Installing TeamViewer..." &&
 wget http://www.teamviewer.com/download/teamviewer_linux.deb &&
