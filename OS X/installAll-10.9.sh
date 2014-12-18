@@ -31,6 +31,8 @@ cd ~/Downloads
 
 curl -O https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg https://dl.google.com/drive/installgoogledrive.dmg https://mega.co.nz/MEGAsyncSetup.dmg
 
+curl -O https://dl.google.com/dl/androidjumper/mtp/current/androidfiletransfer.dmg
+
 curl -O http://download-cf.jetbrains.com/idea/ideaIU-14.0.2.dmg
 curl -O http://download-cf.jetbrains.com/idea/ideaIC-14.0.2.dmg
 
