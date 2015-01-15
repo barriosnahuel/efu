@@ -25,7 +25,10 @@ cd ~/Downloads
 
 #TODO : Use variables here instead of the full URL.
 
-curl -O https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg https://dl.google.com/drive/installgoogledrive.dmg https://mega.co.nz/MEGAsyncSetup.dmg
+curl -O https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg
+
+https://dl.google.com/drive/installgoogledrive.dmg
+https://mega.co.nz/MEGAsyncSetup.dmg
 
 curl -O https://dl.google.com/dl/androidjumper/mtp/current/androidfiletransfer.dmg
 

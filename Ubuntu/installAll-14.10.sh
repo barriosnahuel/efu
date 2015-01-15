@@ -184,6 +184,18 @@ tar -zxf ideaIU-14.0.2.tar.gz &&
 mv idea-IU-139.659.2 ~/Coding/IDEs &&
 mv ideaIU-14.0.2.tar.gz ~/Coding/IDEs
 
+
+echo "==> - NB: Downloading and configuring the Android SDK..." &&
+wget http://dl.google.com/android/android-sdk_r24.0.2-linux.tgz &&
+tar zxvf android-sdk_r24.0.2-linux.tgz &&
+mv android-sdk-linux ~/Coding/xDKs/ &&
+mv android-sdk_r24.0.2-linux.tgz ~/Coding/xDKs/ &&
+echo 'export ANDROID_HOME=$HOME/Coding/xDKs/android-sdk-linux' >> ~/.bash_profile &&
+echo 'export PATH=$ANDROID_HOME/tools:$PATH' >> ~/.bash_profile &&
+echo 'export PATH=$ANDROID_HOME/platform-tools:$PATH' >> ~/.bash_profile &&
+echo "==> - NB: Successfully installed the Android SDK and added Android path environment variables."
+
+
 echo "==> - NB: Installing Android Studio..." &&
 wget https://dl.google.com/dl/android/studio/ide-zips/1.0.1/android-studio-ide-135.1641136-linux.zip &&
 unzip android-studio-ide-135.1641136-linux.zip &&
