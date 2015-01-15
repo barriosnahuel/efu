@@ -13,16 +13,12 @@ cd ~/ &&
 mkdir Coding &&
 cd Coding &&
 mkdir IDEs &&
-cd .. &&
 mkdir xDKs &&
-cd .. &&
 mkdir servers &&
-cd .. &&	
-mkdir workspace &&
-cd .. &&
 mkdir workspace-mine &&
-cd .. &&
 mkdir workspace-test &&
+mkdir workspace-work &&
+echo "==> - NB: Directories tree successfully created."
 
 echo "==> - NB: Downloading .dmg files to install favourite software..."
 cd ~/Downloads
