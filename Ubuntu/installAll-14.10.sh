@@ -1,6 +1,6 @@
 #!/bin/bash
 # Script created by Nahuel Barrios: barrios.nahuel@gmail.com
-# Just comment the undesired software at the: "sudo apt-get install" line to skip installing specific software.
+# Just comment the undesired software at the: "sudo apt-get install" line to skip the installation of each specific software.
 
 echo "==> - NB: ############################## Creating directories tree ##############################"
 echo "==> - NB: Creating directories tree..."
@@ -9,17 +9,12 @@ mkdir .gradle
 mkdir Coding &&
 cd Coding &&
 mkdir IDEs &&
-cd .. &&
 mkdir xDKs &&
-cd .. &&
 mkdir servers &&
-cd .. &&
-mkdir workspace &&
-cd .. &&
+mkdir workspace-mine &&
 mkdir workspace-test &&
-cd .. &&
 mkdir workspace-work &&
-cd ../../ &&
+cd .. &&
 mkdir Software &&
 mkdir VMs &&
 echo "==> - NB: Directories tree successfully created."
@@ -54,6 +49,9 @@ sudo apt-add-repository ppa:thefanclub/grive-tools
 echo "==> - NB: Adding repositories for JDownloader..."
 sudo add-apt-repository ppa:jd-team/jdownloader
 
+echo "==> - NB: Adding repositories for Mixxx DJ software..."
+sudo add-apt-repository ppa:mixxx/mixxx
+
 echo "==> - NB: Adding repositories for Rhythmbox and its plugins..."
 sudo add-apt-repository ppa:fossfreedom/rhythmbox
 sudo add-apt-repository ppa:fossfreedom/rhythmbox-plugins
@@ -83,9 +81,6 @@ else
 	rm -f google-chrome-stable_current_i386.deb
 fi
 
-echo "==> - NB: Installing Java JDK and setting default..."
-sudo apt-get install oracle-java8-installer oracle-java8-set-default
-
 echo "==> - NB: Instaling latest Rhythmbox and its plugins..."
 sudo apt-get install rhythmbox rhythmbox-plugin-rhythmweb rhythmbox-plugin-equalizer rhythmbox-plugin-opencontainingfolder rhythmbox-plugin-llyrics
 
@@ -97,6 +92,9 @@ sudo apt-get install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uu
 
 echo "==> - NB: Installing Grive: a Google Drive unofficial client..."
 sudo apt-get install -y grive-tools
+
+echo "==> - NB: Installing Mixxx DJ software..."
+sudo apt-get install mixxx libportaudio2
 
 #	Mega
 echo "==> - NB: Downloading Mega Nautilus extension..." &&
@@ -112,8 +110,21 @@ sudo dpkg -i nautilus-megasync-xUbuntu_14.04_amd64.deb &&
 echo "==> - NB: Deleting Mega Nautilus extension downloaded file after successfull installation..." &&
 rm -f nautilus-megasync-xUbuntu_14.04_amd64.deb
 
-echo "==> - NB: Installing Dropbox..."
-sudo apt-get install nautilus-dropbox
+echo "==> - NB: Installing Dropbox and XClip (to copy into clipboard from terminal),..."
+sudo apt-get install nautilus-dropbox xclip
+
+
+echo "==> - NB: Generating an SSH Key..." &&
+#	Creates a new ssh key, using the provided email as a label
+ssh-keygen -t rsa -C "barrios.nahuel@gmail.com" &&
+#	start the ssh-agent in the background
+eval "$(ssh-agent -s)" &&
+ssh-add ~/.ssh/id_rsa &&
+echo "==> - NB: SSH Key successfully generated in ~/.ssh/id_rsa.pub" &&
+xclip -sel clip < ~/.ssh/id_rsa.pub &&
+echo "==> - NB: SSH Key copied to clipboard."
+#	End SSH Key
+
 
 #	NODE JS and NPM
 echo "==> - NB: Installing NodeJS and NPM... (Gist taken from: https://gist.github.com/isaacs/579814)"
@@ -148,36 +159,36 @@ echo 'export PATH=$ANT_HOME/bin:$PATH' >> ~/.bashrc &&
 echo "==> - NB: Successfully added Ant to path environment variable."
 
 echo "==> - NB: Installing Maven..." &&
-wget http://mirrors.dcarsat.com.ar/apache/maven/maven-3/3.2.3/binaries/apache-maven-3.2.3-bin.zip &&
-unzip apache-maven-3.2.3-bin.zip &&
-mv apache-maven-3.2.3 ~/Coding/xDKs &&
-mv apache-maven-3.2.3-bin.zip ~/Coding/xDKs &&
-echo 'export M2_HOME=$HOME/Coding/xDKs/apache-maven-3.2.3' >> ~/.bashrc &&
+wget http://mirrors.nxnethosting.com/apache/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.zip &&
+unzip apache-maven-3.2.5-bin.zip &&
+mv apache-maven-3.2.5 ~/Coding/xDKs &&
+mv apache-maven-3.2.5-bin.zip ~/Coding/xDKs &&
+echo 'export M2_HOME=$HOME/Coding/xDKs/apache-maven-3.2.5' >> ~/.bashrc &&
 echo 'export PATH=$M2_HOME/bin:$PATH' >> ~/.bashrc &&
 echo "==> - NB: Successfully added Maven to path environment variable."
 
 echo "==> - NB: Installing Gradle..." &&
-wget https://services.gradle.org/distributions/gradle-2.2-bin.zip &&
-unzip gradle-2.2-bin.zip &&
-mv gradle-2.2 ~/Coding/xDKs &&
-mv gradle-2.2-bin.zip ~/Coding/xDKs &&
-echo 'export GRADLE_HOME=$HOME/Coding/xDKs/gradle-2.2' >> ~/.bashrc &&
+wget https://services.gradle.org/distributions/gradle-2.2.1-bin.zip &&
+unzip gradle-2.2.1-bin.zip &&
+mv gradle-2.2.1 ~/Coding/xDKs &&
+mv gradle-2.2.1-bin.zip ~/Coding/xDKs &&
+echo 'export GRADLE_HOME=$HOME/Coding/xDKs/gradle-2.2.1' >> ~/.bashrc &&
 echo 'export PATH=$GRADLE_HOME/bin:$PATH' >> ~/.bashrc &&
-echo "org.gradle.daemon=true" >> ~/.gradle/gradle.properties
-echo "org.gradle.parallel=true" >> ~/.gradle/gradle.properties
+echo "org.gradle.daemon=true" >> ~/.gradle/gradle.properties &&
+echo "org.gradle.parallel=true" >> ~/.gradle/gradle.properties &&
 echo "==> - NB: Successfully added Gradle to path environment variable."
 
-echo "==> - NB: Installing Intellij IDEA..." &&
-wget http://download.jetbrains.com/idea/ideaIU-139.463.4.tar.gz &&
-tar -zxf ideaIU-139.463.4.tar.gz &&
-mv idea-IU-139.463.4 ~/Coding/IDEs &&
-mv ideaIU-139.463.4.tar.gz ~/Coding/IDEs
+echo "==> - NB: Installing Intellij IDEA Ultimate Edition..." &&
+wget http://download-cf.jetbrains.com/idea/ideaIU-14.0.2.tar.gz &&
+tar -zxf ideaIU-14.0.2.tar.gz &&
+mv idea-IU-139.659.2 ~/Coding/IDEs &&
+mv ideaIU-14.0.2.tar.gz ~/Coding/IDEs
 
 echo "==> - NB: Installing Android Studio..." &&
-wget https://dl.google.com/dl/android/studio/ide-zips/0.8.14/android-studio-ide-135.1538390-linux.zip &&
-unzip android-studio-ide-135.1538390-linux.zip &&
+wget https://dl.google.com/dl/android/studio/ide-zips/1.0.1/android-studio-ide-135.1641136-linux.zip &&
+unzip android-studio-ide-135.1641136-linux.zip &&
 mv android-studio ~/Coding/IDEs &&
-mv android-studio-ide-135.1538390-linux.zip ~/Coding/IDEs
+mv android-studio-ide-135.1641136-linux.zip ~/Coding/IDEs
 
 echo "==> - NB: Installing VirtualBox (Genymotion dependency)..." &&
 wget http://download.virtualbox.org/virtualbox/4.3.20/virtualbox-4.3_4.3.20-96996~Ubuntu~raring_amd64.deb &&
@@ -193,8 +204,8 @@ echo "==> - NB: [IMPORTANT] Genymotion was not installed. You must go to ~/Codin
 echo "==> - NB: Installing Gimp..."
 sudo apt-get install gimp gimp-data gimp-plugin-registry gimp-data-extras
 
-echo "==> - NB: Installing XClip (to copy into clipboard from terminal), JDownloader, Subdownloader, GMountISO, Freemind (a mind maps editor), Gnac (to convert audio files), and a Steam client (will update on first run)..."
-sudo apt-get install xclip jdownloader subdownloader gmountiso freemind gnac steam
+echo "==> - NB: Installing JDownloader, Subdownloader, GMountISO, Freemind (a mind maps editor), Gnac (to convert audio files), and a Steam client (will update on first run)..."
+sudo apt-get install jdownloader subdownloader gmountiso freemind gnac steam
 
 echo "==> - NB: Installing TeamViewer..." &&
 wget http://www.teamviewer.com/download/teamviewer_linux.deb &&
