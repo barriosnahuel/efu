@@ -13,23 +13,22 @@ cd ~/ &&
 mkdir Coding &&
 cd Coding &&
 mkdir IDEs &&
-cd .. &&
 mkdir xDKs &&
-cd .. &&
 mkdir servers &&
-cd .. &&	
-mkdir workspace &&
-cd .. &&
 mkdir workspace-mine &&
-cd .. &&
 mkdir workspace-test &&
+mkdir workspace-work &&
+echo "==> - NB: Directories tree successfully created."
 
 echo "==> - NB: Downloading .dmg files to install favourite software..."
 cd ~/Downloads
 
 #TODO : Use variables here instead of the full URL.
 
-curl -O https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg https://dl.google.com/drive/installgoogledrive.dmg https://mega.co.nz/MEGAsyncSetup.dmg
+curl -O https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg
+
+https://dl.google.com/drive/installgoogledrive.dmg
+https://mega.co.nz/MEGAsyncSetup.dmg
 
 curl -O https://dl.google.com/dl/androidjumper/mtp/current/androidfiletransfer.dmg
 
