@@ -17,6 +17,8 @@ mkdir workspace-work &&
 cd .. &&
 mkdir Software &&
 mkdir VMs &&
+cd ~/Downloads/
+
 echo "==> - NB: Directories tree successfully created."
 
 echo "==> - NB: ############################## Adding particular software repositories ##############################"

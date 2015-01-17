@@ -26,18 +26,15 @@ cd ~/Downloads
 #TODO : Use variables here instead of the full URL.
 
 curl -O https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg
-
-https://dl.google.com/drive/installgoogledrive.dmg
-https://mega.co.nz/MEGAsyncSetup.dmg
-
-curl -O https://dl.google.com/dl/androidjumper/mtp/current/androidfiletransfer.dmg
-
-curl -O http://download-cf.jetbrains.com/idea/ideaIU-14.0.2.dmg
-curl -O http://download-cf.jetbrains.com/idea/ideaIC-14.0.2.dmg
-
 curl -O https://dl.google.com/dl/android/studio/install/1.0.0/android-studio-ide-135.1629389.dmg
-
+curl -O https://dl.google.com/dl/androidjumper/mtp/current/androidfiletransfer.dmg
+curl -O https://dl.google.com/drive/installgoogledrive.dmg
+curl -O https://mega.co.nz/MEGAsyncSetup.dmg
+curl -O http://download-cf.jetbrains.com/idea/ideaIU-14.0.2.dmg
+curl -O http://nodejs.org/dist/v0.10.35/node-v0.10.35.pkg
+curl -O https://s3.amazonaws.com/assets.heroku.com/heroku-toolbelt/heroku-toolbelt.pkg
 curl -O https://transmission.cachefly.net/Transmission-2.84.dmg
+curl -O http://download-cf.jetbrains.com/idea/ideaIC-14.0.2.dmg
 
 echo 'export ANDROID_HOME=$HOME/Coding/xDKs/android-sdk-macosx' >> ~/.bash_profile &&
 echo 'export PATH=$ANDROID_HOME/tools:$PATH' >> ~/.bash_profile &&
@@ -59,6 +56,6 @@ echo 'export GRADLE_HOME=$HOME/Coding/xDKs/gradle-2.2.1' >> ~/.bash_profile &&
 echo 'export PATH=$GRADLE_HOME/bin:$PATH' >> ~/.bash_profile
 echo "==> - NB: Successfully added Gradle to path environment variable."
 
-
+echo "==> - NB: Setting up JAVA_HOME environment variable..."
 echo 'export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_71.jdk/Contents/Home' >> ~/.bash_profile
 echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bash_profile
