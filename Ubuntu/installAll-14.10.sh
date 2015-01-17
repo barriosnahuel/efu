@@ -1,6 +1,8 @@
 #!/bin/bash
-# Script created by Nahuel Barrios: barrios.nahuel@gmail.com
+# Script created by Nahuel Barrios: Barrios.Nahuel@gmail.com
 # Just comment the undesired software at the: "sudo apt-get install" line to skip the installation of each specific software.
+#
+# Last run on 17/01/2015.
 
 echo "==> - NB: ############################## Creating directories tree ##############################"
 echo "==> - NB: Creating directories tree..."
@@ -35,9 +37,7 @@ sudo dpkg -i playdeb_0.3-1~getdeb1_all.deb &&
 echo "==> - NB: Deleting Downloads..." &&
 rm -f getdeb-repository_0.1-1~getdeb1_all.deb &&
 rm -f playdeb_0.3-1~getdeb1_all.deb
-
-echo "==> - NB: Steps taken form: http://howtoubuntu.org/things-to-do-after-installing-ubuntu-14-10-utopic-unicorn; Thanks!"
-echo "==> - NB: ================="
+echo "==> - NB: Till here, steps were taken form: http://howtoubuntu.org/things-to-do-after-installing-ubuntu-14-10-utopic-unicorn; Thanks!"
 
 echo "==> - NB: Adding repositories for Sublime Text 3..."
 sudo add-apt-repository ppa:webupd8team/sublime-text-3 -y
@@ -182,8 +182,10 @@ echo "==> - NB: Installing Intellij IDEA Ultimate Edition..." &&
 wget http://download-cf.jetbrains.com/idea/ideaIU-14.0.2.tar.gz &&
 tar -zxf ideaIU-14.0.2.tar.gz &&
 mv idea-IU-139.659.2 ~/Coding/IDEs &&
-mv ideaIU-14.0.2.tar.gz ~/Coding/IDEs
-
+mv ideaIU-14.0.2.tar.gz ~/Coding/IDEs &&
+echo "==> - NB: Setting up JAVA_HOME environment variable pointing to a JDK 8 to use as default java command." &&
+echo 'export JAVA_HOME=$HOME/Coding/xDKs/jdk1.8.0_25' >> ~/.bash_profile
+echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bash_profile &&
 
 echo "==> - NB: Configuring the Android SDK..." &&
 echo 'export ANDROID_HOME=$HOME/Coding/xDKs/android-sdk-linux' >> ~/.bash_profile &&
@@ -196,7 +198,9 @@ echo "==> - NB: Installing Android Studio..." &&
 wget https://dl.google.com/dl/android/studio/ide-zips/1.0.1/android-studio-ide-135.1641136-linux.zip &&
 unzip android-studio-ide-135.1641136-linux.zip &&
 mv android-studio ~/Coding/IDEs &&
-mv android-studio-ide-135.1641136-linux.zip ~/Coding/IDEs
+mv android-studio-ide-135.1641136-linux.zip ~/Coding/IDEs &&
+echo "==> - NB: Setting up STUDIO_JDK environment variable pointing to a JDK 7 to use with Android Studio." &&
+echo 'export STUDIO_JDK=$HOME/Coding/xDKs/jdk1.7.0_71' >> ~/.bash_profile
 
 echo "==> - NB: Installing VirtualBox (Genymotion dependency)..." &&
 wget http://download.virtualbox.org/virtualbox/4.3.20/virtualbox-4.3_4.3.20-96996~Ubuntu~raring_amd64.deb &&
@@ -240,4 +244,5 @@ sudo apt-get -y clean
 echo "==> - NB: Updating installed packages..."
 sudo apt-get upgrade
 
-echo "==> - NB: Thanks for using me! --- Don't forget to fork me on Github: http://github.com/barriosnahuel/efu"
+echo "==> - NB: ##############################  Finished installation of favorite software   ##############################"
+echo "==> - NB: Thanks for using me! --- Don't forget to fork me on Github: http://github.com/barriosnahuel/efu ###########"
