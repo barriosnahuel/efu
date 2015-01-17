@@ -59,3 +59,12 @@ echo "==> - NB: Successfully added Gradle to path environment variable."
 echo "==> - NB: Setting up JAVA_HOME environment variable..."
 echo 'export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_71.jdk/Contents/Home' >> ~/.bash_profile
 echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bash_profile
+
+echo "==> - NB: Installing Ant..." &&
+curl -O http://mirrors.dcarsat.com.ar/apache//ant/binaries/apache-ant-1.9.4-bin.zip &&
+unzip apache-ant-1.9.4-bin.zip &&
+mv apache-ant-1.9.4 ~/Coding/xDKs &&
+mv apache-ant-1.9.4-bin.zip ~/Coding/xDKs &&
+echo 'export ANT_HOME=$HOME/Coding/xDKs/apache-ant-1.9.4' >> ~/.bash_profile &&
+echo 'export PATH=$ANT_HOME/bin:$PATH' >> ~/.bash_profile &&
+echo "==> - NB: Successfully added Ant to path environment variable."
