@@ -58,6 +58,9 @@ sudo add-apt-repository ppa:fossfreedom/rhythmbox-plugins -y
 echo "==> - NB: Updating software sources. Required after adding ppa repositories."
 sudo apt-get update
 
+echo "==> - NB: Fixing current packages..."
+sudo apt-get -f install
+
 echo "==> - NB: Removing packages that are not neccessary to prevent conflicts..."
 sudo apt-get autoremove
 
