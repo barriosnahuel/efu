@@ -39,24 +39,21 @@ rm -f playdeb_0.3-1~getdeb1_all.deb
 echo "==> - NB: Steps taken form: http://howtoubuntu.org/things-to-do-after-installing-ubuntu-14-10-utopic-unicorn; Thanks!"
 echo "==> - NB: ================="
 
-echo "==> - NB: Adding Oracle JDK repository..."
-sudo add-apt-repository ppa:webupd8team/java
-
 echo "==> - NB: Adding repositories for Sublime Text 3..."
-sudo add-apt-repository ppa:webupd8team/sublime-text-3
+sudo add-apt-repository ppa:webupd8team/sublime-text-3 -y
 
 echo "==> - NB: Adding repositories for Grive (a Google Drive unofficial client)..."
-sudo apt-add-repository ppa:thefanclub/grive-tools
+sudo apt-add-repository ppa:thefanclub/grive-tools -y
 
 echo "==> - NB: Adding repositories for JDownloader..."
-sudo add-apt-repository ppa:jd-team/jdownloader
+sudo add-apt-repository ppa:jd-team/jdownloader -y
 
 echo "==> - NB: Adding repositories for Mixxx DJ software..."
-sudo add-apt-repository ppa:mixxx/mixxx
+sudo add-apt-repository ppa:mixxx/mixxx -y
 
 echo "==> - NB: Adding repositories for Rhythmbox and its plugins..."
-sudo add-apt-repository ppa:fossfreedom/rhythmbox
-sudo add-apt-repository ppa:fossfreedom/rhythmbox-plugins
+sudo add-apt-repository ppa:fossfreedom/rhythmbox -y
+sudo add-apt-repository ppa:fossfreedom/rhythmbox-plugins -y
 
 echo "==> - NB: Updating software sources. Required after adding ppa repositories."
 sudo apt-get update
