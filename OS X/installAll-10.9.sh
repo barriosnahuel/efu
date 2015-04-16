@@ -7,34 +7,17 @@ echo "==> - NB: Adding some aliases to ~/.bash_profile..."
 echo "alias ll='ls -la'" >> ~/.bash_profile &&
 . ~/.bash_profile &&
 
-echo "==> - NB: ############################## Creating directories tree ##############################"
-echo "==> - NB: Creating directories tree..."
-cd ~/ &&
-mkdir Coding &&
-cd Coding &&
-mkdir IDEs &&
-mkdir xDKs &&
-mkdir servers &&
-mkdir workspace-mine &&
-mkdir workspace-test &&
-mkdir workspace-work &&
-echo "==> - NB: Directories tree successfully created."
 
-echo "==> - NB: Downloading .dmg files to install favourite software..."
-cd ~/Downloads
+# FROM HERE
+sh ../createDirectoriesTree.sh
 
-#TODO : Use variables here instead of the full URL.
+echo "==> - EFU: Loading properties..."
+. ./properties.sh
 
-curl -O https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg
-curl -O https://dl.google.com/dl/android/studio/install/1.0.0/android-studio-ide-135.1629389.dmg
-curl -O https://dl.google.com/dl/androidjumper/mtp/current/androidfiletransfer.dmg
-curl -O https://dl.google.com/drive/installgoogledrive.dmg
-curl -O https://mega.co.nz/MEGAsyncSetup.dmg
-curl -O http://download-cf.jetbrains.com/idea/ideaIU-14.0.2.dmg
-curl -O http://nodejs.org/dist/v0.10.35/node-v0.10.35.pkg
-curl -O https://s3.amazonaws.com/assets.heroku.com/heroku-toolbelt/heroku-toolbelt.pkg
-curl -O https://transmission.cachefly.net/Transmission-2.84.dmg
-curl -O http://download-cf.jetbrains.com/idea/ideaIC-14.0.2.dmg
+echo "==> - EFU: Loading utility functions..."
+. ./../functions.sh
+# TO HERE, is THE SAME FOR ALL OTHER PLATFORMS
+
 
 echo 'export ANDROID_HOME=$HOME/Coding/xDKs/android-sdk-macosx' >> ~/.bash_profile &&
 echo 'export PATH=$ANDROID_HOME/tools:$PATH' >> ~/.bash_profile &&
