@@ -6,6 +6,7 @@ ANDROID_STUDIO=https://dl.google.com/dl/android/studio/ide-zips/1.0.1/android-st
 ANDROID_FILE_TRANSFER=
 GOOGLE_DRIVE=
 MEGA=https://mega.co.nz/linux/MEGAsync/xUbuntu_14.04/amd64/megasync-xUbuntu_14.04_amd64.deb
+MEGA_NAUTILUS=https://mega.co.nz/linux/MEGAsync/xUbuntu_14.04/amd64/nautilus-megasync-xUbuntu_14.04_amd64.deb
 NODE_JS=http://nodejs.org/dist/node-latest.tar.gz
 HEROKU=https://toolbelt.heroku.com/install-ubuntu.sh
 TRANSMISSION=
