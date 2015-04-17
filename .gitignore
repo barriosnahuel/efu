@@ -1,2 +1,6 @@
-.idea
-efu.iml
+### JetBrains template
+/**/.idea/
+/**/*.iml
+
+### Mac OS X template
+/**/.DS_Store
