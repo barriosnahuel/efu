@@ -10,5 +10,5 @@ MEGA_NAUTILUS=
 NODE_JS=http://nodejs.org/dist/v0.10.35/node-v0.10.35.pkg
 HEROKU=https://s3.amazonaws.com/assets.heroku.com/heroku-toolbelt/heroku-toolbelt.pkg
 TRANSMISSION=https://transmission.cachefly.net/Transmission-2.84.dmg
-IDEA_ULTIMATE=http://download-cf.jetbrains.com/idea/ideaIU-14.0.2.dmg
-IDEA_COMMUNITY=http://download-cf.jetbrains.com/idea/ideaIC-14.0.2.dmg
+IDEA_ULTIMATE=http://download-cf.jetbrains.com/idea/ideaIU-14.1.2.dmg
+IDEA_COMMUNITY=http://download-cf.jetbrains.com/idea/ideaIC-14.1.2.dmg
