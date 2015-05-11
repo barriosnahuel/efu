@@ -62,15 +62,15 @@ echo "==> - EFU: ##############################  Installing favorite software   
 echo "==> - EFU: Installing Google Chrome (stable version)..."
 if [ $(getconf LONG_BIT) = "64" ]
 then
-	echo "==> - EFU: 64bit Detected" &&
-	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb &&
-	sudo dpkg -i google-chrome-stable_current_amd64.deb &&
-	rm -f google-chrome-stable_current_amd64.deb
+    echo "==> - EFU: 64bit Detected" &&
+    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb &&
+    sudo dpkg -i google-chrome-stable_current_amd64.deb &&
+    rm -f google-chrome-stable_current_amd64.deb
 else
-	echo "==> - EFU: 32bit Detected" &&
-	wget https://dl.google.com/linux/direct/google-chrome-stable_current_i386.deb &&
-	sudo dpkg -i google-chrome-stable_current_i386.deb &&
-	rm -f google-chrome-stable_current_i386.deb
+    echo "==> - EFU: 32bit Detected" &&
+    wget https://dl.google.com/linux/direct/google-chrome-stable_current_i386.deb &&
+    sudo dpkg -i google-chrome-stable_current_i386.deb &&
+    rm -f google-chrome-stable_current_i386.deb
 fi
 
 echo "==> - EFU: Instaling latest Rhythmbox and its plugins..."
