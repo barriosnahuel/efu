@@ -208,13 +208,7 @@ wget http://download.virtualbox.org/virtualbox/4.3.20/virtualbox-4.3_4.3.20-9699
 sudo dpkg -i virtualbox-4.3_4.3.20-96996~Ubuntu~raring_amd64.deb &&
 rm virtualbox-4.3_4.3.20-96996~Ubuntu~raring_amd64.deb
 
-echo "==> - EFU: Installing Genymotion Android emulator..." &&
-wget http://files2.genymotion.com/genymotion/genymotion-2.3.1/genymotion-2.3.1_x64.bin &&
-chmod +x genymotion-2.3.1_x64.bin &&
-mv genymotion-2.3.1_x64.bin ~/Coding/xDKs &&
-log "==> - EFU: [IMPORTANT] Genymotion was not installed. You must go to ~/Coding/xDKs and install it manually."
-
-echo "==> - EFU: Installing Gimp..."
+echo "==> - EFU: Installing Gimp with some plugins..."
 sudo apt-get -fy install gimp gimp-data gimp-plugin-registry gimp-data-extras
 
 echo "==> - EFU: Installing JDownloader, Subdownloader, GMountISO, Freemind (a mind maps editor), Gnac (to convert audio files), and a Steam client (will update on first run)..."
