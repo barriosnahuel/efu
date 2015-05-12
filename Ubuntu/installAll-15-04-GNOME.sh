@@ -10,10 +10,7 @@ echo "==> - EFU: To see the installation log run the following line on the comma
 
 echo "==> - EFU: Loading properties..."
 . ./properties.sh
-
-echo "==> - EFU: Loading utility functions..."
-. ./../functions.sh
-# TO HERE, is THE SAME FOR ALL OTHER PLATFORMS
+# TO HERE, IS THE SAME FOR ALL OTHER PLATFORMS
 
 
 log "==> - EFU: ############################## Adding particular software repositories ##############################"

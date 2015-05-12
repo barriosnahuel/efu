@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 # Created by Nahuel Barrios on 15/04/15. Contact me at: Barrios.Nahuel@gmail.com
 
-echo "==> - EFU: ############################## Creating directories tree ##############################"
-echo "==> - EFU: Creating directories tree..."
+. ./functions.sh
+
+log "==> - EFU: ############################## Creating directories tree ##############################"
+
 cd ~/ &&
 mkdir .gradle
 mkdir Coding &&
@@ -17,6 +19,6 @@ cd .. &&
 mkdir Software &&
 mkdir VMs &&
 
-echo "==> - EFU: Directories tree successfully created."
+log "==> - EFU: Directories tree successfully created."
 
 cd ~/Downloads/
