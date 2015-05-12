@@ -110,6 +110,15 @@ echo 'export PATH=$ANDROID_HOME/platform-tools:$PATH' >> ~/.bashrc &&
 . ~/.bashrc &&
 log "==> - EFU: Android SDK installed and configured successfully"
 
+echo "==> - EFU: Installing Gradle..." &&
+downloadAndUncompress "Gradle" https://services.gradle.org/distributions/gradle-2.2.1-bin.zip
+echo 'export GRADLE_HOME=$HOME/Coding/xDKs/gradle-2.2.1' >> ~/.bashrc &&
+echo 'export PATH=$GRADLE_HOME/bin:$PATH' >> ~/.bashrc &&
+. ~/.bashrc &&
+echo "org.gradle.daemon=true" >> ~/.gradle/gradle.properties &&
+echo "org.gradle.parallel=true" >> ~/.gradle/gradle.properties &&
+log "==> - EFU: Gradle installed and configured successfully."
+
 echo "==> - EFU: Installing Apache Ant..." &&
 downloadAndUncompress "Apache Ant" http://mirrors.dcarsat.com.ar/apache//ant/binaries/apache-ant-1.9.4-bin.zip &&
 echo 'export ANT_HOME=$HOME/Coding/xDKs/apache-ant-1.9.4' >> ~/.bashrc &&
@@ -124,17 +133,7 @@ echo 'export PATH=$M2_HOME/bin:$PATH' >> ~/.bashrc &&
 . ~/.bashrc &&
 log "==> - EFU: Apache Maven configured successfully."
 
-echo "==> - EFU: Installing Gradle..." &&
-downloadAndUncompress "Gradle" https://services.gradle.org/distributions/gradle-2.2.1-bin.zip
-echo 'export GRADLE_HOME=$HOME/Coding/xDKs/gradle-2.2.1' >> ~/.bashrc &&
-echo 'export PATH=$GRADLE_HOME/bin:$PATH' >> ~/.bashrc &&
-. ~/.bashrc &&
-echo "org.gradle.daemon=true" >> ~/.gradle/gradle.properties &&
-echo "org.gradle.parallel=true" >> ~/.gradle/gradle.properties &&
-log "==> - EFU: Gradle installed and configured successfully."
-
 echo "==> - EFU: Installing NodeJS..." &&
-
 downloadAndUncompress "NodeJS" http://nodejs.org/dist/v0.12.2/node-v0.12.2-linux-x64.tar.gz &&
 echo 'export PATH=$HOME/Coding/xDKs/node-v0.12.2-linux-x64/bin:$PATH' >> ~/.bashrc &&
 
@@ -155,6 +154,10 @@ heroku login &&
 echo "==> - EFU: Adding existent public keys to Heroku to be able to run commands..." &&
 heroku keys:add &&
 log "==> - EFU: Heroku configured successfully."
+
+downloadAndUncompress "Google App Engine SDK" https://storage.googleapis.com/appengine-sdks/featured/appengine-java-sdk-1.9.20.zip
+echo "export PATH=$PATH:$HOME/Coding/xDKs/appengine-java-sdk-1.9.20/" >> ~/.bashrc
+. ~/.bashrc
 
 
 log "==> - EFU: ################ Finished installing development kits ################"
