@@ -6,7 +6,6 @@ ANDROID_STUDIO=https://dl.google.com/dl/android/studio/install/1.0.0/android-stu
 ANDROID_FILE_TRANSFER=https://dl.google.com/dl/androidjumper/mtp/current/androidfiletransfer.dmg
 GOOGLE_DRIVE=https://dl.google.com/drive/installgoogledrive.dmg
 MEGA=https://mega.co.nz/MEGAsyncSetup.dmg
-MEGA_NAUTILUS=
 NODE_JS=http://nodejs.org/dist/v0.12.2/node-v0.12.2.pkg
 HEROKU=https://s3.amazonaws.com/assets.heroku.com/heroku-toolbelt/heroku-toolbelt.pkg
 TRANSMISSION=https://transmission.cachefly.net/Transmission-2.84.dmg
