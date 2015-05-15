@@ -15,7 +15,7 @@ getFileExtension() {
     echo ${1##*.}
 }
 
-getDirectoryFromFileName() {
+getFileNameWithoutExtension() {
     echo ${1%.*}
 }
 
