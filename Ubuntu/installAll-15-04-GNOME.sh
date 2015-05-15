@@ -170,6 +170,14 @@ echo 'export JAVA_HOME=$HOME/Coding/xDKs/jdk1.8.0_45' >> ~/.bashrc
 echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc &&
 . ~/.bashrc
 
+cd ~/Coding/servers/
+TOMCAT_URL=http://mirrors.nxnethosting.com/apache/tomcat/tomcat-8/v8.0.22/bin/apache-tomcat-8.0.22.zip
+downloadAndUncompress "Apache Tomcat 8" $TOMCAT_URL
+TOMCAT_DIRECTORY=$(getFileNameWithoutExtension $(getFileName $TOMCAT_URL))
+cd ~/Coding/servers/$TOMCAT_DIRECTORY/bin &&
+chmod +x catalina.sh &&
+log "==> - EFU: Apache Tomcat configured successfully. Now you can run: sh startup.sh and sh shutdown.sh"
+
 
 echo "==> - EFU: Installing Gimp with some plugins..."
 sudo apt-get -fy install gimp gimp-data gimp-plugin-registry gimp-data-extras
