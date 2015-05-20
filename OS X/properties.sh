@@ -11,3 +11,8 @@ HEROKU=https://s3.amazonaws.com/assets.heroku.com/heroku-toolbelt/heroku-toolbel
 TRANSMISSION=https://transmission.cachefly.net/Transmission-2.84.dmg
 IDEA_ULTIMATE=http://download-cf.jetbrains.com/idea/ideaIU-14.1.2.dmg
 IDEA_COMMUNITY=http://download-cf.jetbrains.com/idea/ideaIC-14.1.2.dmg
+GRADLE=https://services.gradle.org/distributions/gradle-2.2.1-bin.zip
+APACHE_ANT=http://mirrors.dcarsat.com.ar/apache//ant/binaries/apache-ant-1.9.4-bin.zip
+APACHE_MAVEN=http://mirrors.nxnethosting.com/apache/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.zip
+APACHE_TOMCAT=http://mirrors.nxnethosting.com/apache/tomcat/tomcat-8/v8.0.22/bin/apache-tomcat-8.0.22.zip
+

@@ -111,7 +111,7 @@ echo 'export PATH=$ANDROID_HOME/platform-tools:$PATH' >> ~/.bashrc &&
 log "==> - EFU: Android SDK installed and configured successfully"
 
 echo "==> - EFU: Installing Gradle..." &&
-downloadAndUncompress "Gradle" https://services.gradle.org/distributions/gradle-2.2.1-bin.zip
+downloadAndUncompress "Gradle" $GRADLE
 echo 'export GRADLE_HOME=$HOME/Coding/xDKs/gradle-2.2.1' >> ~/.bashrc &&
 echo 'export PATH=$GRADLE_HOME/bin:$PATH' >> ~/.bashrc &&
 . ~/.bashrc &&
@@ -120,14 +120,14 @@ echo "org.gradle.parallel=true" >> ~/.gradle/gradle.properties &&
 log "==> - EFU: Gradle installed and configured successfully."
 
 echo "==> - EFU: Installing Apache Ant..." &&
-downloadAndUncompress "Apache Ant" http://mirrors.dcarsat.com.ar/apache//ant/binaries/apache-ant-1.9.4-bin.zip &&
+downloadAndUncompress "Apache Ant" $APACHE_ANT &&
 echo 'export ANT_HOME=$HOME/Coding/xDKs/apache-ant-1.9.4' >> ~/.bashrc &&
 echo 'export PATH=$ANT_HOME/bin:$PATH' >> ~/.bashrc &&
 . ~/.bashrc &&
 log "==> - EFU: Apache Ant configured successfully."
 
 echo "==> - EFU: Installing Apache Maven..." &&
-downloadAndUncompress "Apache Maven" http://mirrors.nxnethosting.com/apache/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.zip
+downloadAndUncompress "Apache Maven" $APACHE_MAVEN &&
 echo 'export M2_HOME=$HOME/Coding/xDKs/apache-maven-3.2.5' >> ~/.bashrc &&
 echo 'export PATH=$M2_HOME/bin:$PATH' >> ~/.bashrc &&
 . ~/.bashrc &&
@@ -164,16 +164,15 @@ log "==> - EFU: ################ Finished installing development kits ##########
 
 echo "==> - EFU: Installing Intellij IDEA Ultimate Edition..." &&
 cd ~/Coding/IDEs/
-downloadAndUncompress "Intellij IDEA Ultimate Edition" http://download-cf.jetbrains.com/idea/ideaIU-14.1.2.tar.gz &&
+downloadAndUncompress "Intellij IDEA Ultimate Edition" $IDEA_ULTIMATE &&
 echo "==> - EFU: Setting up JAVA_HOME environment variable pointing to a JDK 8 to use as default java command." &&
 echo 'export JAVA_HOME=$HOME/Coding/xDKs/jdk1.8.0_45' >> ~/.bashrc
 echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc &&
 . ~/.bashrc
 
 cd ~/Coding/servers/
-TOMCAT_URL=http://mirrors.nxnethosting.com/apache/tomcat/tomcat-8/v8.0.22/bin/apache-tomcat-8.0.22.zip
-downloadAndUncompress "Apache Tomcat 8" $TOMCAT_URL
-TOMCAT_DIRECTORY=$(getFileNameWithoutExtension $(getFileName $TOMCAT_URL))
+downloadAndUncompress "Apache Tomcat 8" $APACHE_TOMCAT
+TOMCAT_DIRECTORY=$(getFileNameWithoutExtension $(getFileName $APACHE_TOMCAT))
 cd ~/Coding/servers/$TOMCAT_DIRECTORY/bin &&
 chmod +x catalina.sh &&
 log "==> - EFU: Apache Tomcat configured successfully. Now you can run: sh startup.sh and sh shutdown.sh"
