@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/barriosnahuel/efu.png?label=ready&title=Ready)](https://waffle.io/barriosnahuel/efu)
 efu
 ===
 
