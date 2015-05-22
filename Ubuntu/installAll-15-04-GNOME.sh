@@ -145,7 +145,7 @@ curl https://www.npmjs.com/install.sh | sh &&
 log "==> - EFU: NPM successfully installed."
 
 echo "==> - EFU: Installing via the NPM package manager: Apache Cordova and Plugman (a command line tool to install and uninstall plugins for use with Apache Cordova projects), Mocha (for testing) and Bower..." &&
-npm install -g cordova plugman mocha bower express-generator &&
+npm install -g cordova plugman mocha bower express-generator grunt-cli &&
 
 echo "==> - EFU: Installing Heroku toolbelt to run Heroku commands from command line..." &&
 wget -qO- $HEROKU | sh &&
