@@ -21,8 +21,8 @@ sudo add-apt-repository ppa:webupd8team/sublime-text-3 -y
 log "==> - EFU: Adding repositories for Ubuntu Make..."
 sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make
 
-log "==> - EFU: Adding repositories for Grive (a Google Drive unofficial client)..."
-sudo apt-add-repository ppa:thefanclub/grive-tools -y
+log "==> - EFU: Adding repositories for Drive..."
+sudo add-apt-repository ppa:twodopeshaggy/drive
 
 log "==> - EFU: Adding repositories for JDownloader..."
 sudo add-apt-repository ppa:jd-team/jdownloader -y
@@ -64,14 +64,11 @@ fi
 log "==> - EFU: Instaling latest Rhythmbox and its plugins..."
 sudo apt-get -fy install rhythmbox rhythmbox-plugin-rhythmweb rhythmbox-plugin-equalizer rhythmbox-plugin-opencontainingfolder rhythmbox-plugin-llyrics
 
-log "==> - EFU: Instaling Sublime Text 3, GIT, MongoDB and WebP command line tools..."
-sudo apt-get -fy install sublime-text-installer git-core mongodb curl webp
+log "==> - EFU: Instaling Drive, Sublime Text 3, GIT, MongoDB and WebP command line tools..."
+sudo apt-get -fy install drive sublime-text-installer git-core mongodb curl webp golang-go
 
 log "==> - EFU: Installing packages to compress and extract different kind of files..."
 sudo apt-get -fy install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract
-
-log "==> - EFU: Installing Grive: a Google Drive unofficial client..."
-sudo apt-get -fy install -y grive-tools
 
 log "==> - EFU: Installing Mixxx DJ software..."
 sudo apt-get -fy install mixxx libportaudio2
@@ -156,7 +153,7 @@ heroku keys:add &&
 log "==> - EFU: Heroku configured successfully."
 
 downloadAndUncompress "Google App Engine SDK" https://storage.googleapis.com/appengine-sdks/featured/appengine-java-sdk-1.9.20.zip
-echo "export PATH=$PATH:$HOME/Coding/xDKs/appengine-java-sdk-1.9.20/" >> ~/.bashrc
+echo 'export PATH=$PATH:$HOME/Coding/xDKs/appengine-java-sdk-1.9.20/' >> ~/.bashrc
 . ~/.bashrc
 
 
