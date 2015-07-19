@@ -109,7 +109,7 @@ log "==> - EFU: Android SDK installed and configured successfully"
 
 echo "==> - EFU: Installing Gradle..." &&
 downloadAndUncompress "Gradle" $GRADLE
-echo 'export GRADLE_HOME=$HOME/Coding/xDKs/gradle-2.2.1' >> ~/.bashrc &&
+echo 'export GRADLE_HOME=$HOME/Coding/xDKs/gradle-2.5' >> ~/.bashrc &&
 echo 'export PATH=$GRADLE_HOME/bin:$PATH' >> ~/.bashrc &&
 . ~/.bashrc &&
 echo "org.gradle.daemon=true" >> ~/.gradle/gradle.properties &&
