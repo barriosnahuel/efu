@@ -38,7 +38,7 @@ install() {
     echo "==> - EFU: Installing" $1 "..."
     FILE=$(getFileName $2)
 
-    sudo dpkg -i $FILE &&
+    sudo gdebi $FILE &&
     echo $1 "installed successfully." &&
 
     rm -f $FILE
