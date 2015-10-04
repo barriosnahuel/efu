@@ -7,6 +7,7 @@ echo "==> - EFU: To see the installation log run the following line on the comma
 
 # FROM HERE
 . ./../createDirectoriesTree.sh
+. ./../functions.sh
 
 echo "==> - EFU: Loading properties..."
 . ./properties.sh
@@ -19,10 +20,10 @@ log "==> - EFU: Adding repositories for Sublime Text 3..."
 sudo add-apt-repository ppa:webupd8team/sublime-text-3 -y
 
 log "==> - EFU: Adding repositories for Ubuntu Make..."
-sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make
+sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make -y
 
 log "==> - EFU: Adding repositories for Drive..."
-sudo add-apt-repository ppa:twodopeshaggy/drive
+sudo add-apt-repository ppa:twodopeshaggy/drive -y
 
 log "==> - EFU: Adding repositories for JDownloader..."
 sudo add-apt-repository ppa:jd-team/jdownloader -y
@@ -51,15 +52,41 @@ log "==> - EFU: ##############################  Installing favorite software   #
 downloadAndInstall "GetDeb" http://archive.getdeb.net/install_deb/getdeb-repository_0.1-1~getdeb1_all.deb
 downloadAndInstall "PlayDeb" http://archive.getdeb.net/install_deb/playdeb_0.3-1~getdeb1_all.deb
 
-# Install Google Chrome
-if [ $(getconf LONG_BIT) = "64" ]
-then
-    log "==> - EFU: 64bit machine detected" &&
-    downloadAndInstall "Google Chrome (amd64)" $GOOGLE_CHROME
-else
-    log "==> - EFU: 32bit machine detected"
-    downloadAndInstall "Google Chrome (x86)" $GOOGLE_CHROME
-fi
+log "==> - EFU: Instaling latest Rhythmbox and its plugins..."
+sudo apt-get -fy install rhythmbox rhythmbox-plugin-rhythmweb rhythmbox-plugin-equalizer rhythmbox-plugin-opencontainingfolder rhythmbox-plugin-llyrics
+
+log "==> - EFU: Instaling Drive, Sublime Text 3, GIT, MongoDB and WebP command line tools..."
+sudo apt-get -fy install drive sublime-text-installer git-core mongodb curl webp golang-go
+
+log "==> - EFU: Installing packages to compress and extract different kind of files..."
+sudo apt-get -fy install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract
+
+log "==> - EFU: Installing Mixxx DJ software..."
+sudo apt-get -fy install mixxx libportaudio2
+
+downloadAndInstall "Mega Sync client" $MEGA
+downloadAndInstall "Mega Nautilus extension" $MEGA_NAUTILUS
+
+log "==> - EFU: Installing Dropbox and XClip (to copy into clipboard from terminal),..."
+sudo apt-get -fy install nautilus-dropbox xclip
+
+
+echo "==> - EFU: Generating an SSH Key..." &&
+#   Creates a new ssh key, using the provided email as a label
+ssh-keygen -t rsa -C "barrios.nahuel@gmail.com" &&
+#   start the ssh-agent in the background
+eval "$(ssh-agent-s)" &&
+ssh-add ~/.ssh/id_rsa &&
+log "==> - EFU: SSH Key for barrios.nahuel@gmail.com successfully generated in ~/.ssh/id_rsa.pub"
+
+xclip -sel clip < ~/.ssh/id_rsa.pub &&
+log "==> - EFU: SSH Key copied to clipboard."
+
+
+log "==> - EFU: ##############################  Installing favorite software   ##############################"
+
+downloadAndInstall "GetDeb" http://archive.getdeb.net/install_deb/getdeb-repository_0.1-1~getdeb1_all.deb
+downloadAndInstall "PlayDeb" http://archive.getdeb.net/install_deb/playdeb_0.3-1~getdeb1_all.deb
 
 log "==> - EFU: Instaling latest Rhythmbox and its plugins..."
 sudo apt-get -fy install rhythmbox rhythmbox-plugin-rhythmweb rhythmbox-plugin-equalizer rhythmbox-plugin-opencontainingfolder rhythmbox-plugin-llyrics
@@ -95,7 +122,7 @@ log "==> - EFU: SSH Key copied to clipboard."
 log "==> - EFU: ################ Installing development kits ################"
 
 echo "==> - EFU: Installing and configuring the Android development environment..." &&
-sudo apt-get install ubuntu-make &&
+sudo apt-get -fy install ubuntu-make &&
 umake android &&
 
 cd ~/Coding/xDKs/ &&
@@ -109,7 +136,7 @@ log "==> - EFU: Android SDK installed and configured successfully"
 
 echo "==> - EFU: Installing Gradle..." &&
 downloadAndUncompress "Gradle" $GRADLE
-echo 'export GRADLE_HOME=$HOME/Coding/xDKs/gradle-2.5' >> ~/.bashrc &&
+echo 'export GRADLE_HOME=$HOME/Coding/xDKs/gradle-2.6' >> ~/.bashrc &&
 echo 'export PATH=$GRADLE_HOME/bin:$PATH' >> ~/.bashrc &&
 . ~/.bashrc &&
 echo "org.gradle.daemon=true" >> ~/.gradle/gradle.properties &&
@@ -118,21 +145,21 @@ log "==> - EFU: Gradle installed and configured successfully."
 
 echo "==> - EFU: Installing Apache Ant..." &&
 downloadAndUncompress "Apache Ant" $APACHE_ANT &&
-echo 'export ANT_HOME=$HOME/Coding/xDKs/apache-ant-1.9.4' >> ~/.bashrc &&
+echo 'export ANT_HOME=$HOME/Coding/xDKs/apache-ant-1.9.6' >> ~/.bashrc &&
 echo 'export PATH=$ANT_HOME/bin:$PATH' >> ~/.bashrc &&
 . ~/.bashrc &&
 log "==> - EFU: Apache Ant configured successfully."
 
 echo "==> - EFU: Installing Apache Maven..." &&
 downloadAndUncompress "Apache Maven" $APACHE_MAVEN &&
-echo 'export M2_HOME=$HOME/Coding/xDKs/apache-maven-3.2.5' >> ~/.bashrc &&
+echo 'export M2_HOME=$HOME/Coding/xDKs/apache-maven-3.3.3' >> ~/.bashrc &&
 echo 'export PATH=$M2_HOME/bin:$PATH' >> ~/.bashrc &&
 . ~/.bashrc &&
 log "==> - EFU: Apache Maven configured successfully."
 
 echo "==> - EFU: Installing NodeJS..." &&
-downloadAndUncompress "NodeJS" http://nodejs.org/dist/v0.12.2/node-v0.12.2-linux-x64.tar.gz &&
-echo 'export PATH=$HOME/Coding/xDKs/node-v0.12.2-linux-x64/bin:$PATH' >> ~/.bashrc &&
+downloadAndUncompress "NodeJS" $NODE_JS
+echo 'export PATH=$HOME/Coding/xDKs/node-v4.1.1-linux-x64/bin:$PATH' >> ~/.bashrc &&
 
 . ~/.bashrc &&
 log "==> - EFU: NodeJS installed and configured successfully."
@@ -152,8 +179,8 @@ echo "==> - EFU: Adding existent public keys to Heroku to be able to run command
 heroku keys:add &&
 log "==> - EFU: Heroku configured successfully."
 
-downloadAndUncompress "Google App Engine SDK" https://storage.googleapis.com/appengine-sdks/featured/appengine-java-sdk-1.9.20.zip
-echo 'export PATH=$PATH:$HOME/Coding/xDKs/appengine-java-sdk-1.9.20/' >> ~/.bashrc
+downloadAndUncompress "Google App Engine SDK" https://storage.googleapis.com/appengine-sdks/featured/appengine-java-sdk-1.9.27.zip
+echo 'export PATH=$PATH:$HOME/Coding/xDKs/appengine-java-sdk-1.9.27/' >> ~/.bashrc
 . ~/.bashrc
 
 
@@ -168,7 +195,7 @@ echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc &&
 . ~/.bashrc
 
 cd ~/Coding/servers/
-downloadAndUncompress "Apache Tomcat 8" $APACHE_TOMCAT
+downloadAndUncompress "Apache Tomcat" $APACHE_TOMCAT
 TOMCAT_DIRECTORY=$(getFileNameWithoutExtension $(getFileName $APACHE_TOMCAT))
 cd ~/Coding/servers/$TOMCAT_DIRECTORY/bin &&
 chmod +x catalina.sh &&
@@ -183,7 +210,7 @@ sudo apt-get -fy install jdownloader subdownloader gmountiso freemind gnac steam
 
 cd ~/Downloads/
 downloadAndInstall "TeamViewer" http://www.teamviewer.com/download/teamviewer_linux.deb
-downloadAndInstall "RoboMongo" http://robomongo.org/files/linux/robomongo-0.8.4-x86_64.deb
+downloadAndInstall "RoboMongo" http://robomongo.org/files/linux/robomongo-0.8.5-x86_64.deb
 
 echo "==> - EFU: Cleaning up..." &&
 sudo apt-get -f install &&
