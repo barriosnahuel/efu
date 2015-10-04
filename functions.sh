@@ -4,7 +4,7 @@
 
 log() {
     echo $1 &&
-    echo $1 >> efu.log
+    echo $1 >> ~/Downloads/efu.log
 }
 
 getFileName() {
