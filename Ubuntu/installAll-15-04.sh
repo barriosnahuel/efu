@@ -7,6 +7,7 @@ echo "==> - EFU: To see the installation log run the following line on the comma
 
 # FROM HERE
 . ./../createDirectoriesTree.sh
+. ./../functions.sh
 
 echo "==> - EFU: Loading properties..."
 . ./properties.sh
@@ -194,7 +195,7 @@ echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc &&
 . ~/.bashrc
 
 cd ~/Coding/servers/
-downloadAndUncompress "Apache Tomcat 8" $APACHE_TOMCAT
+downloadAndUncompress "Apache Tomcat" $APACHE_TOMCAT
 TOMCAT_DIRECTORY=$(getFileNameWithoutExtension $(getFileName $APACHE_TOMCAT))
 cd ~/Coding/servers/$TOMCAT_DIRECTORY/bin &&
 chmod +x catalina.sh &&
