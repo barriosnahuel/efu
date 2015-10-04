@@ -145,7 +145,7 @@ log "==> - EFU: Gradle installed and configured successfully."
 
 echo "==> - EFU: Installing Apache Ant..." &&
 downloadAndUncompress "Apache Ant" $APACHE_ANT &&
-echo 'export ANT_HOME=$HOME/Coding/xDKs/apache-ant-2.4.0' >> ~/.bashrc &&
+echo 'export ANT_HOME=$HOME/Coding/xDKs/apache-ant-1.9.6' >> ~/.bashrc &&
 echo 'export PATH=$ANT_HOME/bin:$PATH' >> ~/.bashrc &&
 . ~/.bashrc &&
 log "==> - EFU: Apache Ant configured successfully."
