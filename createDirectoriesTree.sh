@@ -14,9 +14,11 @@ mkdir xDKs &&
 mkdir servers &&
 mkdir workspace-mine &&
 mkdir workspace-test &&
+mkdir workspace-tools &&
 mkdir workspace-work &&
 cd .. &&
 mkdir Software &&
+mkdir Songs\ Lyrics
 mkdir VMs &&
 
 log "==> - EFU: Directories tree successfully created."

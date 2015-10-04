@@ -4,7 +4,7 @@
 
 log() {
     echo $1 &&
-    echo $1 >> efu.log
+    echo $1 >> ~/Downloads/efu.log
 }
 
 getFileName() {
@@ -38,7 +38,7 @@ install() {
     echo "==> - EFU: Installing" $1 "..."
     FILE=$(getFileName $2)
 
-    sudo dpkg -i $FILE &&
+    sudo gdebi $FILE &&
     echo $1 "installed successfully." &&
 
     rm -f $FILE

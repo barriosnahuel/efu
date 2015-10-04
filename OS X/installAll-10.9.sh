@@ -5,6 +5,7 @@
 
 # FROM HERE
 . ./../createDirectoriesTree.sh
+. ./../functions.sh
 
 echo "==> - EFU: Loading properties..."
 . ./properties.sh
