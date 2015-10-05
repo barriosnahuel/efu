@@ -83,42 +83,6 @@ xclip -sel clip < ~/.ssh/id_rsa.pub &&
 log "==> - EFU: SSH Key copied to clipboard."
 
 
-log "==> - EFU: ##############################  Installing favorite software   ##############################"
-
-downloadAndInstall "GetDeb" http://archive.getdeb.net/install_deb/getdeb-repository_0.1-1~getdeb1_all.deb
-downloadAndInstall "PlayDeb" http://archive.getdeb.net/install_deb/playdeb_0.3-1~getdeb1_all.deb
-
-log "==> - EFU: Instaling latest Rhythmbox and its plugins..."
-sudo apt-get -fy install rhythmbox rhythmbox-plugin-rhythmweb rhythmbox-plugin-equalizer rhythmbox-plugin-opencontainingfolder rhythmbox-plugin-llyrics
-
-log "==> - EFU: Instaling Drive, Sublime Text 3, GIT, MongoDB and WebP command line tools..."
-sudo apt-get -fy install drive sublime-text-installer git-core mongodb curl webp golang-go
-
-log "==> - EFU: Installing packages to compress and extract different kind of files..."
-sudo apt-get -fy install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract
-
-log "==> - EFU: Installing Mixxx DJ software..."
-sudo apt-get -fy install mixxx libportaudio2
-
-downloadAndInstall "Mega Sync client" $MEGA
-downloadAndInstall "Mega Nautilus extension" $MEGA_NAUTILUS
-
-log "==> - EFU: Installing Dropbox and XClip (to copy into clipboard from terminal),..."
-sudo apt-get -fy install nautilus-dropbox xclip
-
-
-echo "==> - EFU: Generating an SSH Key..." &&
-#   Creates a new ssh key, using the provided email as a label
-ssh-keygen -t rsa -C "barrios.nahuel@gmail.com" &&
-#   start the ssh-agent in the background
-eval "$(ssh-agent-s)" &&
-ssh-add ~/.ssh/id_rsa &&
-log "==> - EFU: SSH Key for barrios.nahuel@gmail.com successfully generated in ~/.ssh/id_rsa.pub"
-
-xclip -sel clip < ~/.ssh/id_rsa.pub &&
-log "==> - EFU: SSH Key copied to clipboard."
-
-
 log "==> - EFU: ################ Installing development kits ################"
 
 echo "==> - EFU: Installing and configuring the Android development environment..." &&
