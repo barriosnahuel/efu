@@ -10,3 +10,4 @@ GRADLE=https://downloads.gradle.org/distributions/gradle-2.6-all.zip
 APACHE_ANT=http://apache.xfree.com.ar//ant/binaries/apache-ant-1.9.6-bin.zip
 APACHE_MAVEN=http://mirrors.nxnethosting.com/apache/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.zip
 APACHE_TOMCAT=http://apache.dattatec.com/tomcat/tomcat-8/v8.0.27/bin/apache-tomcat-8.0.27.zip
+JDOWNLOADER=https://mega.nz/#!LJ9FyK7b!t88t6YBo2Wm_ABkSO7GikxujDF5Hddng9bgDb8fwoJQ
