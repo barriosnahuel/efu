@@ -25,9 +25,6 @@ sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make -y
 log "==> - EFU: Adding repositories for Drive..."
 sudo add-apt-repository ppa:twodopeshaggy/drive -y
 
-log "==> - EFU: Adding repositories for JDownloader..."
-sudo add-apt-repository ppa:jd-team/jdownloader -y
-
 log "==> - EFU: Adding repositories for Mixxx DJ software..."
 sudo add-apt-repository ppa:mixxx/mixxx -y
 
@@ -169,12 +166,14 @@ log "==> - EFU: Apache Tomcat configured successfully. Now you can run: sh start
 echo "==> - EFU: Installing Gimp with some plugins..."
 sudo apt-get -fy install gimp gimp-data gimp-plugin-registry gimp-data-extras
 
-echo "==> - EFU: Installing JDownloader, Subdownloader, GMountISO, Freemind (a mind maps editor), Gnac (to convert audio files), and a Steam client (will update on first run)..."
-sudo apt-get -fy install jdownloader subdownloader gmountiso freemind gnac steam
+echo "==> - EFU: Installing Subdownloader, GMountISO, Freemind (a mind maps editor), Gnac (to convert audio files), and a Steam client (will update on first run)..."
+sudo apt-get -fy install subdownloader gmountiso freemind gnac steam
 
 cd ~/Downloads/
 downloadAndInstall "TeamViewer" http://www.teamviewer.com/download/teamviewer_linux.deb
 downloadAndInstall "RoboMongo" http://robomongo.org/files/linux/robomongo-0.8.5-x86_64.deb
+
+echo "==> - EFU: JDownloader2: Download it from" $JDOWNLOADER
 
 echo "==> - EFU: Cleaning up..." &&
 sudo apt-get -f install &&
