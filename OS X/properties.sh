@@ -17,4 +17,4 @@ GRADLE=https://downloads.gradle.org/distributions/gradle-2.5-all.zip
 APACHE_ANT=http://mirrors.dcarsat.com.ar/apache//ant/binaries/apache-ant-1.9.4-bin.zip
 APACHE_MAVEN=http://mirrors.nxnethosting.com/apache/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.zip
 APACHE_TOMCAT=http://mirrors.nxnethosting.com/apache/tomcat/tomcat-8/v8.0.22/bin/apache-tomcat-8.0.22.zip
-
+JDOWNLOADER=https://mega.nz/#!aYc2GLLA!0yW5XNlUlIOHWpNRTiv6gUae1GM-RH2feFvOPb-Gqf0

@@ -41,3 +41,5 @@ mv apache-ant-1.9.4-bin.zip ~/Coding/xDKs &&
 echo 'export ANT_HOME=$HOME/Coding/xDKs/apache-ant-1.9.4' >> ~/.bash_profile &&
 echo 'export PATH=$ANT_HOME/bin:$PATH' >> ~/.bash_profile &&
 echo "==> - EFU: Successfully added Ant to path environment variable."
+
+echo "==> - EFU: JDownloader2: Download it from" $JDOWNLOADER
