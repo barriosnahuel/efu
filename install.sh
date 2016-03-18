@@ -23,7 +23,7 @@ if [ "$PLATFORM" != "osx" ] && [ "$PLATFORM" != "ubuntu" ]; then
 fi
 
 
-if isOsx $PLATFORM; then
+if isOsx "$PLATFORM"; then
     log "Detected platform <OS X>"
 else
     log "Detected platform <Ubuntu>"
@@ -31,7 +31,7 @@ fi
 
 
 log "Loading properties file..."
-if isOsx $PLATFORM; then
+if isOsx "$PLATFORM"; then
     . ./OS\ X/properties.sh
 else
     . ./Ubuntu/properties.sh
