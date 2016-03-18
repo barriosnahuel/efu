@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-# Created by Nahuel Barrios on 15/04/15. Contact me at: Barrios.Nahuel@gmail.com
+####
+# Created by Nahuel Barrios.
+####
 
 GOOGLE_CHROME=https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg
 ANDROID_STUDIO=https://dl.google.com/dl/android/studio/install/1.0.0/android-studio-ide-135.1629389.dmg

@@ -1,15 +1,9 @@
 #!/bin/bash
-# Script created by Nahuel Barrios: barrios.nahuel@gmail.com
-# Last run: 11/12/14
+####
+# Created by Nahuel Barrios.
 # Just comment the undesired software to skip installing specific software.
+####
 
-# FROM HERE
-. ./../createDirectoriesTree.sh
-. ./../functions.sh
-
-echo "==> - EFU: Loading properties..."
-. ./properties.sh
-# TO HERE, IS THE SAME FOR ALL OTHER PLATFORMS
 
 echo "==> - EFU: Adding some aliases to ~/.bash_profile..."
 echo "alias ll='ls -la'" >> ~/.bash_profile &&

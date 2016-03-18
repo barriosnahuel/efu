@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-# Created by Nahuel Barrios on 15/04/15. Contact me at: Barrios.Nahuel@gmail.com
+####
+# Created by Nahuel Barrios.
+####
 
 MEGA=https://mega.co.nz/linux/MEGAsync/xUbuntu_15.04/amd64/megasync-xUbuntu_15.04_amd64.deb
 MEGA_NAUTILUS=https://mega.co.nz/linux/MEGAsync/xUbuntu_15.04/amd64/nautilus-megasync-xUbuntu_15.04_amd64.deb

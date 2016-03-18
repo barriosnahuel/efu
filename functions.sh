@@ -1,10 +1,32 @@
 #!/bin/sh
-
-# Created by Nahuel Barrios on 15/04/15. Contact me at: Barrios.Nahuel@gmail.com
+####
+# Created by Nahuel Barrios on 15/04/15.
+####
 
 log() {
-    echo $1 &&
-    echo $1 >> ~/Downloads/efu.log
+    echo "EFU ==>" $1 $2 $3 &&
+    echo "EFU ==>" $1 $2 $3 >> ~/Downloads/efu.log
+}
+
+logError() {
+    echo "EFU ==> ERROR:" $1 $2 $3 &&
+    echo "EFU ==> ERROR:" $1 $2 $3 >> ~/Downloads/efu.log
+}
+
+isUbuntu(){
+    if [ "$1" == "ubuntu" ]; then
+        return 0
+    else
+        return 1
+    fi
+}
+
+isOsx(){
+    if [ "$1" == "osx" ]; then
+        return 0
+    else
+        return 1
+    fi
 }
 
 getFileName() {
