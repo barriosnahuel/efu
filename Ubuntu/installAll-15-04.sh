@@ -72,18 +72,6 @@ log "==> - EFU: SSH Key copied to clipboard."
 
 log "==> - EFU: ################ Installing development kits ################"
 
-echo "==> - EFU: Installing and configuring the Android development environment..." &&
-sudo apt-get -fy install ubuntu-make &&
-umake android &&
-
-cd ~/Coding/xDKs/ &&
-
-echo "==> - EFU: Configuring Android SDK environment variables..." &&
-echo 'export ANDROID_HOME=$HOME/Coding/xDKs/android-sdk' >> ~/.bashrc &&
-echo 'export PATH=$ANDROID_HOME/tools:$PATH' >> ~/.bashrc &&
-echo 'export PATH=$ANDROID_HOME/platform-tools:$PATH' >> ~/.bashrc &&
-. ~/.bashrc &&
-log "==> - EFU: Android SDK installed and configured successfully"
 
 echo "==> - EFU: Installing Gradle..." &&
 downloadAndUncompress "Gradle" $GRADLE
