@@ -34,5 +34,8 @@ sdk install ant
 log "Installing Kotlin through sdkman"
 sdk install kotlin
 
+log "Installing Groovy through sdkman"
+sdk install groovy
+
 log "Installing Grails through sdkman"
 sdk install grails
