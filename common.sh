@@ -4,4 +4,5 @@
 ####
 
 . modules/git.sh
+. modules/sdkman.sh
 . modules/android.sh
