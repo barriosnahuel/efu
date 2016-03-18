@@ -4,115 +4,115 @@
 # Just comment the undesired command lines to skip the installation of specific software.
 ####
 
-log "==> - EFU: ############################## Adding particular software repositories ##############################"
+log "############################## Adding particular software repositories ##############################"
 
-log "==> - EFU: Adding repositories for Sublime Text 3..."
+log "Adding repositories for Sublime Text 3..."
 sudo add-apt-repository ppa:webupd8team/sublime-text-3 -y
 
-log "==> - EFU: Adding repositories for Ubuntu Make..."
+log "Adding repositories for Ubuntu Make..."
 sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make -y
 
-log "==> - EFU: Adding repositories for Drive..."
+log "Adding repositories for Drive..."
 sudo add-apt-repository ppa:twodopeshaggy/drive -y
 
-log "==> - EFU: Adding repositories for Mixxx DJ software..."
+log "Adding repositories for Mixxx DJ software..."
 sudo add-apt-repository ppa:mixxx/mixxx -y
 
-log "==> - EFU: Adding repositories for Rhythmbox and its plugins..."
+log "Adding repositories for Rhythmbox and its plugins..."
 sudo add-apt-repository ppa:fossfreedom/rhythmbox -y
 sudo add-apt-repository ppa:fossfreedom/rhythmbox-plugins -y
 
-echo "==> - EFU: Updating software sources. Required after adding ppa repositories."
+log "Updating software sources. Required after adding ppa repositories."
 sudo apt-get update
 
-echo "==> - EFU: Fixing current packages..."
+log "Fixing current packages..."
 sudo apt-get -f install
 
-echo "==> - EFU: Removing packages that are not neccessary to prevent conflicts..."
+log "Removing packages that are not neccessary to prevent conflicts..."
 sudo apt-get autoremove
 
-log "==> - EFU: Installing gdebi package manager..."
+log "Installing gdebi package manager..."
 sudo apt-get -fy install gdebi
 
-log "==> - EFU: ##############################  Installing favorite software   ##############################"
+log "##############################  Installing favorite software   ##############################"
 
 downloadAndInstall "GetDeb" http://archive.getdeb.net/install_deb/getdeb-repository_0.1-1~getdeb1_all.deb
 downloadAndInstall "PlayDeb" http://archive.getdeb.net/install_deb/playdeb_0.3-1~getdeb1_all.deb
 
-log "==> - EFU: Instaling latest Rhythmbox and its plugins..."
+log "Instaling latest Rhythmbox and its plugins..."
 sudo apt-get -fy install rhythmbox rhythmbox-plugin-rhythmweb rhythmbox-plugin-equalizer rhythmbox-plugin-opencontainingfolder rhythmbox-plugin-llyrics
 
-log "==> - EFU: Instaling Drive, Sublime Text 3, MongoDB and WebP command line tools..."
+log "Instaling Drive, Sublime Text 3, MongoDB and WebP command line tools..."
 sudo apt-get -fy install drive sublime-text-installer mongodb curl webp golang-go
 
-log "==> - EFU: Installing packages to compress and extract different kind of files..."
+log "Installing packages to compress and extract different kind of files..."
 sudo apt-get -fy install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract
 
-log "==> - EFU: Installing Mixxx DJ software..."
+log "Installing Mixxx DJ software..."
 sudo apt-get -fy install mixxx libportaudio2
 
 downloadAndInstall "Mega Sync client" $MEGA
 downloadAndInstall "Mega Nautilus extension" $MEGA_NAUTILUS
 
-log "==> - EFU: Installing Dropbox and XClip (to copy into clipboard from terminal),..."
+log "Installing Dropbox and XClip (to copy into clipboard from terminal),..."
 sudo apt-get -fy install nautilus-dropbox xclip
 
 
-echo "==> - EFU: Generating an SSH Key..." &&
+log "Generating an SSH Key..." &&
 #   Creates a new ssh key, using the provided email as a label
 ssh-keygen -t rsa -C "barrios.nahuel@gmail.com" &&
 #   start the ssh-agent in the background
 eval "$(ssh-agent-s)" &&
 ssh-add ~/.ssh/id_rsa &&
-log "==> - EFU: SSH Key for barrios.nahuel@gmail.com successfully generated in ~/.ssh/id_rsa.pub"
+log "SSH Key for barrios.nahuel@gmail.com successfully generated in ~/.ssh/id_rsa.pub"
 
 xclip -sel clip < ~/.ssh/id_rsa.pub &&
-log "==> - EFU: SSH Key copied to clipboard."
+log "SSH Key copied to clipboard."
 
 
-log "==> - EFU: ################ Installing development kits ################"
+log "################ Installing development kits ################"
 
 
-echo "==> - EFU: Installing Apache Maven..." &&
+log "Installing Apache Maven..." &&
 downloadAndUncompress "Apache Maven" $APACHE_MAVEN &&
 echo 'export M2_HOME=$HOME/Coding/xDKs/apache-maven-3.3.3' >> ~/.bashrc &&
 echo 'export PATH=$M2_HOME/bin:$PATH' >> ~/.bashrc &&
 . ~/.bashrc &&
-log "==> - EFU: Apache Maven configured successfully."
+log "Apache Maven configured successfully."
 
-echo "==> - EFU: Installing NodeJS..." &&
+log "Installing NodeJS..." &&
 downloadAndUncompress "NodeJS" $NODE_JS
 echo 'export PATH=$HOME/Coding/xDKs/node-v4.1.1-linux-x64/bin:$PATH' >> ~/.bashrc &&
 
 . ~/.bashrc &&
-log "==> - EFU: NodeJS installed and configured successfully."
+log "NodeJS installed and configured successfully."
 
-echo "==> - EFU: Installing NPM package manager (latest version)..." &&
+log "Installing NPM package manager (latest version)..." &&
 curl https://www.npmjs.com/install.sh | sh &&
-log "==> - EFU: NPM successfully installed."
+log "NPM successfully installed."
 
-echo "==> - EFU: Installing via the NPM package manager: Apache Cordova and Plugman (a command line tool to install and uninstall plugins for use with Apache Cordova projects), Mocha (for testing) and Bower..." &&
+log "Installing via the NPM package manager: Apache Cordova and Plugman (a command line tool to install and uninstall plugins for use with Apache Cordova projects), Mocha (for testing) and Bower..." &&
 npm install -g cordova plugman mocha bower express-generator grunt-cli &&
 
-echo "==> - EFU: Installing Heroku toolbelt to run Heroku commands from command line..." &&
+log "Installing Heroku toolbelt to run Heroku commands from command line..." &&
 wget -qO- $HEROKU | sh &&
-echo "==> - EFU: Please login against Heroku with your account." &&
+log "Please login against Heroku with your account." &&
 heroku login &&
-echo "==> - EFU: Adding existent public keys to Heroku to be able to run commands..." &&
+log "Adding existent public keys to Heroku to be able to run commands..." &&
 heroku keys:add &&
-log "==> - EFU: Heroku configured successfully."
+log "Heroku configured successfully."
 
 downloadAndUncompress "Google App Engine SDK" https://storage.googleapis.com/appengine-sdks/featured/appengine-java-sdk-1.9.27.zip
 echo 'export PATH=$PATH:$HOME/Coding/xDKs/appengine-java-sdk-1.9.27/' >> ~/.bashrc
 . ~/.bashrc
 
 
-log "==> - EFU: ################ Finished installing development kits ################"
+log "################ Finished installing development kits ################"
 
-echo "==> - EFU: Installing Intellij IDEA Ultimate Edition..." &&
+log "Installing Intellij IDEA Ultimate Edition..." &&
 cd ~/Coding/IDEs/
 downloadAndUncompress "Intellij IDEA Ultimate Edition" $IDEA_ULTIMATE &&
-echo "==> - EFU: Setting up JAVA_HOME environment variable pointing to a JDK 8 to use as default java command." &&
+log "Setting up JAVA_HOME environment variable pointing to a JDK 8 to use as default java command." &&
 echo 'export JAVA_HOME=$HOME/Coding/xDKs/jdk1.8.0_45' >> ~/.bashrc
 echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc &&
 . ~/.bashrc
@@ -122,30 +122,30 @@ downloadAndUncompress "Apache Tomcat" $APACHE_TOMCAT
 TOMCAT_DIRECTORY=$(getFileNameWithoutExtension $(getFileName $APACHE_TOMCAT))
 cd ~/Coding/servers/$TOMCAT_DIRECTORY/bin &&
 chmod +x catalina.sh &&
-log "==> - EFU: Apache Tomcat configured successfully. Now you can run: sh startup.sh and sh shutdown.sh"
+log "Apache Tomcat configured successfully. Now you can run: sh startup.sh and sh shutdown.sh"
 
 
-echo "==> - EFU: Installing Gimp with some plugins..."
+log "Installing Gimp with some plugins..."
 sudo apt-get -fy install gimp gimp-data gimp-plugin-registry gimp-data-extras
 
-echo "==> - EFU: Installing Subdownloader, GMountISO, Freemind (a mind maps editor), Gnac (to convert audio files), and a Steam client (will update on first run)..."
+log "Installing Subdownloader, GMountISO, Freemind (a mind maps editor), Gnac (to convert audio files), and a Steam client (will update on first run)..."
 sudo apt-get -fy install subdownloader gmountiso freemind gnac steam
 
 cd ~/Downloads/
 downloadAndInstall "TeamViewer" http://www.teamviewer.com/download/teamviewer_linux.deb
 downloadAndInstall "RoboMongo" http://robomongo.org/files/linux/robomongo-0.8.5-x86_64.deb
 
-echo "==> - EFU: JDownloader2: Download it from" $JDOWNLOADER
+log "JDownloader2: Download it from" $JDOWNLOADER
 
-echo "==> - EFU: Cleaning up..." &&
+log "Cleaning up..." &&
 sudo apt-get -f install &&
 sudo apt-get autoremove &&
 sudo apt-get -y autoclean &&
 sudo apt-get -y clean
 
-log "==> - EFU: Updating installed packages..."
+log "Updating installed packages..."
 sudo apt-get upgrade
 
-log "==> - EFU: ##############################  Finished installation of favorite software   ##############################"
-log "==> - EFU: Thanks for using me! --- Don't forget to fork me on Github: http://github.com/barriosnahuel/efu ###########"
-echo "==> - EFU: To see the installation log run the following line on the command line: tail –f efu.log"
+log "##############################  Finished installation of favorite software   ##############################"
+log "Thanks for using me! --- Don't forget to fork me on Github: http://github.com/barriosnahuel/efu ###########"
+log "To see the installation log run the following line on the command line: tail –f efu.log"
