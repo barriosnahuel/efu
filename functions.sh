@@ -14,7 +14,7 @@ logError() {
 }
 
 isUbuntu(){
-    if [ "$1" == "ubuntu" ]; then
+    if [ "$1" = "ubuntu" ]; then
         return 0
     else
         return 1
@@ -22,7 +22,7 @@ isUbuntu(){
 }
 
 isOsx(){
-    if [ "$1" == "osx" ]; then
+    if [ "$1" = "osx" ]; then
         return 0
     else
         return 1
@@ -63,7 +63,7 @@ install() {
     sudo gdebi "$FILE" &&
     echo "$1 installed successfully." &&
 
-    rm -f $FILE
+    rm -f "$FILE"
 }
 
 ##  Parameters:
@@ -84,7 +84,7 @@ downloadAndUncompress() {
     FILE_NAME=$(getFileName "$2") &&
 
     # Use the file extension to use unzip or tar to uncompress the file.
-    if [ $(getFileExtension "$FILE_NAME") = "zip" ]; then
+    if [ "$(getFileExtension $FILE_NAME)" = "zip" ]; then
         unzip "$FILE_NAME"
     else
         tar -zxf "$FILE_NAME"

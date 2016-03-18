@@ -9,6 +9,4 @@ script:
   - shellcheck functions.sh
   - shellcheck createDirectoriesTree.sh
   - shellcheck common.sh
-  - shellcheck Ubuntu/properties.sh
-  - shellcheck OS\ X/properties.sh
   - shellcheck install.sh
