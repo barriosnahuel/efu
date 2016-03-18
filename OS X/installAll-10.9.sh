@@ -9,11 +9,6 @@ echo "==> - EFU: Adding some aliases to ~/.bash_profile..."
 echo "alias ll='ls -la'" >> ~/.bash_profile &&
 . ~/.bash_profile &&
 
-echo 'export ANDROID_HOME=$HOME/Coding/xDKs/android-sdk-macosx' >> ~/.bash_profile &&
-echo 'export PATH=$ANDROID_HOME/tools:$PATH' >> ~/.bash_profile &&
-echo 'export PATH=$ANDROID_HOME/platform-tools:$PATH' >> ~/.bash_profile &&
-echo "==> - EFU: Successfully added Android path environment variables."
-
 echo "==> - EFU: Installing Gradle..."
 curl -O https://downloads.gradle.org/distributions/gradle-2.2.1-bin.zip &&
 unzip gradle-2.2.1-bin.zip &&
