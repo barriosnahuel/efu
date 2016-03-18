@@ -1,7 +1,8 @@
 #!/bin/bash
-# Script created by Nahuel Barrios: barrios.nahuel@gmail.com
-# Last run: 11/12/14
+####
+# Created by Nahuel Barrios.
 # Just comment the undesired software to skip installing specific software.
+####
 
 
 echo "==> - EFU: Adding some aliases to ~/.bash_profile..."

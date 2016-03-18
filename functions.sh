@@ -1,6 +1,7 @@
 #!/bin/sh
-
-# Created by Nahuel Barrios on 15/04/15. Contact me at: Barrios.Nahuel@gmail.com
+####
+# Created by Nahuel Barrios on 15/04/15.
+####
 
 log() {
     echo "EFU ==>" $1 $2 $3 &&
@@ -13,7 +14,7 @@ logError() {
 }
 
 isUbuntu(){
-    if [ "$PLATFORM" == "ubuntu" ]; then
+    if [ "$1" == "ubuntu" ]; then
         return 0
     else
         return 1
@@ -21,7 +22,7 @@ isUbuntu(){
 }
 
 isOsx(){
-    if [ "$PLATFORM" == "osx" ]; then
+    if [ "$1" == "osx" ]; then
         return 0
     else
         return 1
