@@ -73,22 +73,6 @@ log "==> - EFU: SSH Key copied to clipboard."
 log "==> - EFU: ################ Installing development kits ################"
 
 
-echo "==> - EFU: Installing Gradle..." &&
-downloadAndUncompress "Gradle" $GRADLE
-echo 'export GRADLE_HOME=$HOME/Coding/xDKs/gradle-2.6' >> ~/.bashrc &&
-echo 'export PATH=$GRADLE_HOME/bin:$PATH' >> ~/.bashrc &&
-. ~/.bashrc &&
-echo "org.gradle.daemon=true" >> ~/.gradle/gradle.properties &&
-echo "org.gradle.parallel=true" >> ~/.gradle/gradle.properties &&
-log "==> - EFU: Gradle installed and configured successfully."
-
-echo "==> - EFU: Installing Apache Ant..." &&
-downloadAndUncompress "Apache Ant" $APACHE_ANT &&
-echo 'export ANT_HOME=$HOME/Coding/xDKs/apache-ant-1.9.6' >> ~/.bashrc &&
-echo 'export PATH=$ANT_HOME/bin:$PATH' >> ~/.bashrc &&
-. ~/.bashrc &&
-log "==> - EFU: Apache Ant configured successfully."
-
 echo "==> - EFU: Installing Apache Maven..." &&
 downloadAndUncompress "Apache Maven" $APACHE_MAVEN &&
 echo 'export M2_HOME=$HOME/Coding/xDKs/apache-maven-3.3.3' >> ~/.bashrc &&
