@@ -11,6 +11,12 @@ EFU (Easy-Fast-Upgradable): The SH script you need to finish your Ubuntu/MacOS X
 ## Issues: [![Stories ready to be worked on](https://badge.waffle.io/barriosnahuel/efu.png?label=ready&title=Ready)](https://waffle.io/barriosnahuel/efu) [![Stories in progress](https://badge.waffle.io/barriosnahuel/efu.png?label=in progress&title=In Progress)](https://waffle.io/barriosnahuel/efu)
 
 
+## Use it
+1. Download [latest release](https://github.com/barriosnahuel/efu/releases).
+2. `cd` into downloaded directory.
+3. `sh install.sh [osx | ubuntu]`
+4. In a new tab of your terminal: `tail –f ~/Downloads/efu.log`
+
 ## Repo usage
 *Do not clone or push to* **master** *branch.*
 
