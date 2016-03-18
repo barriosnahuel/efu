@@ -3,7 +3,7 @@
 
 . ./functions.sh
 
-log "==> - EFU: ############################## Creating directories tree ##############################"
+log "#### Creating directories tree ####"
 
 cd ~/ &&
 mkdir .gradle
@@ -14,13 +14,12 @@ mkdir xDKs &&
 mkdir servers &&
 mkdir workspace-mine &&
 mkdir workspace-test &&
-mkdir workspace-tools &&
 mkdir workspace-work &&
 cd .. &&
 mkdir Software &&
 mkdir Songs\ Lyrics
 mkdir VMs &&
 
-log "==> - EFU: Directories tree successfully created."
+log "Directories tree successfully created."
 
 cd ~/Downloads/
