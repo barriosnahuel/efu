@@ -57,11 +57,11 @@ downloadInBackground() {
 # 1. Program name
 # 2. URL
 install() {
-    echo "==> - EFU: Installing $1..."
+    log "Installing $1..."
     FILE=$(getFileName "$2")
 
     sudo gdebi "$FILE" &&
-    echo "$1 installed successfully." &&
+    log "$1 installed successfully." &&
 
     rm -f "$FILE"
 }
@@ -84,7 +84,7 @@ downloadAndUncompress() {
     FILE_NAME=$(getFileName "$2") &&
 
     # Use the file extension to use unzip or tar to uncompress the file.
-    if [ "$(getFileExtension $FILE_NAME)" = "zip" ]; then
+    if [ "$(getFileExtension "$FILE_NAME")" = "zip" ]; then
         unzip "$FILE_NAME"
     else
         tar -zxf "$FILE_NAME"
