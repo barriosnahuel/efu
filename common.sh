@@ -3,7 +3,7 @@
 # Created by Nahuel Barrios on 17/3/16.
 ####
 
-if isUbuntu $PLATFORM; then
+if isUbuntu "$PLATFORM"; then
     log "#### Adding particular software repositories ####"
 
     log "Installing gdebi package manager..."

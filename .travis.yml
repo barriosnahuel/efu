@@ -1,0 +1,17 @@
+language: sh
+
+before_script:
+  - sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu/ trusty-backports restricted main universe"
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq shellcheck
+
+script:
+  - shellcheck functions.sh
+  - shellcheck createDirectoriesTree.sh
+  - shellcheck common.sh
+  - shellcheck install.sh
+  - shellcheck OS\ X/installAll-10.9.sh
+
+notifications:
+  email:
+    on_failure: change
