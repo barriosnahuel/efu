@@ -11,6 +11,8 @@ echo "alias ll='ls -la'" >> ~/.bash_profile &&
 
 log "Setting up JAVA_HOME environment variable..."
 echo 'export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_71.jdk/Contents/Home' >> ~/.bash_profile
+
+# shellcheck disable=SC2016
 echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bash_profile
 
-log "JDownloader2: Download it from" $JDOWNLOADER
+log "JDownloader2: Download it from $JDOWNLOADER"
