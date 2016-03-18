@@ -1,18 +1,8 @@
 #!/usr/bin/env bash
-
-# Script created by Nahuel Barrios: Barrios.Nahuel@gmail.com
+####
+# Created by Nahuel Barrios.
 # Just comment the undesired command lines to skip the installation of specific software.
-
-echo "==> - EFU: To see the installation log run the following line on the command line: tail –f efu.log"
-
-# FROM HERE
-. ./../createDirectoriesTree.sh
-. ./../functions.sh
-
-echo "==> - EFU: Loading properties..."
-. ./properties.sh
-# TO HERE, IS THE SAME FOR ALL OTHER PLATFORMS
-
+####
 
 log "==> - EFU: ############################## Adding particular software repositories ##############################"
 
@@ -55,8 +45,8 @@ downloadAndInstall "PlayDeb" http://archive.getdeb.net/install_deb/playdeb_0.3-1
 log "==> - EFU: Instaling latest Rhythmbox and its plugins..."
 sudo apt-get -fy install rhythmbox rhythmbox-plugin-rhythmweb rhythmbox-plugin-equalizer rhythmbox-plugin-opencontainingfolder rhythmbox-plugin-llyrics
 
-log "==> - EFU: Instaling Drive, Sublime Text 3, GIT, MongoDB and WebP command line tools..."
-sudo apt-get -fy install drive sublime-text-installer git-core mongodb curl webp golang-go
+log "==> - EFU: Instaling Drive, Sublime Text 3, MongoDB and WebP command line tools..."
+sudo apt-get -fy install drive sublime-text-installer mongodb curl webp golang-go
 
 log "==> - EFU: Installing packages to compress and extract different kind of files..."
 sudo apt-get -fy install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract
