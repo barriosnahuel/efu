@@ -30,5 +30,9 @@ else
     echo "$(TOOLS_PATH)" >> ~/.bashrc &&
     echo "$(PLATFORM_TOOLS_PATH)" >> ~/.bashrc &&
     echo "$(HIERARCHY_VIEWER)" >> ~/.bashrc &&
+
+    # This is to stop getting warning messages about iBus daemon. Taken from https://youtrack.jetbrains.com/issue/IDEA-78860
+    echo "export IBUS_ENABLE_SYNC_MODE=1" >> ~/.profile &&
+
     log "Successfully added Android environment variables."
 fi
