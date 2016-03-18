@@ -10,4 +10,8 @@ script:
   - shellcheck createDirectoriesTree.sh
   - shellcheck common.sh
   - shellcheck install.sh
-  - shellcheck OS\ X/instalAll-10.9.sh
+  - shellcheck OS\ X/installAll-10.9.sh
+
+notifications:
+  email:
+    on_failure: change
