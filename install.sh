@@ -44,9 +44,9 @@ log "Loading common software installation"
 log "Common software installed ok"
 
 
-log "Loading $PLATFORM custom installation file..."
-if [ "$isOsx" ]; then
-    . ./OS\ X/installAll-10.9.sh
-else
-    . ./Ubuntu/installAll-15-04.sh
-fi
+#log "Loading $PLATFORM custom installation file..."
+#if [ "$isOsx" ]; then
+#    . ./OS\ X/installAll-10.9.sh
+#else
+#    . ./Ubuntu/installAll-15-04.sh
+#fi
