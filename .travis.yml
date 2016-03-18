@@ -6,5 +6,7 @@ before_script:
   - sudo apt-get install -qq shellcheck
 
 script:
-  - shellcheck install.sh
   - shellcheck functions.sh
+  - shellcheck createDirectoriesTree.sh
+  - shellcheck common.sh
+  - shellcheck install.sh
