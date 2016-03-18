@@ -10,3 +10,4 @@ script:
   - shellcheck createDirectoriesTree.sh
   - shellcheck common.sh
   - shellcheck install.sh
+  - shellcheck OS\ X/instalAll-10.9.sh
