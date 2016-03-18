@@ -7,3 +7,4 @@ before_script:
 
 script:
   - shellcheck install.sh
+  - shellcheck functions.sh
