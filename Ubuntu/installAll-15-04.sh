@@ -4,37 +4,7 @@
 # Just comment the undesired command lines to skip the installation of specific software.
 ####
 
-log "############################## Adding particular software repositories ##############################"
-
-log "Adding repositories for Sublime Text 3..."
-sudo add-apt-repository ppa:webupd8team/sublime-text-3 -y
-
-log "Adding repositories for Ubuntu Make..."
-sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make -y
-
-log "Adding repositories for Drive..."
-sudo add-apt-repository ppa:twodopeshaggy/drive -y
-
-log "Adding repositories for Mixxx DJ software..."
-sudo add-apt-repository ppa:mixxx/mixxx -y
-
-log "Adding repositories for Rhythmbox and its plugins..."
-sudo add-apt-repository ppa:fossfreedom/rhythmbox -y
-sudo add-apt-repository ppa:fossfreedom/rhythmbox-plugins -y
-
-log "Updating software sources. Required after adding ppa repositories."
-sudo apt-get update
-
-log "Fixing current packages..."
-sudo apt-get -f install
-
-log "Removing packages that are not neccessary to prevent conflicts..."
-sudo apt-get autoremove
-
-log "Installing gdebi package manager..."
-sudo apt-get -fy install gdebi
-
-log "##############################  Installing favorite software   ##############################"
+log "#### Installing favorite software ####"
 
 downloadAndInstall "GetDeb" http://archive.getdeb.net/install_deb/getdeb-repository_0.1-1~getdeb1_all.deb
 downloadAndInstall "PlayDeb" http://archive.getdeb.net/install_deb/playdeb_0.3-1~getdeb1_all.deb
@@ -70,7 +40,7 @@ xclip -sel clip < ~/.ssh/id_rsa.pub &&
 log "SSH Key copied to clipboard."
 
 
-log "################ Installing development kits ################"
+log "#### Installing development kits ####"
 
 
 log "Installing Apache Maven..." &&
