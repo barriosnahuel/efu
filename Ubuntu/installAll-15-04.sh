@@ -79,26 +79,28 @@ echo 'export PATH=$PATH:$HOME/Coding/xDKs/appengine-java-sdk-1.9.27/' >> ~/.bash
 
 log "################ Finished installing development kits ################"
 
-log "Installing Intellij IDEA Ultimate Edition..." &&
+preInstallationLog "Intellij IDEA Ultimate Edition" &&
 cd ~/Coding/IDEs/
 downloadAndUncompress "Intellij IDEA Ultimate Edition" $IDEA_ULTIMATE &&
 log "Setting up JAVA_HOME environment variable pointing to a JDK 8 to use as default java command." &&
-echo 'export JAVA_HOME=$HOME/Coding/xDKs/jdk1.8.0_45' >> ~/.bashrc
+echo 'export JAVA_HOME=$HOME/Coding/xDKs/jdk1.8.0_45' >> ~/.bashrc &&
 echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc &&
-. ~/.bashrc
+. ~/.bashrc &&
+postInstallationLog "Intellij IDEA Ultimate Edition"
 
 cd ~/Coding/servers/
 downloadAndUncompress "Apache Tomcat" $APACHE_TOMCAT
 TOMCAT_DIRECTORY=$(getFileNameWithoutExtension $(getFileName $APACHE_TOMCAT))
 cd ~/Coding/servers/$TOMCAT_DIRECTORY/bin &&
 chmod +x catalina.sh &&
-log "Apache Tomcat configured successfully. Now you can run: sh startup.sh and sh shutdown.sh"
+log "Apache Tomcat configured successfully. Now you can run: 'sh startup.sh' and 'sh shutdown.sh'"
 
 
-log "Installing Gimp with some plugins..."
+preInstallationLog "Gimp (with some plugins)"
 sudo apt-get -fy install gimp gimp-data gimp-plugin-registry gimp-data-extras
+postInstallationLog "Gimp (with some plugins)"
 
-log "Installing Subdownloader, GMountISO, Freemind (a mind maps editor), Gnac (to convert audio files), and a Steam client (will update on first run)..."
+preInstallationLog "Subdownloader, GMountISO, Freemind (a mind maps editor), Gnac (to convert audio files), and a Steam client (will update on first run)"
 sudo apt-get -fy install subdownloader gmountiso freemind gnac steam
 
 cd ~/Downloads/
@@ -116,6 +118,6 @@ sudo apt-get -y clean
 log "Updating installed packages..."
 sudo apt-get upgrade
 
-log "##############################  Finished installation of favorite software   ##############################"
-log "Thanks for using me! --- Don't forget to fork me on Github: http://github.com/barriosnahuel/efu ###########"
-log "To see the installation log run the following line on the command line: tail –f efu.log"
+log "#### Finished installation of favorite software ####"
+log "Thanks for using me! --- Don't forget to fork me on Github: http://github.com/barriosnahuel/efu ####"
+log "To see the installation log run the following line on the command line: 'tail –f ~/Downloads/efu.log'"

@@ -13,6 +13,14 @@ logError() {
     echo "EFU ==> ERROR: $1 $2 $3" >> ~/Downloads/efu.log
 }
 
+preInstallationLog(){
+    log "Installing $1..."
+}
+
+postInstallationLog(){
+    log "$1 installed ok"
+}
+
 isUbuntu(){
     if [ "$1" = "ubuntu" ]; then
         return 0
@@ -57,11 +65,11 @@ downloadInBackground() {
 # 1. Program name
 # 2. URL
 install() {
-    log "Installing $1..."
+    preInstallationLog $1
     FILE=$(getFileName "$2")
 
     sudo gdebi "$FILE" &&
-    log "$1 installed successfully." &&
+    postInstallationLog $1 &&
 
     rm -f "$FILE"
 }
