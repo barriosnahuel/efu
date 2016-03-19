@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
-####
 # Created by Nahuel Barrios.
 # Just comment the undesired command lines to skip the installation of specific software.
-####
 
 log "#### Installing favorite software ####"
 
@@ -43,18 +41,15 @@ log "SSH Key copied to clipboard."
 log "#### Installing development kits ####"
 
 
-log "Installing Apache Maven..." &&
+preInstallationLog "Apache Maven" &&
 downloadAndUncompress "Apache Maven" $APACHE_MAVEN &&
-echo 'export M2_HOME=$HOME/Coding/xDKs/apache-maven-3.3.3' >> ~/.bashrc &&
-echo 'export PATH=$M2_HOME/bin:$PATH' >> ~/.bashrc &&
-. ~/.bashrc &&
+addToShell 'export M2_HOME=$HOME/Coding/xDKs/apache-maven-3.3.3'
+addToShell 'export PATH=$M2_HOME/bin:$PATH'
 log "Apache Maven configured successfully."
 
 log "Installing NodeJS..." &&
 downloadAndUncompress "NodeJS" $NODE_JS
-echo 'export PATH=$HOME/Coding/xDKs/node-v4.1.1-linux-x64/bin:$PATH' >> ~/.bashrc &&
-
-. ~/.bashrc &&
+addToShell 'export PATH=$HOME/Coding/xDKs/node-v4.1.1-linux-x64/bin:$PATH'
 log "NodeJS installed and configured successfully."
 
 log "Installing NPM package manager (latest version)..." &&
@@ -73,8 +68,7 @@ heroku keys:add &&
 log "Heroku configured successfully."
 
 downloadAndUncompress "Google App Engine SDK" https://storage.googleapis.com/appengine-sdks/featured/appengine-java-sdk-1.9.27.zip
-echo 'export PATH=$PATH:$HOME/Coding/xDKs/appengine-java-sdk-1.9.27/' >> ~/.bashrc
-. ~/.bashrc
+addToShell 'export PATH=$PATH:$HOME/Coding/xDKs/appengine-java-sdk-1.9.27/'
 
 
 log "################ Finished installing development kits ################"
@@ -83,9 +77,8 @@ preInstallationLog "Intellij IDEA Ultimate Edition" &&
 cd ~/Coding/IDEs/
 downloadAndUncompress "Intellij IDEA Ultimate Edition" $IDEA_ULTIMATE &&
 log "Setting up JAVA_HOME environment variable pointing to a JDK 8 to use as default java command." &&
-echo 'export JAVA_HOME=$HOME/Coding/xDKs/jdk1.8.0_45' >> ~/.bashrc &&
-echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc &&
-. ~/.bashrc &&
+addToShell 'export JAVA_HOME=$HOME/Coding/xDKs/jdk1.8.0_45'
+addToShell 'export PATH=$JAVA_HOME/bin:$PATH'
 postInstallationLog "Intellij IDEA Ultimate Edition"
 
 cd ~/Coding/servers/

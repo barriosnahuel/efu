@@ -1,7 +1,5 @@
 #!/bin/sh
-####
 # Created by Nahuel Barrios on 15/04/15.
-####
 
 log() {
     echo "EFU ==> $1 $2 $3" &&
@@ -99,4 +97,16 @@ downloadAndUncompress() {
     fi
 
     echo "$1 uncompressed successfully."
+}
+
+addToShell() {
+    if [ -f ~/.bashrc ]; then
+        echo "$1" >> ~/.bashrc &&
+        . ~/.bashrc
+    fi
+
+    if [ -f ~/.zshrc ]; then
+        echo "$1" >> ~/.zshrc &&
+        . ~/.zshrc
+    fi
 }
