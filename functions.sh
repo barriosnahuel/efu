@@ -101,12 +101,12 @@ downloadAndUncompress() {
 
 addToShell() {
     if [ -f ~/.bashrc ]; then
-        echo $1 >> ~/.bashrc &&
+        echo "$1" >> ~/.bashrc &&
         . ~/.bashrc
     fi
 
     if [ -f ~/.zshrc ]; then
-        echo $1 >> ~/.zshrc &&
+        echo "$1" >> ~/.zshrc &&
         . ~/.zshrc
     fi
 }

@@ -3,7 +3,7 @@
 
 log "Configuring Android development environment..." &&
 
-if isUbuntu $PLATFORM; then
+if [ isUbuntu "$PLATFORM" ]; then
     sudo apt-get -fy install ubuntu-make &&
     umake android &&
     log "Android SDK installed successfully"
@@ -14,8 +14,14 @@ if isUbuntu $PLATFORM; then
 fi
 
 log "Configuring Android SDK environment variables..." &&
+
+# shellcheck disable=SC2016
 addToShell 'export ANDROID_HOME=$HOME/Coding/xDKs/android-sdk' &&
+
+# shellcheck disable=SC2016
 addToShell 'export PATH=$ANDROID_HOME/tools:$PATH' &&
+
+# shellcheck disable=SC2016
 addToShell 'export PATH=$ANDROID_HOME/platform-tools:$PATH' &&
 
 # This is to be able to use the hierarchy viewer
