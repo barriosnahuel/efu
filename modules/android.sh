@@ -3,7 +3,7 @@
 
 log "Configuring Android development environment..." &&
 
-if [ isUbuntu "$PLATFORM" ]; then
+if isUbuntu "$PLATFORM"; then
     sudo apt-get -fy install ubuntu-make &&
     umake android &&
     log "Android SDK installed successfully"
