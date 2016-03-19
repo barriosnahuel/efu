@@ -38,5 +38,5 @@ if isUbuntu "$PLATFORM"; then
 fi
 
 . modules/git.sh
-. modules/sdkman.sh
+. modules/sdkman/sdkman.sh
 . modules/android.sh
