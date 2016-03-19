@@ -65,11 +65,11 @@ downloadInBackground() {
 # 1. Program name
 # 2. URL
 install() {
-    preInstallationLog $1
+    preInstallationLog "$1"
     FILE=$(getFileName "$2")
 
     sudo gdebi "$FILE" &&
-    postInstallationLog $1 &&
+    postInstallationLog "$1" &&
 
     rm -f "$FILE"
 }
