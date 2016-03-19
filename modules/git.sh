@@ -1,7 +1,5 @@
 #!/bin/bash
-####
 # Created by Nahuel Barrios on 17/3/16.
-####
 
 if isUbuntu $PLATFORM; then
     sudo apt-get -fy install git

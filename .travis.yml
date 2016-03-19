@@ -11,6 +11,10 @@ script:
   - shellcheck common.sh
   - shellcheck install.sh
   - shellcheck OS\ X/installAll-10.9.sh
+  - shellcheck modules/sdkman/sdkman.sh
+  - shellcheck modules/android.sh
+  - shellcheck modules/git.sh
+  - shellcheck modules/homebrew.sh
 
 notifications:
   email:
