@@ -15,6 +15,9 @@ if isUbuntu "$PLATFORM"; then
     log "Adding repositories for Ubuntu Make..."
     sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make -y
 
+    log "Adding repositories for Go language"
+    sudo add-apt-repository ppa:ubuntu-lxc/lxd-stable
+
     log "Adding repositories for Drive..."
     sudo add-apt-repository ppa:twodopeshaggy/drive -y
 
@@ -44,3 +47,5 @@ fi
 . modules/nodejs.sh
 . modules/sdkman/sdkman.sh
 . modules/android.sh
+. modules/go.sh
+. modules/google-drive.sh
