@@ -34,7 +34,7 @@ log "Properties file loaded ok"
 
 
 log "Loading common software installation"
-. common.sh
+. ./common.sh
 log "Common software installed ok"
 
 
