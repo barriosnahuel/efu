@@ -51,7 +51,7 @@ logInfo "Download latest Android Studio from: http://tools.android.com/download/
 logInfo "Download JDownloader2 from: http://jdownloader.org/download/index"
 
 
-log "#### Finished installation of favorite software ####"
-log "Thanks for using me! --- Don't forget to fork me on Github: http://github.com/barriosnahuel/efu ####"
-log "To see the installation log run the following line on the command line: 'tail –f ~/Downloads/efu.log'"
+logInfo "#### Installation of your favorite software has finished ####"
+logInfo "Thanks for using me! -- Don't forget to fork me on Github: http://github.com/barriosnahuel/efu"
+logInfo "To see the installation log run the following on the command line: 'tail –f ~/Downloads/efu.log'"
 log "[Important] You should also take a look to: '~/Downloads/summary.efu.log'"
