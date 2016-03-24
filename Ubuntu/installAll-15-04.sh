@@ -7,14 +7,27 @@ log "#### Installing favorite software ####"
 downloadAndInstall "GetDeb" http://archive.getdeb.net/install_deb/getdeb-repository_0.1-1~getdeb1_all.deb
 downloadAndInstall "PlayDeb" http://archive.getdeb.net/install_deb/playdeb_0.3-1~getdeb1_all.deb
 
+logInfo "Adding repositories for Rhythmbox and its plugins..."
+sudo add-apt-repository ppa:fossfreedom/rhythmbox -y
+sudo add-apt-repository ppa:fossfreedom/rhythmbox-plugins -y
+sudo apt-get update
+
 log "Instaling latest Rhythmbox and its plugins..."
 sudo apt-get -fy install rhythmbox rhythmbox-plugin-rhythmweb rhythmbox-plugin-equalizer rhythmbox-plugin-opencontainingfolder rhythmbox-plugin-llyrics
 
-log "Instaling Drive, Sublime Text 3, MongoDB and WebP command line tools..."
-sudo apt-get -fy install drive sublime-text-installer mongodb curl webp golang-go
+logInfo "Adding repositories for Sublime Text 3..."
+sudo add-apt-repository ppa:webupd8team/sublime-text-3 -y
+sudo apt-get update
+
+log "Instaling Sublime Text 3"
+sudo apt-get -fy install sublime-text-installer
 
 log "Installing packages to compress and extract different kind of files..."
 sudo apt-get -fy install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract
+
+logInfo "Adding repositories for Mixxx DJ software..."
+sudo add-apt-repository ppa:mixxx/mixxx -y
+sudo apt-get update
 
 log "Installing Mixxx DJ software..."
 sudo apt-get -fy install mixxx libportaudio2
@@ -22,8 +35,8 @@ sudo apt-get -fy install mixxx libportaudio2
 downloadAndInstall "Mega Sync client" $MEGA
 downloadAndInstall "Mega Nautilus extension" $MEGA_NAUTILUS
 
-log "Installing Dropbox and XClip (to copy into clipboard from terminal),..."
-sudo apt-get -fy install nautilus-dropbox xclip
+log "Installing Dropbox, XClip (to copy into clipboard from terminal), MongoDB and WebP command line tools..."
+sudo apt-get -fy install nautilus-dropbox xclip mongodb curl webp
 
 
 log "Generating an SSH Key..." &&
@@ -99,7 +112,3 @@ sudo apt-get -y clean
 
 log "Updating installed packages..."
 sudo apt-get upgrade
-
-log "#### Finished installation of favorite software ####"
-log "Thanks for using me! --- Don't forget to fork me on Github: http://github.com/barriosnahuel/efu ####"
-log "To see the installation log run the following line on the command line: 'tail –f ~/Downloads/efu.log'"

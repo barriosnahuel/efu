@@ -4,6 +4,11 @@
 log "Configuring Android development environment..." &&
 
 if isUbuntu "$PLATFORM"; then
+
+    logInfo "Adding repositories for Ubuntu Make..."
+    sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make -y
+    sudo apt-get update
+
     sudo apt-get -fy install ubuntu-make &&
     umake android &&
     log "Android SDK installed successfully"
