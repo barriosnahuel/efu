@@ -2,7 +2,7 @@
 # Created by Nahuel Barrios on 24/3/16.
 
 preInstallationLog "ZSH"
-if isUbuntu "$PLATFORM"; then
+if [ "$(isUbuntu "$PLATFORM")" ]; then
     sudo apt-get -fy install zsh
 else
     brew install zsh

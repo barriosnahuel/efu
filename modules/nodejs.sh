@@ -2,7 +2,7 @@
 # Created by Nahuel Barrios on 24/3/16.
 
 preInstallationLog "NodeJS (with NPM)"
-if isUbuntu "$PLATFORM"; then
+if [ "$(isUbuntu "$PLATFORM")" ]; then
     downloadAndUncompress "NodeJS" $NODE_JS
     addToShell 'export PATH=$HOME/Coding/xDKs/node-v4.4.1-linux-x64/bin:$PATH'
     log "NodeJS and NPM installed and configured successfully."

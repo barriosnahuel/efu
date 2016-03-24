@@ -3,7 +3,7 @@
 
 log "Configuring Android development environment..." &&
 
-if isUbuntu "$PLATFORM"; then
+if [ "$(isUbuntu "$PLATFORM")" ]; then
 
     logInfo "Adding repositories for Ubuntu Make..."
     sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make -y
