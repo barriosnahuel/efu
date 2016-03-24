@@ -29,11 +29,7 @@ log "Coding directories tree created ok"
 
 
 log "Loading properties file..."
-if isOsx "$PLATFORM"; then
-    . ./OS\ X/properties.sh
-else
-    . ./Ubuntu/properties.sh
-fi
+. ./properties.sh
 log "Properties file loaded ok"
 
 

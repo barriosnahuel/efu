@@ -41,11 +41,11 @@ sudo apt-get -fy install nautilus-dropbox xclip mongodb curl webp
 
 log "Generating an SSH Key..." &&
 #   Creates a new ssh key, using the provided email as a label
-ssh-keygen -t rsa -C "barrios.nahuel@gmail.com" &&
+ssh-keygen -t rsa -C $USER_EMAIL &&
 #   start the ssh-agent in the background
 eval "$(ssh-agent-s)" &&
 ssh-add ~/.ssh/id_rsa &&
-log "SSH Key for barrios.nahuel@gmail.com successfully generated in ~/.ssh/id_rsa.pub"
+log "SSH Key for $USER_EMAIL successfully generated in ~/.ssh/id_rsa.pub"
 
 xclip -sel clip < ~/.ssh/id_rsa.pub &&
 log "SSH Key copied to clipboard."

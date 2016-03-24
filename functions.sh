@@ -12,10 +12,12 @@ logError() {
 }
 
 logInfo (){
+    log "$1 $2 $3"
     echo "EFU ==> $1 $2 $3" >> ~/Downloads/summary.efu.log
 }
 
 logProgramVersion (){
+    log "$1 $2 $3"
     echo "EFU ==> Installed $1 $2 $3" >> ~/Downloads/summary.efu.log
 }
 
