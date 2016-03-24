@@ -13,5 +13,3 @@ addToShell "export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_71.jdk/C
 
 # shellcheck disable=SC2016
 addToShell 'export PATH=$JAVA_HOME/bin:$PATH'
-
-log "JDownloader2: Download it from $JDOWNLOADER"

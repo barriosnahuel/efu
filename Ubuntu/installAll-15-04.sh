@@ -55,14 +55,14 @@ log "#### Installing development kits ####"
 
 
 preInstallationLog "Apache Maven" &&
-downloadAndUncompress "Apache Maven" $APACHE_MAVEN &&
+downloadAndUncompress "Apache Maven" "http://mirrors.nxnethosting.com/apache/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.zip" &&
 addToShell 'export M2_HOME=$HOME/Coding/xDKs/apache-maven-3.3.3'
 addToShell 'export PATH=$M2_HOME/bin:$PATH'
 log "Apache Maven configured successfully."
 
 
 log "Installing Heroku toolbelt to run Heroku commands from command line..." &&
-wget -qO- $HEROKU | sh &&
+wget -qO- "https://toolbelt.heroku.com/install-ubuntu.sh" | sh &&
 log "Please login against Heroku with your account." &&
 heroku login &&
 log "Adding existent public keys to Heroku to be able to run commands..." &&
@@ -84,7 +84,7 @@ addToShell 'export PATH=$JAVA_HOME/bin:$PATH'
 postInstallationLog "Intellij IDEA Ultimate Edition"
 
 cd ~/Coding/servers/
-downloadAndUncompress "Apache Tomcat" $APACHE_TOMCAT
+downloadAndUncompress "Apache Tomcat" "http://apache.dattatec.com/tomcat/tomcat-8/v8.0.27/bin/apache-tomcat-8.0.27.zip"
 TOMCAT_DIRECTORY=$(getFileNameWithoutExtension $(getFileName $APACHE_TOMCAT))
 cd ~/Coding/servers/$TOMCAT_DIRECTORY/bin &&
 chmod +x catalina.sh &&

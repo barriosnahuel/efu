@@ -49,6 +49,8 @@ else
     . ./Ubuntu/installAll-15-04.sh
 fi
 
+logInfo "Download JDownloader2 from: http://jdownloader.org/download/index"
+
 log "#### Finished installation of favorite software ####"
 log "Thanks for using me! --- Don't forget to fork me on Github: http://github.com/barriosnahuel/efu ####"
 log "To see the installation log run the following line on the command line: 'tail –f ~/Downloads/efu.log'"
