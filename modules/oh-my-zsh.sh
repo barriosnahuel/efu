@@ -8,8 +8,10 @@ else
     brew install zsh
 fi
 
-chsh -s $(which zsh) &&
+chsh -s "$(which zsh)" &&
 postInstallationLog "ZSH"
+
+# shellcheck disable=SC2016
 log 'Default shell changed to "zsh", to revert change just run: "chsh -s $(which bash)"'
 
 

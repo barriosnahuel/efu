@@ -9,8 +9,8 @@ else
     postInstallationLog "Mac OS X Command line tools"
 fi
 
-git config --global user.name $USER_FULL_NAME &&
-git config --global user.email $USER_EMAIL &&
+git config --global user.name "$USER_FULL_NAME" &&
+git config --global user.email "$USER_EMAIL" &&
 git config --global push.default simple &&
 
 log "GIT configured successfully."

@@ -22,7 +22,10 @@ else
     log "Go already installed"
 fi
 
+# shellcheck disable=SC2016
 addToShell 'export GOPATH=$HOME/Coding/xDKs/gopath'
+
+# shellcheck disable=SC2016
 addToShell 'export PATH=/usr/local/go/bin:$GOPATH/bin:$PATH'
 
 logProgramVersion "Go" "$(go version)"

@@ -3,8 +3,11 @@
 
 preInstallationLog "NodeJS (with NPM)"
 if [ "$(isUbuntu "$PLATFORM")" ]; then
-    downloadAndUncompress "NodeJS" $NODE_JS
+    downloadAndUncompress "NodeJS" "$NODE_JS"
+
+    # shellcheck disable=SC2016
     addToShell 'export PATH=$HOME/Coding/xDKs/node-v4.4.1-linux-x64/bin:$PATH'
+
     log "NodeJS and NPM installed and configured successfully."
 else
     brew install node
@@ -16,8 +19,9 @@ else
     fi
 fi
 
-
+# shellcheck disable=SC2016
 addToShell 'export PATH="$HOME/.node/bin:$PATH"'
+
 log "Added ~/.node/bin to your PATH so commands you install globally are usable."
 
 logProgramVersion "Node" "$(node -v)"
