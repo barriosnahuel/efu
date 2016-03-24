@@ -41,5 +41,6 @@ fi
 
 . modules/oh-my-zsh.sh
 . modules/git.sh
+. modules/nodejs.sh
 . modules/sdkman/sdkman.sh
 . modules/android.sh

@@ -47,17 +47,6 @@ addToShell 'export M2_HOME=$HOME/Coding/xDKs/apache-maven-3.3.3'
 addToShell 'export PATH=$M2_HOME/bin:$PATH'
 log "Apache Maven configured successfully."
 
-log "Installing NodeJS..." &&
-downloadAndUncompress "NodeJS" $NODE_JS
-addToShell 'export PATH=$HOME/Coding/xDKs/node-v4.1.1-linux-x64/bin:$PATH'
-log "NodeJS installed and configured successfully."
-
-log "Installing NPM package manager (latest version)..." &&
-curl https://www.npmjs.com/install.sh | sh &&
-log "NPM successfully installed."
-
-log "Installing via the NPM package manager: Apache Cordova and Plugman (a command line tool to install and uninstall plugins for use with Apache Cordova projects), Mocha (for testing) and Bower..." &&
-npm install -g cordova plugman mocha bower express-generator grunt-cli &&
 
 log "Installing Heroku toolbelt to run Heroku commands from command line..." &&
 wget -qO- $HEROKU | sh &&
