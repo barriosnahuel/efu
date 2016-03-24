@@ -10,6 +10,7 @@ fi
 
 chsh -s $(which zsh) &&
 postInstallationLog "ZSH"
+log 'Default shell changed to "zsh", to revert change just run: "chsh -s $(which bash)"'
 
 
 preInstallationLog "Oh-My-ZSH"
