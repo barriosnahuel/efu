@@ -45,6 +45,10 @@ else
     . ./Ubuntu/installAll-15-04.sh
 fi
 
+logInfo "Download latest Java7 from: http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html"
+logInfo "Download latest Java8 from: http://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase8-2177648.html"
+logInfo "Download latest JetBrains Intellij IDEA EAP from: https://confluence.jetbrains.com/display/IDEADEV/EAP"
+logInfo "Download latest Android Studio from: http://tools.android.com/download/studio/canary/latest"
 logInfo "Download JDownloader2 from: http://jdownloader.org/download/index"
 
 log "#### Finished installation of favorite software ####"
