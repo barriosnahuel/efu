@@ -42,7 +42,7 @@ log "Loading $PLATFORM custom installation file..."
 if [ "$isOsx" ]; then
     . ./OS\ X/installAll-10.11.sh
 else
-    . ./Ubuntu/installAll-15-04.sh
+    . ./Ubuntu/installAll-15.04.sh
 fi
 
 
