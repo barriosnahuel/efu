@@ -12,6 +12,7 @@ log "Gradle installed and configured successfully. Check ~/.gradle/gradle.proper
 
 log "Installing Apache Ant through sdkman"
 sdk install ant
+logProgramVersion "Apache Ant" "$(ant -v)"
 
 log "Installing Kotlin through sdkman"
 sdk install kotlin

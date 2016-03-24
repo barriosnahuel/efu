@@ -9,22 +9,6 @@ if isUbuntu "$PLATFORM"; then
     log "Installing gdebi package manager..."
     sudo apt-get -fy install gdebi
 
-    log "Adding repositories for Sublime Text 3..."
-    sudo add-apt-repository ppa:webupd8team/sublime-text-3 -y
-
-    log "Adding repositories for Ubuntu Make..."
-    sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make -y
-
-    log "Adding repositories for Drive..."
-    sudo add-apt-repository ppa:twodopeshaggy/drive -y
-
-    log "Adding repositories for Mixxx DJ software..."
-    sudo add-apt-repository ppa:mixxx/mixxx -y
-
-    log "Adding repositories for Rhythmbox and its plugins..."
-    sudo add-apt-repository ppa:fossfreedom/rhythmbox -y
-    sudo add-apt-repository ppa:fossfreedom/rhythmbox-plugins -y
-
     log "Updating software sources. Required after adding ppa repositories."
     sudo apt-get update
 
@@ -35,8 +19,25 @@ if isUbuntu "$PLATFORM"; then
     sudo apt-get autoremove
 
     log "#### Software repositories and packages updated ok ####"
+else
+    . modules/homebrew.sh
 fi
 
+# Remember that oh-my-zsh.sh requires homebrew.sh.
+. modules/oh-my-zsh.sh
+
 . modules/git.sh
+
+# Remember that nodejs.sh requires homebrew.sh.
+. modules/nodejs.sh
+
 . modules/sdkman/sdkman.sh
 . modules/android.sh
+
+# Remember that go.sh requires homebrew.sh.
+. modules/go.sh
+
+# Remember that nodejs.sh requires go.sh.
+. modules/google-drive.sh
+
+. modules/java.sh

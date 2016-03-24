@@ -22,6 +22,8 @@ else
   logError "Review the Homebrew messages to see if any action is needed."
 fi
 
+logProgramVersion "Homebrew" "$(brew --version)"
+
 
 preInstallationLog "Transmission"
 brew install transmission

@@ -7,14 +7,27 @@ log "#### Installing favorite software ####"
 downloadAndInstall "GetDeb" http://archive.getdeb.net/install_deb/getdeb-repository_0.1-1~getdeb1_all.deb
 downloadAndInstall "PlayDeb" http://archive.getdeb.net/install_deb/playdeb_0.3-1~getdeb1_all.deb
 
+logInfo "Adding repositories for Rhythmbox and its plugins..."
+sudo add-apt-repository ppa:fossfreedom/rhythmbox -y
+sudo add-apt-repository ppa:fossfreedom/rhythmbox-plugins -y
+sudo apt-get update
+
 log "Instaling latest Rhythmbox and its plugins..."
 sudo apt-get -fy install rhythmbox rhythmbox-plugin-rhythmweb rhythmbox-plugin-equalizer rhythmbox-plugin-opencontainingfolder rhythmbox-plugin-llyrics
 
-log "Instaling Drive, Sublime Text 3, MongoDB and WebP command line tools..."
-sudo apt-get -fy install drive sublime-text-installer mongodb curl webp golang-go
+logInfo "Adding repositories for Sublime Text 3..."
+sudo add-apt-repository ppa:webupd8team/sublime-text-3 -y
+sudo apt-get update
+
+log "Instaling Sublime Text 3"
+sudo apt-get -fy install sublime-text-installer
 
 log "Installing packages to compress and extract different kind of files..."
 sudo apt-get -fy install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract
+
+logInfo "Adding repositories for Mixxx DJ software..."
+sudo add-apt-repository ppa:mixxx/mixxx -y
+sudo apt-get update
 
 log "Installing Mixxx DJ software..."
 sudo apt-get -fy install mixxx libportaudio2
@@ -22,17 +35,17 @@ sudo apt-get -fy install mixxx libportaudio2
 downloadAndInstall "Mega Sync client" $MEGA
 downloadAndInstall "Mega Nautilus extension" $MEGA_NAUTILUS
 
-log "Installing Dropbox and XClip (to copy into clipboard from terminal),..."
-sudo apt-get -fy install nautilus-dropbox xclip
+log "Installing Dropbox, XClip (to copy into clipboard from terminal), MongoDB and WebP command line tools..."
+sudo apt-get -fy install nautilus-dropbox xclip mongodb curl webp
 
 
 log "Generating an SSH Key..." &&
 #   Creates a new ssh key, using the provided email as a label
-ssh-keygen -t rsa -C "barrios.nahuel@gmail.com" &&
+ssh-keygen -t rsa -C $USER_EMAIL &&
 #   start the ssh-agent in the background
 eval "$(ssh-agent-s)" &&
 ssh-add ~/.ssh/id_rsa &&
-log "SSH Key for barrios.nahuel@gmail.com successfully generated in ~/.ssh/id_rsa.pub"
+log "SSH Key for $USER_EMAIL successfully generated in ~/.ssh/id_rsa.pub"
 
 xclip -sel clip < ~/.ssh/id_rsa.pub &&
 log "SSH Key copied to clipboard."
@@ -42,25 +55,14 @@ log "#### Installing development kits ####"
 
 
 preInstallationLog "Apache Maven" &&
-downloadAndUncompress "Apache Maven" $APACHE_MAVEN &&
+downloadAndUncompress "Apache Maven" "http://mirrors.nxnethosting.com/apache/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.zip" &&
 addToShell 'export M2_HOME=$HOME/Coding/xDKs/apache-maven-3.3.3'
 addToShell 'export PATH=$M2_HOME/bin:$PATH'
 log "Apache Maven configured successfully."
 
-log "Installing NodeJS..." &&
-downloadAndUncompress "NodeJS" $NODE_JS
-addToShell 'export PATH=$HOME/Coding/xDKs/node-v4.1.1-linux-x64/bin:$PATH'
-log "NodeJS installed and configured successfully."
-
-log "Installing NPM package manager (latest version)..." &&
-curl https://www.npmjs.com/install.sh | sh &&
-log "NPM successfully installed."
-
-log "Installing via the NPM package manager: Apache Cordova and Plugman (a command line tool to install and uninstall plugins for use with Apache Cordova projects), Mocha (for testing) and Bower..." &&
-npm install -g cordova plugman mocha bower express-generator grunt-cli &&
 
 log "Installing Heroku toolbelt to run Heroku commands from command line..." &&
-wget -qO- $HEROKU | sh &&
+wget -qO- "https://toolbelt.heroku.com/install-ubuntu.sh" | sh &&
 log "Please login against Heroku with your account." &&
 heroku login &&
 log "Adding existent public keys to Heroku to be able to run commands..." &&
@@ -82,7 +84,7 @@ addToShell 'export PATH=$JAVA_HOME/bin:$PATH'
 postInstallationLog "Intellij IDEA Ultimate Edition"
 
 cd ~/Coding/servers/
-downloadAndUncompress "Apache Tomcat" $APACHE_TOMCAT
+downloadAndUncompress "Apache Tomcat" "http://apache.dattatec.com/tomcat/tomcat-8/v8.0.27/bin/apache-tomcat-8.0.27.zip"
 TOMCAT_DIRECTORY=$(getFileNameWithoutExtension $(getFileName $APACHE_TOMCAT))
 cd ~/Coding/servers/$TOMCAT_DIRECTORY/bin &&
 chmod +x catalina.sh &&
@@ -110,7 +112,3 @@ sudo apt-get -y clean
 
 log "Updating installed packages..."
 sudo apt-get upgrade
-
-log "#### Finished installation of favorite software ####"
-log "Thanks for using me! --- Don't forget to fork me on Github: http://github.com/barriosnahuel/efu ####"
-log "To see the installation log run the following line on the command line: 'tail –f ~/Downloads/efu.log'"

@@ -3,7 +3,12 @@
 
 log "Configuring Android development environment..." &&
 
-if isUbuntu "$PLATFORM"; then
+if [ "$(isUbuntu "$PLATFORM")" ]; then
+
+    logInfo "Adding repositories for Ubuntu Make..."
+    sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make -y
+    sudo apt-get update
+
     sudo apt-get -fy install ubuntu-make &&
     umake android &&
     log "Android SDK installed successfully"
@@ -11,6 +16,8 @@ if isUbuntu "$PLATFORM"; then
     # This is to stop getting warning messages about iBus daemon. Taken from https://youtrack.jetbrains.com/issue/IDEA-78860
     addToShell "# This is to stop getting warning messages about iBus daemon. Taken from https://youtrack.jetbrains.com/issue/IDEA-78860"
     addToShell "export IBUS_ENABLE_SYNC_MODE=1"
+else
+    logInfo "Download Android File Transfer from: https://www.android.com/filetransfer"
 fi
 
 log "Configuring Android SDK environment variables..."
