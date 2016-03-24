@@ -2,9 +2,6 @@
 # Created by Nahuel Barrios.
 # Just comment the undesired software to skip installing specific software.
 
-log "Adding some aliases to ~/.bash_profile..."
-addToShell "alias ll='ls -la'"
-
 
 preInstallationLog "Command line tools"
 xcode-select --install

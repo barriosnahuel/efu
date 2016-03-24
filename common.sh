@@ -35,8 +35,11 @@ if isUbuntu "$PLATFORM"; then
     sudo apt-get autoremove
 
     log "#### Software repositories and packages updated ok ####"
+else
+    . modules/homebrew.sh
 fi
 
+. modules/oh-my-zsh.sh
 . modules/git.sh
 . modules/sdkman/sdkman.sh
 . modules/android.sh
