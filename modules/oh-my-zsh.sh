@@ -21,4 +21,7 @@ postInstallationLog "Oh-My-ZSH"
 
 
 sed -i -e 's/plugins=(git)/plugins=(git git-extras command-not-found common-aliases dirhistory)/' ~/.zshrc &&
-log "Added some plugins to Oh-My-ZSH: git, git-extras, command-not-found, common-aliases, dirhistory."
+logInfo "Added some plugins to Oh-My-ZSH: git, git-extras, command-not-found, common-aliases, dirhistory."
+
+sed -i -e 's/ZSH_THEME="robbyrussell"/ZSH_THEME="avit"' ~/.zshrc &&
+logInfo 'ZSH Theme changed to "avit"'
