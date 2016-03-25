@@ -23,18 +23,19 @@ else
     . modules/homebrew.sh
 fi
 
-# Remember that oh-my-zsh.sh requires homebrew.sh.
+# Remember that oh-my-zsh.sh requires Homebrew.sh.
 . modules/oh-my-zsh.sh
 
 . modules/git.sh
+. modules/ssh.sh
 
-# Remember that nodejs.sh requires homebrew.sh.
+# Remember that nodejs.sh requires Homebrew.sh.
 . modules/nodejs.sh
 
 . modules/sdkman/sdkman.sh
 . modules/android.sh
 
-# Remember that go.sh requires homebrew.sh.
+# Remember that go.sh requires Homebrew.sh.
 . modules/go.sh
 
 # Remember that nodejs.sh requires go.sh.
@@ -42,7 +43,10 @@ fi
 
 . modules/java.sh
 
-# Remember that maven.sh requires homebrew.sh.
+# Remember that maven.sh requires Homebrew.sh.
 . modules/maven.sh
 
 . modules/google-app-engine.sh
+
+# Remember that heroku.sh requires Homebrew.sh.
+. modules/heroku.sh

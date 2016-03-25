@@ -35,32 +35,8 @@ sudo apt-get -fy install mixxx libportaudio2
 downloadAndInstall "Mega Sync client" $MEGA
 downloadAndInstall "Mega Nautilus extension" $MEGA_NAUTILUS
 
-log "Installing Dropbox, XClip (to copy into clipboard from terminal), MongoDB and WebP command line tools..."
+log "Installing Dropbox, MongoDB and WebP command line tools..."
 sudo apt-get -fy install nautilus-dropbox xclip mongodb curl webp
-
-
-log "Generating an SSH Key..." &&
-#   Creates a new ssh key, using the provided email as a label
-ssh-keygen -t rsa -C $USER_EMAIL &&
-#   start the ssh-agent in the background
-eval "$(ssh-agent-s)" &&
-ssh-add ~/.ssh/id_rsa &&
-log "SSH Key for $USER_EMAIL successfully generated in ~/.ssh/id_rsa.pub"
-
-xclip -sel clip < ~/.ssh/id_rsa.pub &&
-log "SSH Key copied to clipboard."
-
-
-log "#### Installing development kits ####"
-
-
-log "Installing Heroku toolbelt to run Heroku commands from command line..." &&
-wget -qO- "https://toolbelt.heroku.com/install-ubuntu.sh" | sh &&
-log "Please login against Heroku with your account." &&
-heroku login &&
-log "Adding existent public keys to Heroku to be able to run commands..." &&
-heroku keys:add &&
-log "Heroku configured successfully."
 
 
 log "################ Finished installing development kits ################"
