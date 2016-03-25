@@ -41,4 +41,8 @@ fi
 . modules/google-drive.sh
 
 . modules/java.sh
+
+# Remember that maven.sh requires homebrew.sh.
+. modules/maven.sh
+
 . modules/google-app-engine.sh

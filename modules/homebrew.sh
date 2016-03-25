@@ -30,11 +30,6 @@ brew install transmission
 postInstallationLog "Transmission"
 
 
-preInstallationLog "Apache Maven"
-brew install maven
-postInstallationLog "Apache Maven"
-
-
 preInstallationLog "Heroku" &&
 brew install heroku-toolbelt &&
 postInstallationLog "Heroku" &&

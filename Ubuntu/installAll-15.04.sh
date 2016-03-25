@@ -53,16 +53,6 @@ log "SSH Key copied to clipboard."
 
 log "#### Installing development kits ####"
 
-preInstallationLog "Apache Maven" &&
-
-cd ~/Coding/xDKs/
-downloadAndUncompress "Apache Maven" "http://mirrors.nxnethosting.com/apache/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.zip" &&
-cd ~/Downloads/
-
-addToShell 'export M2_HOME=$HOME/Coding/xDKs/apache-maven-3.3.3'
-addToShell 'export PATH=$M2_HOME/bin:$PATH'
-postInstallationLog "Apache Maven"
-
 
 log "Installing Heroku toolbelt to run Heroku commands from command line..." &&
 wget -qO- "https://toolbelt.heroku.com/install-ubuntu.sh" | sh &&
