@@ -23,6 +23,7 @@ script:
   - shellcheck modules/nodejs.sh
   - shellcheck modules/oh-my-zsh.sh
   - shellcheck modules/ssh.sh
+  - shellcheck modules/sublime-text.sh
   - shellcheck OS\ X/installAll-10.11.sh
 
 notifications:

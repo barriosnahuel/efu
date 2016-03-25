@@ -15,13 +15,6 @@ sudo apt-get update
 log "Instaling latest Rhythmbox and its plugins..."
 sudo apt-get -fy install rhythmbox rhythmbox-plugin-rhythmweb rhythmbox-plugin-equalizer rhythmbox-plugin-opencontainingfolder rhythmbox-plugin-llyrics
 
-logInfo "Adding repositories for Sublime Text 3..."
-sudo add-apt-repository ppa:webupd8team/sublime-text-3 -y
-sudo apt-get update
-
-log "Instaling Sublime Text 3"
-sudo apt-get -fy install sublime-text-installer
-
 log "Installing packages to compress and extract different kind of files..."
 sudo apt-get -fy install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract
 
