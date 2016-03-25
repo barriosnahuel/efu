@@ -12,6 +12,10 @@ log "Installing packages to compress and extract different kind of files..."
 sudo apt-get -fy install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract
 
 
+log "Installing GParted with NTFS support"
+sudo apt-get -fy install gparted ntfs-3g
+
+
 logInfo "Adding repositories for Rhythmbox and its plugins..."
 sudo add-apt-repository ppa:fossfreedom/rhythmbox -y
 sudo add-apt-repository ppa:fossfreedom/rhythmbox-plugins -y
