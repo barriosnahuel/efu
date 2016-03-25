@@ -26,6 +26,8 @@ if [ "$(isUbuntu "$PLATFORM")" ]; then
     xclip -sel clip < ~/.ssh/id_rsa.pub
     logInfo "SSH Key copied to clipboard. If don't, just run: 'xclip -sel clip < ~/.ssh/id_rsa.pub'"
 else
+
+    # shellcheck disable=SC2002
     cat ~/.ssh/id_rsa.pub | pbcopy
     logInfo "SSH Key copied to clipboard. If not, just run: 'cat ~/.ssh/id_rsa.pub | pbcopy'"
 fi

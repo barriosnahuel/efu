@@ -4,11 +4,13 @@
 preInstallationLog "Apache Tomcat"
 
 cd ~/Coding/servers/
-downloadAndUncompress "Apache Tomcat" "http://apache.dattatec.com/tomcat/tomcat-8/v8.0.33/bin/apache-tomcat-8.0.33.zip"
 
-TOMCAT_DIRECTORY=$(getFileNameWithoutExtension $(getFileName $APACHE_TOMCAT))
+APACHE_TOMCAT=http://apache.dattatec.com/tomcat/tomcat-8/v8.0.33/bin/apache-tomcat-8.0.33.zip
+downloadAndUncompress "Apache Tomcat" "$APACHE_TOMCAT"
 
-cd ~/Coding/servers/$TOMCAT_DIRECTORY/bin &&
+TOMCAT_DIRECTORY=$(getFileNameWithoutExtension '$(getFileName "$APACHE_TOMCAT")')
+
+cd ~/Coding/servers/"$TOMCAT_DIRECTORY"/bin &&
 chmod +x catalina.sh &&
 
 cd ~/Downloads/
