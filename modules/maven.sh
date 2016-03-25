@@ -17,7 +17,7 @@ if ! command -v mvn >/dev/null; then
         addToShell 'export PATH=$M2_HOME/bin:$PATH'
 
     else
-        brew install maven
+        sdk install maven
     fi
 
     postInstallationLog "Apache Maven"

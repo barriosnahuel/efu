@@ -43,10 +43,6 @@ fi
 
 . modules/java.sh
 . modules/gimp.sh
-
-# Remember that maven.sh requires Homebrew.sh.
-. modules/maven.sh
-
 . modules/google-app-engine.sh
 
 # Remember that heroku.sh requires Homebrew.sh.
@@ -57,3 +53,6 @@ fi
 
 # sdkman at the end because SDKMAN_DIR environment variable must be at the end to work.
 . modules/sdkman/sdkman.sh
+
+# Remember that maven.sh requires sdkman.sh.
+. modules/maven.sh
