@@ -19,7 +19,7 @@ if ! command -v go >/dev/null; then
 
     postInstallationLog "Go language"
 else
-    log "Go already installed"
+    logAlreadyInstalled "Go Language"
 fi
 
 # shellcheck disable=SC2016

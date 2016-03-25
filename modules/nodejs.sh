@@ -3,7 +3,10 @@
 
 preInstallationLog "NodeJS (with NPM)"
 if [ "$(isUbuntu "$PLATFORM")" ]; then
+
+    cd ~/Coding/xDKs/
     downloadAndUncompress "NodeJS" "$NODE_JS"
+    cd ~/Downloads/
 
     # shellcheck disable=SC2016
     addToShell 'export PATH=$HOME/Coding/xDKs/node-v4.4.1-linux-x64/bin:$PATH'
@@ -13,9 +16,11 @@ else
     brew install node
 
     if ! command -v npm >/dev/null; then
+        preInstallationLog "NPM"
         curl -L https://www.npmjs.com/install.sh | sh
+        postInstallationLog "NPM"
     else
-      log "NPM installed ok."
+        log "NPM installed ok through NodeJS"
     fi
 fi
 

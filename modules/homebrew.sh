@@ -8,7 +8,7 @@ if ! command -v brew >/dev/null; then
     # shellcheck disable=SC2016
     addToShell 'export PATH="/usr/local/bin:$PATH"'
 else
-  log "Homebrew already installed. Skipping..."
+  logAlreadyInstalled "Homebrew"
 fi
 
 log "Updating Homebrew formulas..."
@@ -23,22 +23,3 @@ else
 fi
 
 logProgramVersion "Homebrew" "$(brew --version)"
-
-
-preInstallationLog "Transmission"
-brew install transmission
-postInstallationLog "Transmission"
-
-
-preInstallationLog "Apache Maven"
-brew install maven
-postInstallationLog "Apache Maven"
-
-
-preInstallationLog "Heroku" &&
-brew install heroku-toolbelt &&
-postInstallationLog "Heroku" &&
-heroku login &&
-log "Adding existent public keys to Heroku to be able to run commands..." &&
-heroku keys:add &&
-log "Heroku configured successfully"

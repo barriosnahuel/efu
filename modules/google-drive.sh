@@ -18,7 +18,8 @@ if ! command -v drive >/dev/null; then
 
     postInstallationLog "Google Drive client"
 else
-    log "Google Drive client already installed"
+    logAlreadyInstalled "Google Drive Client"
 fi
 
+logInfo "See https://github.com/odeke-em/drive#usage to mount your Google Drive directory on your local filesystem"
 logProgramVersion "Google Drive client" "$(drive version)"
