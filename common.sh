@@ -41,3 +41,4 @@ fi
 . modules/google-drive.sh
 
 . modules/java.sh
+. modules/google-app-engine.sh

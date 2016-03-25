@@ -53,12 +53,15 @@ log "SSH Key copied to clipboard."
 
 log "#### Installing development kits ####"
 
-
 preInstallationLog "Apache Maven" &&
+
+cd ~/Coding/xDKs/
 downloadAndUncompress "Apache Maven" "http://mirrors.nxnethosting.com/apache/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.zip" &&
+cd ~/Downloads/
+
 addToShell 'export M2_HOME=$HOME/Coding/xDKs/apache-maven-3.3.3'
 addToShell 'export PATH=$M2_HOME/bin:$PATH'
-log "Apache Maven configured successfully."
+postInstallationLog "Apache Maven"
 
 
 log "Installing Heroku toolbelt to run Heroku commands from command line..." &&
@@ -69,19 +72,9 @@ log "Adding existent public keys to Heroku to be able to run commands..." &&
 heroku keys:add &&
 log "Heroku configured successfully."
 
-downloadAndUncompress "Google App Engine SDK" https://storage.googleapis.com/appengine-sdks/featured/appengine-java-sdk-1.9.27.zip
-addToShell 'export PATH=$PATH:$HOME/Coding/xDKs/appengine-java-sdk-1.9.27/'
-
 
 log "################ Finished installing development kits ################"
 
-preInstallationLog "Intellij IDEA Ultimate Edition" &&
-cd ~/Coding/IDEs/
-downloadAndUncompress "Intellij IDEA Ultimate Edition" $IDEA_ULTIMATE &&
-log "Setting up JAVA_HOME environment variable pointing to a JDK 8 to use as default java command." &&
-addToShell 'export JAVA_HOME=$HOME/Coding/xDKs/jdk1.8.0_45'
-addToShell 'export PATH=$JAVA_HOME/bin:$PATH'
-postInstallationLog "Intellij IDEA Ultimate Edition"
 
 cd ~/Coding/servers/
 downloadAndUncompress "Apache Tomcat" "http://apache.dattatec.com/tomcat/tomcat-8/v8.0.27/bin/apache-tomcat-8.0.27.zip"
@@ -95,14 +88,15 @@ preInstallationLog "Gimp (with some plugins)"
 sudo apt-get -fy install gimp gimp-data gimp-plugin-registry gimp-data-extras
 postInstallationLog "Gimp (with some plugins)"
 
+
 preInstallationLog "Subdownloader, GMountISO, Freemind (a mind maps editor), Gnac (to convert audio files), and a Steam client (will update on first run)"
 sudo apt-get -fy install subdownloader gmountiso freemind gnac steam
+
 
 cd ~/Downloads/
 downloadAndInstall "TeamViewer" http://www.teamviewer.com/download/teamviewer_linux.deb
 downloadAndInstall "RoboMongo" http://robomongo.org/files/linux/robomongo-0.8.5-x86_64.deb
 
-log "JDownloader2: Download it from" $JDOWNLOADER
 
 log "Cleaning up..." &&
 sudo apt-get -f install &&
