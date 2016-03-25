@@ -14,11 +14,15 @@ script:
   - shellcheck modules/android.sh
   - shellcheck modules/git.sh
   - shellcheck modules/go.sh
+  - shellcheck modules/google-app-engine.sh
   - shellcheck modules/google-drive.sh
+  - shellcheck modules/heroku.sh
   - shellcheck modules/homebrew.sh
   - shellcheck modules/java.sh
+  - shellcheck modules/maven.sh
   - shellcheck modules/nodejs.sh
   - shellcheck modules/oh-my-zsh.sh
+  - shellcheck modules/ssh.sh
   - shellcheck OS\ X/installAll-10.11.sh
 
 notifications:
