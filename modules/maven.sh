@@ -20,7 +20,7 @@ if ! command -v mvn >/dev/null; then
     postInstallationLog "Apache Maven"
 
 else
-    log "Apache Maven is already installed. Skipping installation."
+    logAlreadyInstalled "Apache Maven"
 fi
 
 logProgramVersion "Apache Maven" "$(mvn -v)"

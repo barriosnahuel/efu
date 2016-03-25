@@ -16,6 +16,10 @@ logInfo (){
     echo "EFU ==> $1 $2 $3" >> ~/Downloads/summary.efu.log
 }
 
+logAlreadyInstalled (){
+    log "'$1' already installed. Skipping installation..."
+}
+
 logProgramVersion (){
     log "$1 $2 $3"
     echo "EFU ==> Installed $1 $2 $3" >> ~/Downloads/summary.efu.log

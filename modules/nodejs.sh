@@ -16,9 +16,11 @@ else
     brew install node
 
     if ! command -v npm >/dev/null; then
+        preInstallationLog "NPM"
         curl -L https://www.npmjs.com/install.sh | sh
+        postInstallationLog "NPM"
     else
-      log "NPM installed ok."
+        log "NPM installed ok through NodeJS"
     fi
 fi
 

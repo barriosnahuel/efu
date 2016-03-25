@@ -18,7 +18,7 @@ if ! command -v drive >/dev/null; then
 
     postInstallationLog "Google Drive client"
 else
-    log "Google Drive client already installed"
+    logAlreadyInstalled "Google Drive Client"
 fi
 
 logProgramVersion "Google Drive client" "$(drive version)"
