@@ -11,6 +11,8 @@ if ! command -v mvn >/dev/null; then
         cd ~/Downloads/
 
         addToShell 'export M2_HOME=$HOME/Coding/xDKs/apache-maven-3.3.9'
+
+        # shellcheck disable=SC2016
         addToShell 'export PATH=$M2_HOME/bin:$PATH'
 
     else
