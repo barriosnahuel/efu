@@ -32,7 +32,6 @@ fi
 # Remember that nodejs.sh requires Homebrew.sh.
 . modules/nodejs.sh
 
-. modules/sdkman/sdkman.sh
 . modules/android.sh
 . modules/sublime-text.sh
 
@@ -55,3 +54,6 @@ fi
 
 . modules/tomcat.sh
 . modules/mixxx.sh
+
+# sdkman at the end because SDKMAN_DIR environment variable must be at the end to work.
+. modules/sdkman/sdkman.sh
