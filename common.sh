@@ -34,6 +34,7 @@ fi
 
 . modules/sdkman/sdkman.sh
 . modules/android.sh
+. modules/sublime-text.sh
 
 # Remember that go.sh requires Homebrew.sh.
 . modules/go.sh
@@ -50,3 +51,5 @@ fi
 
 # Remember that heroku.sh requires Homebrew.sh.
 . modules/heroku.sh
+
+. modules/tomcat.sh
