@@ -1,33 +1,40 @@
 #!/bin/bash
 # Created by Nahuel Barrios on 24/3/16.
 
-preInstallationLog "NodeJS (with NPM)"
-if [ "$(isUbuntu "$PLATFORM")" ]; then
 
-    cd ~/Coding/xDKs/
-    downloadAndUncompress "NodeJS" "$NODE_JS"
-    cd ~/Downloads/
+if ! command -v node >/dev/null; then
+    preInstallationLog "NodeJS (with NPM)"
+
+    if [ "$(isUbuntu "$PLATFORM")" ]; then
+
+        cd ~/Coding/xDKs/
+        downloadAndUncompress "NodeJS" "$NODE_JS"
+        cd ~/Downloads/
+
+        # shellcheck disable=SC2016
+        addToShell 'export PATH=$HOME/Coding/xDKs/node-v4.4.1-linux-x64/bin:$PATH'
+
+        log "NodeJS and NPM installed and configured successfully."
+    else
+        brew install node
+
+        if ! command -v npm >/dev/null; then
+            preInstallationLog "NPM"
+            curl -L https://www.npmjs.com/install.sh | sh
+            postInstallationLog "NPM"
+        else
+            log "NPM installed ok through NodeJS"
+        fi
+    fi
 
     # shellcheck disable=SC2016
-    addToShell 'export PATH=$HOME/Coding/xDKs/node-v4.4.1-linux-x64/bin:$PATH'
+    addToShell 'export PATH="$HOME/.node/bin:$PATH"'
 
-    log "NodeJS and NPM installed and configured successfully."
+    log "Added ~/.node/bin to your PATH so commands you install globally are usable."
 else
-    brew install node
-
-    if ! command -v npm >/dev/null; then
-        preInstallationLog "NPM"
-        curl -L https://www.npmjs.com/install.sh | sh
-        postInstallationLog "NPM"
-    else
-        log "NPM installed ok through NodeJS"
-    fi
+    logAlreadyInstalled "NodeJS (with NPM)"
 fi
 
-# shellcheck disable=SC2016
-addToShell 'export PATH="$HOME/.node/bin:$PATH"'
-
-log "Added ~/.node/bin to your PATH so commands you install globally are usable."
 
 logProgramVersion "Node" "$(node -v)"
 logProgramVersion "NPM" "$(npm -v)"
