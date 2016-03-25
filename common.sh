@@ -43,6 +43,7 @@ fi
 . modules/google-drive.sh
 
 . modules/java.sh
+. modules/gimp.sh
 
 # Remember that maven.sh requires Homebrew.sh.
 . modules/maven.sh
@@ -53,3 +54,4 @@ fi
 . modules/heroku.sh
 
 . modules/tomcat.sh
+. modules/mixxx.sh

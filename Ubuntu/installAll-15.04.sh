@@ -20,20 +20,8 @@ log "Instaling latest Rhythmbox and its plugins..."
 sudo apt-get -fy install rhythmbox rhythmbox-plugin-rhythmweb rhythmbox-plugin-equalizer rhythmbox-plugin-opencontainingfolder rhythmbox-plugin-llyrics
 
 
-logInfo "Adding repositories for Mixxx DJ software..."
-sudo add-apt-repository ppa:mixxx/mixxx -y
-sudo apt-get update
-log "Installing Mixxx DJ software..."
-sudo apt-get -fy install mixxx libportaudio2
-
-
 log "Installing Dropbox, MongoDB and WebP command line tools..."
 sudo apt-get -fy install nautilus-dropbox mongodb curl webp
-
-
-preInstallationLog "Gimp (with some plugins)"
-sudo apt-get -fy install gimp gimp-data gimp-plugin-registry gimp-data-extras
-postInstallationLog "Gimp (with some plugins)"
 
 
 preInstallationLog "Subdownloader, GMountISO, Freemind (a mind maps editor), Gnac (to convert audio files), and a Steam client (will update on first run)"
