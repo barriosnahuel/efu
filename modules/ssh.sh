@@ -15,7 +15,7 @@ ssh-add ~/.ssh/id_rsa &&
 
 if [ "$(isUbuntu "$PLATFORM")" ]; then
 
-    if ! command -v brew >/dev/null; then
+    if ! command -v xclip >/dev/null; then
         preInstallationLog "xclip"
         sudo apt-get -fy install xclip
         postInstallationLog "xclip"
