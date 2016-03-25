@@ -21,4 +21,5 @@ else
     logAlreadyInstalled "Google Drive Client"
 fi
 
+logInfo "See https://github.com/odeke-em/drive#usage to mount your Google Drive directory on your local filesystem"
 logProgramVersion "Google Drive client" "$(drive version)"
