@@ -1,0 +1,35 @@
+language: sh
+
+before_script:
+  - sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu/ trusty-backports restricted main universe"
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq shellcheck
+
+script:
+  - shellcheck functions.sh
+  - shellcheck createDirectoriesTree.sh
+  - shellcheck common.sh
+  - shellcheck install.sh
+  - shellcheck modules/sdkman/sdkman.sh
+  - shellcheck modules/android.sh
+  - shellcheck modules/gimp.sh
+  - shellcheck modules/git.sh
+  - shellcheck modules/go.sh
+  - shellcheck modules/google-app-engine.sh
+  - shellcheck modules/google-drive.sh
+  - shellcheck modules/heroku.sh
+  - shellcheck modules/homebrew.sh
+  - shellcheck modules/java.sh
+  - shellcheck modules/maven.sh
+  - shellcheck modules/mixxx.sh
+  - shellcheck modules/nodejs.sh
+  - shellcheck modules/oh-my-zsh.sh
+  - shellcheck modules/ssh.sh
+  - shellcheck modules/sublime-text.sh
+  - shellcheck modules/tomcat.sh
+  - shellcheck OS\ X/installAll-10.11.sh
+  - shellcheck Ubuntu/installAll-15.04.sh
+
+notifications:
+  email:
+    on_failure: change
