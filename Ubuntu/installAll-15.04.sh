@@ -28,8 +28,8 @@ log "Installing Dropbox, MongoDB and WebP command line tools..."
 sudo apt-get -fy install nautilus-dropbox mongodb curl webp
 
 
-preInstallationLog "Subdownloader, GMountISO, Freemind (a mind maps editor), Gnac (to convert audio files), Steam client (will update on first run) and PlayOnLinux"
-sudo apt-get -fy install subdownloader gmountiso freemind gnac steam playonlinux
+preInstallationLog "Subdownloader, GMountISO, Freemind (a mind maps editor), Sound Converter, Steam client (will update on first run) and PlayOnLinux"
+sudo apt-get -fy install subdownloader gmountiso freemind soundconverter steam playonlinux
 
 
 cd ~/Downloads/
