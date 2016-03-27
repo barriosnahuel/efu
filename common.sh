@@ -3,9 +3,9 @@
 # Created by Nahuel Barrios on 17/3/16.
 ####
 
-if isUbuntu "$PLATFORM"; then
-    log "#### Adding particular software repositories ####"
-
+if isOsx "$PLATFORM"; then
+    . modules/homebrew.sh
+else
     log "Installing gdebi package manager..."
     sudo apt-get -fy install gdebi
 
@@ -19,8 +19,10 @@ if isUbuntu "$PLATFORM"; then
     sudo apt-get autoremove
 
     log "#### Software repositories and packages updated ok ####"
-else
-    . modules/homebrew.sh
+fi
+
+if isLubuntu "$PLATFORM"; then
+    return 0
 fi
 
 # Remember that oh-my-zsh.sh requires Homebrew.sh.

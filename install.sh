@@ -10,16 +10,18 @@ log "Checking platform..."
 PLATFORM=$1
 
 
-if [ "$PLATFORM" != "osx" ] && [ "$PLATFORM" != "ubuntu" ]; then
-    logError "Must specify a platform: [osx | ubuntu]"
+if ! isUbuntu "$1" && ! isOsx "$1" && ! isLubuntu "$1"; then
+    logError "Must specify a platform: [osx | ubuntu | lubuntu]"
     exit 1
 fi
 
 
 if isOsx "$PLATFORM"; then
     log "Detected platform <OS X>"
-else
+elif isUbuntu "$PLATFORM"; then
     log "Detected platform <Ubuntu>"
+else
+    log "Detected platform <Lubuntu>"
 fi
 
 
@@ -42,7 +44,7 @@ log "Loading $PLATFORM custom installation file..."
 if [ "$isOsx" ]; then
     . ./OS\ X/installAll-10.11.sh
 else
-    . ./Ubuntu/installAll-15.04.sh
+    . ./Ubuntu/core.sh
 fi
 
 
