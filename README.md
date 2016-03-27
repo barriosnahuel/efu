@@ -19,6 +19,20 @@ EFU (Easy-Fast-Upgradable): The SH script you need to finish your Ubuntu/MacOS X
 5. In a new tab of your terminal: `tail –f ~/Downloads/efu.log`
 6. Once finished, take a look to: `~/Downloads/summary.efu.log`
 
+### PRO tip!
+If you want to run EFU on Ubuntu, you can just:
+1. Download [latest release](https://github.com/barriosnahuel/efu/releases) on your `~/Downloads` directory.
+2. `gnome-terminal --working-directory ~/Downloads/ \
+--tab -e "sh install.sh ubuntu" \
+--tab -e "tail -f efu.log" \
+--tab -e "tail -f summary.efu.log" \
+; exit`
+
+And this will open a new terminal with 3 tabs:
+- One for the main script: `install.sh` ⇐ *You should check this tab because it will ask you for some things.*
+- One for `efu.log` output. ⇐ *Full script output.*
+- One for `summary.efu.log` output. ⇐ *Most cases this will be enough.*
+
 ## Repo usage
 *Do not clone or push to* **master** *branch.*
 
