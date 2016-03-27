@@ -41,6 +41,14 @@ isUbuntu(){
     fi
 }
 
+isLubuntu(){
+    if [ "$1" = "lubuntu" ]; then
+        return 0
+    else
+        return 1
+    fi
+}
+
 isOsx(){
     if [ "$1" = "osx" ]; then
         return 0
