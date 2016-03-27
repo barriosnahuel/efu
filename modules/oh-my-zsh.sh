@@ -24,4 +24,4 @@ sed -i -e 's/plugins=(git)/plugins=(git git-extras command-not-found common-alia
 logInfo "Added some plugins to Oh-My-ZSH: git, git-extras, command-not-found, common-aliases, dirhistory."
 
 sed -i -e 's/ZSH_THEME="robbyrussell"/ZSH_THEME="avit"' ~/.zshrc &&
-logInfo 'ZSH Theme changed to "avit"'
+logInfo 'ZSH Theme changed to "avit", to view more themes go to: https://github.com/robbyrussell/oh-my-zsh/wiki/themes'
