@@ -23,7 +23,9 @@ EFU (Easy-Fast-Upgradable): The SH script you need to finish your Ubuntu/MacOS X
 If you want to run EFU on **Ubuntu**, you can just:
 
 1. Download [latest release](https://github.com/barriosnahuel/efu/releases) on your `~/Downloads` directory.
-2. 
+2. `cd` into downloaded directory.
+3. Edit `properties.sh` with your custom info.
+4. 
 ```shell
 gnome-terminal --working-directory ~/Downloads/ \
 --tab -e "sh install.sh ubuntu" \
