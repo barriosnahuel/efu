@@ -2,11 +2,17 @@
 # Created by Nahuel Barrios on 27/3/16.
 
 
+preInstallationLog "Gnome System Tools"
+sudo apt-get -fy install gnome-system-tools
+postInstallationLog "Gnome System Tools"
+logInfo "Available programs: network-admin, shares-admin, time-admin, users-admin"
+
+
 log "Installing packages to compress and extract different kind of files..."
 sudo apt-get -fy install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract
 
 
-log "Installing GParted with NTFS support"
+preInstallationLog "GParted with NTFS support"
 sudo apt-get -fy install gparted ntfs-3g
 
 
