@@ -51,7 +51,7 @@ With a little of your interaction, EFU will:
   - Gimp
   - GIT
   - Go language
-  - Google Drive command line client
+  - [Google Drive command line client](https://github.com/odeke-em/drive)
   - Gradle  
   - Grails
   - Groovy
@@ -59,11 +59,11 @@ With a little of your interaction, EFU will:
   - Heroku toolbelt
   - Kotlin
   - Maven  
-  - Mixxx
+  - [Mixxx](http://www.mixxx.org/)
   - NodeJS 
-  - sdkman
+  - [sdkman](http://sdkman.io/)
   - Tomcat  
-  - ZSH and Oh-My-ZSH
+  - ZSH and [Oh-My-ZSH](https://github.com/robbyrussell/oh-my-zsh)
 - Install (and setup) many software (OS X only):
   - Homebrew (OS X only)
   - Transmission torrents client
@@ -78,10 +78,11 @@ With a little of your interaction, EFU will:
   - WebP command line tools
   - ++
 - Suggest (with direct links) to download latest version of:
-  - Java 7 and 8
-  - JDownloader
-  - JetBrains Intellij IDEA (EAP)
   - Android Studio
+  - Java 7 and 8
+  - [JDownloader](http://jdownloader.org/home/index)
+  - JetBrains [Intellij IDEA](https://www.jetbrains.com/idea/) (EAP)
+  - [Macs Fan Control](http://www.crystalidea.com/macs-fan-control)
 
 ## Repo usage
 *Do not clone or push to* **master** *branch.*
