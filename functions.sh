@@ -111,14 +111,22 @@ downloadAndUncompress() {
     # Get file name from path or URL.
     FILE_NAME=$(getFileName "$2") &&
 
+    uncompress "$FILE_NAME"
+}
+
+##  Parameters:
+# 1. File name (without path).
+uncompress(){
+    log "Uncompressing $1"
+
     # Use the file extension to use unzip or tar to uncompress the file.
-    if [ "$(getFileExtension "$FILE_NAME")" = "zip" ]; then
-        unzip "$FILE_NAME"
+    if [ "$(getFileExtension "$1")" = "zip" ]; then
+        unzip "$1"
     else
-        tar -zxf "$FILE_NAME"
+        tar -zxf "$1"
     fi
 
-    echo "$1 uncompressed successfully."
+    log "$1 uncompressed successfully."
 }
 
 addToShell() {
@@ -131,4 +139,16 @@ addToShell() {
         echo "$1" >> ~/.zshrc &&
         . ~/.zshrc
     fi
+}
+
+##  Parameters:
+# 1. String w/ format: "repoOwner/repoName"
+getGitHubFirstAssetFromLatestRelease(){
+    echo $(curl -s https://api.github.com/repos/$1/releases | grep browser_download_url | head -n 1 | cut -d '"' -f 4)
+}
+
+##  Parameters:
+# 1. Url to the browser download url.
+downloadAssetFromGitHub(){
+    curl -LOk $1
 }

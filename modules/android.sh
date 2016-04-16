@@ -35,3 +35,19 @@ addToShell 'export PATH=$ANDROID_HOME/platform-tools:$PATH'
 addToShell "export ANDROID_HVPROTO=ddm"
 
 log "Successfully added Android environment variables."
+
+
+preInstallationLog "Android utilities"
+
+preInstallationLog "ClassyShark"
+# https://github.com/google/android-classyshark/
+
+cd ~/Coding/tools/
+mkdir classyshark
+cd classyshark
+downloadAssetFromGitHub "$(getGitHubFirstAssetFromLatestRelease "google/android-classyshark")"
+addToShell "alias classyshark='java -jar ~/Coding/tools/classyshark/ClassyShark.jar &'"
+logInfo "[Android Utilities]: 'classyshark' alias created."
+postInstallationLog "ClassyShark"
+
+postInstallationLog "Android utilities"
