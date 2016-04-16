@@ -39,6 +39,49 @@ And this will open a new terminal with 3 tabs:
 - One for `efu.log` output. ⇐ *Full script output.*
 - One for `summary.efu.log` output. ⇐ *Most cases this will be enough.*
 
+## What does EFU do for me?
+With a little of your interaction, EFU will:
+- Create a directories tree under ~/Coding for coders.
+- Install (and setup) many software:
+  - Android
+    - [ClassyShark](https://github.com/google/android-classyshark/)
+    - [Dex2Jar](https://github.com/pxb1988/dex2jar)
+  - Ant
+  - Gimp
+  - GIT
+  - Go language
+  - Google Drive command line client
+  - Gradle  
+  - Grails
+  - Groovy
+  - Google App Engine SDK
+  - Heroku toolbelt
+  - Kotlin
+  - Maven  
+  - Mixxx
+  - NodeJS 
+  - sdkman
+  - Tomcat  
+  - ZSH and Oh-My-ZSH
+- Install (and setup) many software (OS X only):
+  - Homebrew (OS X only)
+  - Transmission torrents client
+- Install (and setup) many software (Ubuntu only):
+  - Common packages to compress and uncompress common files
+  - Dropbox
+  - GParted with NTFS support
+  - Mega sync client
+  - MongoDB and a desktop client: Robomongo
+  - Rhythmbox music player
+  - TeamViewer
+  - WebP command line tools
+  - ++
+- Suggest (with direct links) to download latest version of:
+  - Java 7 and 8
+  - JDownloader
+  - JetBrains Intellij IDEA (EAP)
+  - Android Studio
+
 ## Repo usage
 *Do not clone or push to* **master** *branch.*
 

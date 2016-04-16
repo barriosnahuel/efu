@@ -144,11 +144,11 @@ addToShell() {
 ##  Parameters:
 # 1. String w/ format: "repoOwner/repoName"
 getGitHubFirstAssetFromLatestRelease(){
-    echo $(curl -s https://api.github.com/repos/$1/releases | grep browser_download_url | head -n 1 | cut -d '"' -f 4)
+    echo $(curl -s https://api.github.com/repos/"$1"/releases | grep browser_download_url | head -n 1 | cut -d '"' -f 4)
 }
 
 ##  Parameters:
 # 1. Url to the browser download url.
 downloadAssetFromGitHub(){
-    curl -LOk $1
+    curl -LOk "$1"
 }
