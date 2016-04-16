@@ -44,6 +44,8 @@ With a little of your interaction, EFU will:
 - Create a directories tree under ~/Coding for coders.
 - Install (and setup) many software:
   - Android
+    - [ClassyShark](https://github.com/google/android-classyshark/)
+    - [Dex2Jar](https://github.com/pxb1988/dex2jar)
   - Ant
   - Gimp
   - GIT
