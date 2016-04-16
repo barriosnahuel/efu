@@ -144,7 +144,7 @@ addToShell() {
 ##  Parameters:
 # 1. String w/ format: "repoOwner/repoName"
 getGitHubFirstAssetFromLatestRelease(){
-    echo $(curl -s https://api.github.com/repos/"$1"/releases | grep browser_download_url | head -n 1 | cut -d '"' -f 4)
+    curl -s https://api.github.com/repos/"$1"/releases | grep browser_download_url | head -n 1 | cut -d '"' -f 4
 }
 
 ##  Parameters:

@@ -51,9 +51,9 @@ FILE_NAME=$(getFileName "$DEX2JAR_DOWNLOAD_URL") &&
 downloadAssetFromGitHub "$DEX2JAR_DOWNLOAD_URL"
 uncompress "$FILE_NAME"
 
-DEX2JAR_DIRECTORY="dex2jar-$(getFileName $(dirname "$DEX2JAR_DOWNLOAD_URL"))"
+DEX2JAR_DIRECTORY="dex2jar-$(getFileName "$(dirname "$DEX2JAR_DOWNLOAD_URL")")"
 cd "$DEX2JAR_DIRECTORY"
-chmod +x *
+chmod +x ./*
 addToShell "alias d2j='~/Coding/tools/$DEX2JAR_DIRECTORY/d2j-dex2jar.sh'"
 
 echo "Usage: d2j-dex2jar.sh -f path/to/your-apk.apk" >> USAGE.txt
