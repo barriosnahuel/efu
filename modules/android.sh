@@ -39,6 +39,29 @@ log "Successfully added Android environment variables."
 
 preInstallationLog "Android utilities"
 
+preInstallationLog "Dex 2 Jar"
+# https://github.com/pxb1988/dex2jar
+
+cd ~/Coding/tools/
+DEX2JAR_DOWNLOAD_URL=$(getGitHubFirstAssetFromLatestRelease "pxb1988/dex2jar")
+
+# Get file name from url.
+FILE_NAME=$(getFileName "$DEX2JAR_DOWNLOAD_URL") &&
+
+downloadAssetFromGitHub "$DEX2JAR_DOWNLOAD_URL"
+uncompress "$FILE_NAME"
+
+DEX2JAR_DIRECTORY="dex2jar-$(getFileName $(dirname "$DEX2JAR_DOWNLOAD_URL"))"
+cd "$DEX2JAR_DIRECTORY"
+chmod +x *
+addToShell "alias d2j='~/Coding/tools/$DEX2JAR_DIRECTORY/d2j-dex2jar.sh'"
+
+echo "Usage: d2j-dex2jar.sh -f path/to/your-apk.apk" >> USAGE.txt
+echo "More info at: https://github.com/pxb1988/dex2jar" >> USAGE.txt
+logInfo "[Android Utilities]: 'd2j' alias created."
+postInstallationLog "Dex 2 Jar"
+
+
 preInstallationLog "ClassyShark"
 # https://github.com/google/android-classyshark/
 
