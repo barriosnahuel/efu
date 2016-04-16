@@ -6,3 +6,5 @@
 preInstallationLog "Transmission"
 brew install transmission
 postInstallationLog "Transmission"
+
+logInfo "Download Mac Fans Control from: http://www.crystalidea.com/macs-fan-control"
