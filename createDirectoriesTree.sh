@@ -10,6 +10,7 @@ cd Coding
 mkdir IDEs
 mkdir xDKs
 mkdir servers
+mkdir tools
 mkdir workspace-mine
 mkdir workspace-test
 mkdir workspace-work
