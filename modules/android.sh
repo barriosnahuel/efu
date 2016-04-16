@@ -74,13 +74,18 @@ logInfo "[Android Utilities]: 'classyshark' alias created."
 postInstallationLog "ClassyShark"
 
 
-if [ "$(isOsx "$PLATFORM")" ]; then
-    preInstallationLog "Pidcat Android Logcat decorator"
-    # https://github.com/JakeWharton/pidcat
+preInstallationLog "Pidcat Android Logcat decorator"
+# https://github.com/JakeWharton/pidcat
 
+if [ "$(isUbuntu "$PLATFORM")" ]; then
+    cd ~/Coding/tools/
+    curl -H "Accept: application/vnd.github.v3.raw" \
+         -LO https://api.github.com/repos/JakeWharton/pidcat/contents/pidcat.py
+    addToShell "alias pidcat='python ~/Coding/tools/pidcat.py'"
+else
     brew install pidcat
-    logInfo "[Android Utilities]: run 'pidcat your.application.package' to see an improved logcat. More info at https://github.com/JakeWharton/pidcat"
-    postInstallationLog "Pidcat Android Logcat decorator"
 fi
+logInfo "[Android Utilities]: run 'pidcat your.application.package' to see an improved logcat. More info at https://github.com/JakeWharton/pidcat"
+postInstallationLog "Pidcat Android Logcat decorator"
 
 postInstallationLog "Android utilities"
