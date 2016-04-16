@@ -50,4 +50,14 @@ addToShell "alias classyshark='java -jar ~/Coding/tools/classyshark/ClassyShark.
 logInfo "[Android Utilities]: 'classyshark' alias created."
 postInstallationLog "ClassyShark"
 
+
+if [ "$(isOsx "$PLATFORM")" ]; then
+    preInstallationLog "Pidcat Android Logcat decorator"
+    # https://github.com/JakeWharton/pidcat
+
+    brew install pidcat
+    logInfo "[Android Utilities]: run 'pidcat your.application.package' to see an improved logcat. More info at https://github.com/JakeWharton/pidcat"
+    postInstallationLog "Pidcat Android Logcat decorator"
+fi
+
 postInstallationLog "Android utilities"
