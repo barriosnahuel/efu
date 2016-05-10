@@ -24,11 +24,11 @@ else
     log "Detected platform <Lubuntu>"
 fi
 
-
+CURRENT_DIR="$( cd "$( dirname "$0" )" && pwd )"
 log "Creating coding directories tree"
 . ./createDirectoriesTree.sh
 log "Coding directories tree created ok"
-
+cd "${CURRENT_DIR}"
 
 log "Loading properties file..."
 . ./properties.sh
