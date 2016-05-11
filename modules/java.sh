@@ -8,8 +8,7 @@ if ! command -v java >/dev/null; then
     logInfo "Remember to update JAVA_HOME environment variable after installing Java"
 
     log "Setting up Java environment variables..."
-    addToShell "#export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_79.jdk/Contents/Home"
-    addToShell "#export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home"
+    addToShell "#export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home"
 
     # shellcheck disable=SC2016
     addToShell '#export PATH=$JAVA_HOME/bin:$PATH'
