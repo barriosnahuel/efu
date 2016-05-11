@@ -18,11 +18,20 @@ fi
 
 if isOsx "$PLATFORM"; then
     log "Detected platform <OS X>"
+    logInfo "Download Transmission torrents client from: https://www.transmissionbt.com/download"
+    logInfo "Download Mac Fans Control from: http://www.crystalidea.com/macs-fan-control"
 elif isUbuntu "$PLATFORM"; then
     log "Detected platform <Ubuntu>"
 else
     log "Detected platform <Lubuntu>"
 fi
+
+
+logInfo "Download latest JetBrains Intellij IDEA EAP from: https://confluence.jetbrains.com/display/IDEADEV/EAP"
+logInfo "Download latest Android Studio from: http://tools.android.com/download/studio/canary/latest"
+logInfo "Remember to download the following plugins for both IDEA/Android Studio: .gitignore; MultiMarkDown; IDETalk; WakaTime"
+logInfo "Download JDownloader2 from: http://jdownloader.org/download/index"
+
 
 CURRENT_DIR="$( cd "$( dirname "$0" )" && pwd )"
 log "Creating coding directories tree"
@@ -41,16 +50,9 @@ log "Common software installed ok"
 
 
 log "Loading $PLATFORM custom installation file..."
-if [ "$isOsx" ]; then
-    . ./OS\ X/installAll-10.11.sh
-else
+if [ "$isUbuntu" ]; then
     . ./Ubuntu/core.sh
 fi
-
-
-logInfo "Download latest JetBrains Intellij IDEA EAP from: https://confluence.jetbrains.com/display/IDEADEV/EAP"
-logInfo "Download latest Android Studio from: http://tools.android.com/download/studio/canary/latest"
-logInfo "Download JDownloader2 from: http://jdownloader.org/download/index"
 
 
 logInfo "#### Installation of your favorite software has finished ####"
