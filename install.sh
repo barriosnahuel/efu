@@ -52,6 +52,9 @@ log "Common software installed ok"
 log "Loading $PLATFORM custom installation file..."
 if [ "$isUbuntu" ]; then
     . ./Ubuntu/core.sh
+else
+    # This is to show hidden files in Finder (OS X)
+    defaults write com.apple.finder AppleShowAllFiles YES
 fi
 
 
