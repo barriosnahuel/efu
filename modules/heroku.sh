@@ -1,6 +1,8 @@
 #!/bin/bash
 # Created by Nahuel Barrios on 25/3/16.
 
+cd "${CURRENT_DIR}"
+
 if ! command -v heroku >/dev/null; then
     preInstallationLog "Heroku toolbelt"
 

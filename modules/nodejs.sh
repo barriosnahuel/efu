@@ -1,6 +1,7 @@
 #!/bin/bash
 # Created by Nahuel Barrios on 24/3/16.
 
+cd "${CURRENT_DIR}"
 
 if ! command -v node >/dev/null; then
     preInstallationLog "NodeJS (with NPM)"

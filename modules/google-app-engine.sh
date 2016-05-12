@@ -1,6 +1,8 @@
 #!/bin/bash
 # Created by Nahuel Barrios on 25/3/16.
 
+cd "${CURRENT_DIR}"
+
 preInstallationLog "Google App Engine SDK"
 
 cd ~/Coding/xDKs/

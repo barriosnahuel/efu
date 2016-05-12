@@ -33,13 +33,17 @@ logInfo "Remember to download the following plugins for both IDEA/Android Studio
 logInfo "Download JDownloader2 from: http://jdownloader.org/download/index"
 
 
+# Required because we're moving away from current directory when creating directories or uncompressing software =(
 CURRENT_DIR="$( cd "$( dirname "$0" )" && pwd )"
+
+
 log "Creating coding directories tree"
 . ./createDirectoriesTree.sh
 log "Coding directories tree created ok"
-cd "${CURRENT_DIR}"
+
 
 log "Loading properties file..."
+cd "${CURRENT_DIR}"
 . ./properties.sh
 log "Properties file loaded ok"
 

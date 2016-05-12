@@ -1,6 +1,8 @@
 #!/bin/bash
 # Created by Nahuel Barrios on 17/3/16.
 
+cd "${CURRENT_DIR}"
+
 log "Configuring Android development environment..." &&
 
 if [ "$(isUbuntu "$PLATFORM")" ]; then

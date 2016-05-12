@@ -35,7 +35,6 @@ fi
 . modules/nodejs.sh
 
 . modules/android.sh
-cd "${CURRENT_DIR}"
 . modules/sublime-text.sh
 
 # Remember that go.sh requires Homebrew.sh.
@@ -46,14 +45,12 @@ cd "${CURRENT_DIR}"
 
 . modules/java.sh
 . modules/gimp.sh
-cd "${CURRENT_DIR}"
 . modules/google-app-engine.sh
 
 # Remember that heroku.sh requires Homebrew.sh.
 . modules/heroku.sh
 
 . modules/tomcat.sh
-cd "${CURRENT_DIR}"
 . modules/mixxx.sh
 
 # sdkman at the end because SDKMAN_DIR environment variable must be at the end to work.
