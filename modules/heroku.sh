@@ -1,6 +1,8 @@
 #!/bin/bash
 # Created by Nahuel Barrios on 25/3/16.
 
+cd "${CURRENT_DIR}"
+
 if ! command -v heroku >/dev/null; then
     preInstallationLog "Heroku toolbelt"
 
@@ -16,7 +18,7 @@ if ! command -v heroku >/dev/null; then
     log "Adding existent public keys to Heroku to be able to run commands..." &&
     heroku keys:add
 
-    logInfo "Heroku account configured successfully."
+    log "Heroku account configured successfully."
 else
     logAlreadyInstalled "Heroku toolbelt"
 fi

@@ -16,7 +16,7 @@ preInstallationLog "GParted with NTFS support"
 sudo apt-get -fy install gparted ntfs-3g
 
 
-logInfo "Adding repositories for Rhythmbox and its plugins..."
+log "Adding repositories for Rhythmbox and its plugins..."
 sudo add-apt-repository ppa:fossfreedom/rhythmbox -y
 sudo add-apt-repository ppa:fossfreedom/rhythmbox-plugins -y
 sudo apt-get update

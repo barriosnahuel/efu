@@ -14,7 +14,7 @@ EFU (Easy-Fast-Upgradable): The SH script you need to finish your Ubuntu/MacOS X
 ## Use it
 1. Download [latest release](https://github.com/barriosnahuel/efu/releases).
 2. `cd` into downloaded directory.
-3. Edit `properties.sh` with your custom info.
+3. Edit `properties.sh` with your custom info. Properties are required in order tu setup GIT.
 4. `sh install.sh [osx | ubuntu | lubuntu]`
 5. In a new tab of your terminal: `tail –f ~/Downloads/efu.log`
 6. Once finished, take a look to: `~/Downloads/summary.efu.log`
@@ -24,7 +24,7 @@ If you want to run EFU on **Ubuntu**, you can just:
 
 1. Download [latest release](https://github.com/barriosnahuel/efu/releases) on your `~/Downloads` directory.
 2. `cd` into downloaded directory.
-3. Edit `properties.sh` with your custom info.
+3. Edit `properties.sh` with your custom info. Properties are required in order tu setup GIT.
 4. 
 ```shell
 gnome-terminal --working-directory ~/Downloads/ \
@@ -59,14 +59,13 @@ With a little of your interaction, EFU will:
   - Heroku toolbelt
   - Kotlin
   - Maven  
-  - [Mixxx](http://www.mixxx.org/)
+  - [Mixxx](http://www.mixxx.org/): DJ software
   - NodeJS 
   - [sdkman](http://sdkman.io/)
   - Tomcat  
   - ZSH and [Oh-My-ZSH](https://github.com/robbyrussell/oh-my-zsh)
 - Install (and setup) many software (OS X only):
   - Homebrew (OS X only)
-  - Transmission torrents client
 - Install (and setup) many software (Ubuntu only):
   - Common packages to compress and uncompress common files
   - Dropbox
@@ -77,16 +76,14 @@ With a little of your interaction, EFU will:
   - TeamViewer
   - WebP command line tools
   - ++
-- Suggest (with direct links) to download latest version of:
+- Suggest (with links) to download latest version of:
   - Android Studio
   - Java 7 and 8
   - [JDownloader](http://jdownloader.org/home/index)
   - JetBrains [Intellij IDEA](https://www.jetbrains.com/idea/) (EAP)
   - [Macs Fan Control](http://www.crystalidea.com/macs-fan-control)
+  - Transmission torrents client
 
-## Repo usage
-*Do not clone or push to* **master** *branch.*
-
-Create branch or fork from **develop**, then push or create pull requests (if you don't have access) to that branch.
+## Contributing
 
 The repo uses [this branching model](http://nvie.com/posts/a-successful-git-branching-model/).

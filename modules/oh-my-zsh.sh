@@ -1,6 +1,8 @@
 #!/bin/bash
 # Created by Nahuel Barrios on 24/3/16.
 
+cd "${CURRENT_DIR}"
+
 preInstallationLog "ZSH"
 if [ "$(isUbuntu "$PLATFORM")" ]; then
     sudo apt-get -fy install zsh

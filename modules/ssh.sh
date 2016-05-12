@@ -1,6 +1,8 @@
 #!/bin/bash
 # Created by Nahuel Barrios on 25/3/16.
 
+cd "${CURRENT_DIR}"
+
 logInfo "Generating a new SSH Key for $USER_EMAIL" &&
 
 # Creates a new ssh key, using the provided email as a label

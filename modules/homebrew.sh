@@ -1,6 +1,8 @@
 #!/bin/bash
 # Created by Nahuel Barrios on 18/3/16.
 
+cd "${CURRENT_DIR}"
+
 preInstallationLog "Homebrew"
 if ! command -v brew >/dev/null; then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"

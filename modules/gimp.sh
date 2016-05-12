@@ -1,6 +1,7 @@
 #!/bin/bash
 # Created by Nahuel Barrios on 25/3/16.
 
+cd "${CURRENT_DIR}"
 
 if [ "$(isUbuntu "$PLATFORM")" ]; then
 
