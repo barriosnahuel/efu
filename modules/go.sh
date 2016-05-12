@@ -9,7 +9,7 @@ if ! command -v go >/dev/null; then
 
     if [ "$(isUbuntu "$PLATFORM")" ]; then
 
-        logInfo "Adding repositories for Go language"
+        log "Adding repositories for Go language"
 
         sudo add-apt-repository ppa:ubuntu-lxc/lxd-stable
         sudo apt-get update

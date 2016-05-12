@@ -4,7 +4,7 @@
 cd "${CURRENT_DIR}"
 
 if [ "$(isUbuntu "$PLATFORM")" ]; then
-    logInfo "Adding repositories for Sublime Text 3..."
+    log "Adding repositories for Sublime Text 3..."
     sudo add-apt-repository ppa:webupd8team/sublime-text-3 -y
     sudo apt-get update
 

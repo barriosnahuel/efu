@@ -77,7 +77,7 @@ With a little of your interaction, EFU will:
   - TeamViewer
   - WebP command line tools
   - ++
-- Suggest (with direct links) to download latest version of:
+- Suggest (with links) to download latest version of:
   - Android Studio
   - Java 7 and 8
   - [JDownloader](http://jdownloader.org/home/index)
