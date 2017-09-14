@@ -14,11 +14,8 @@ fi
 
 logProgramVersion "sdkman" "$(sdk version)"
 
-log "Installing Gradle through sdkman"
-sdk install gradle &&
-
 cp modules/sdkman/gradle.properties ~/.gradle/ &&
-log "Gradle installed and configured successfully. Check ~/.gradle/gradle.properties to see current configuration"
+log "Gradle properties created successfully. Check ~/.gradle/gradle.properties to see current configuration"
 
 
 log "Installing Apache Ant through sdkman"
