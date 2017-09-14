@@ -3,40 +3,35 @@
 
 cd "${CURRENT_DIR}"
 
-if ! command -v node >/dev/null; then
-    preInstallationLog "NodeJS (with NPM)"
-
-    if [ "$(isUbuntu "$PLATFORM")" ]; then
-
-        cd ~/Coding/xDKs/
-        downloadAndUncompress "NodeJS" "$NODE_JS"
-        cd ~/Downloads/
-
-        # shellcheck disable=SC2016
-        addToShell 'export PATH=$HOME/Coding/xDKs/node-v4.4.1-linux-x64/bin:$PATH'
-
-        log "NodeJS and NPM installed and configured successfully."
-    else
-        brew install node
-
-        if ! command -v npm >/dev/null; then
-            preInstallationLog "NPM"
-            curl -L https://www.npmjs.com/install.sh | sh
-            postInstallationLog "NPM"
-        else
-            log "NPM installed ok through NodeJS"
-        fi
-    fi
-
-    # shellcheck disable=SC2016
-    addToShell 'export PATH="$HOME/.node/bin:$PATH"'
-
-    log "Added ~/.node/bin to your PATH so commands you install globally are usable."
+if ! command -v nvm >/dev/null; then
+    preInstallationLog "NVM"
+    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.4/install.sh | bash
+    postInstallationLog "NVM"
 else
-    logAlreadyInstalled "NodeJS (with NPM)"
+    logAlreadyInstalled "NVM"
 fi
 
 
+if ! command -v node >/dev/null; then
+    preInstallationLog "NodeJS"
+
+    nvm install 6.11.3
+    nvm install 7.10.1
+else
+    logAlreadyInstalled "NodeJS"
+fi
+
+
+if ! command -v npm >/dev/null; then
+    preInstallationLog "NPM"
+    curl -L https://www.npmjs.com/install.sh | sh
+    postInstallationLog "NPM"
+else
+    logAlreadyInstalled "NPM"
+fi
+
+
+logProgramVersion "NVM" "$(nvm version)"
 logProgramVersion "Node" "$(node -v)"
 logProgramVersion "NPM" "$(npm -v)"
 
