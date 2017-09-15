@@ -31,8 +31,9 @@ fi
 . modules/git.sh
 . modules/ssh.sh
 
-# Remember that nodejs.sh requires Homebrew.sh.
 . modules/nodejs.sh
+
+. modules/ruby.sh
 
 . modules/android.sh
 . modules/sublime-text.sh
