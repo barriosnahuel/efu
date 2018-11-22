@@ -3,7 +3,7 @@
 
 cd "${CURRENT_DIR}"
 
-if [ "$(isUbuntu "$PLATFORM")" ]; then
+if isUbuntu "$PLATFORM" ; then
 
     preInstallationLog "Mixxx DJ Software"
 

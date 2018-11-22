@@ -7,7 +7,7 @@ if ! command -v go >/dev/null; then
 
     preInstallationLog "Go language"
 
-    if [ "$(isUbuntu "$PLATFORM")" ]; then
+    if isUbuntu "$PLATFORM" ; then
 
         log "Adding repositories for Go language"
 

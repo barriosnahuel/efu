@@ -6,7 +6,7 @@ cd "${CURRENT_DIR}"
 if ! command -v mvn >/dev/null; then
     preInstallationLog "Apache Maven"
 
-    if [ "$(isUbuntu "$PLATFORM")" ]; then
+    if isUbuntu "$PLATFORM" ; then
 
         cd ~/Coding/xDKs/
         downloadAndUncompress "Apache Maven" "http://mirrors.nxnethosting.com/apache/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.zip" &&

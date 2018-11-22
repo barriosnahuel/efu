@@ -15,7 +15,7 @@ eval "$(ssh-agent-s)" &&
 ssh-add ~/.ssh/id_rsa &&
 
 
-if [ "$(isUbuntu "$PLATFORM")" ]; then
+if isUbuntu "$PLATFORM" ; then
 
     if ! command -v xclip >/dev/null; then
         preInstallationLog "xclip"

@@ -4,7 +4,7 @@
 cd "${CURRENT_DIR}"
 
 preInstallationLog "ZSH"
-if [ "$(isUbuntu "$PLATFORM")" ]; then
+if isUbuntu "$PLATFORM" ; then
     sudo apt-get -fy install zsh
 else
     brew install zsh

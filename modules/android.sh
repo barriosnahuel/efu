@@ -5,7 +5,7 @@ cd "${CURRENT_DIR}"
 
 log "Configuring Android development environment..." &&
 
-if [ "$(isUbuntu "$PLATFORM")" ]; then
+if isUbuntu "$PLATFORM" ; then
 
     logInfo "Adding repositories for Ubuntu Make..."
     sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make -y
@@ -79,7 +79,7 @@ postInstallationLog "ClassyShark"
 preInstallationLog "Pidcat Android Logcat decorator"
 # https://github.com/JakeWharton/pidcat
 
-if [ "$(isUbuntu "$PLATFORM")" ]; then
+if isUbuntu "$PLATFORM" ; then
     cd ~/Coding/tools/
     curl -H "Accept: application/vnd.github.v3.raw" \
          -LO https://api.github.com/repos/JakeWharton/pidcat/contents/pidcat.py

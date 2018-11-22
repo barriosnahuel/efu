@@ -5,7 +5,7 @@ cd "${CURRENT_DIR}"
 
 if ! command -v git >/dev/null; then
 
-    if [ "$(isUbuntu "$PLATFORM")" ]; then
+    if isUbuntu "$PLATFORM" ; then
         preInstallationLog "GIT"
         sudo apt-get -fy install git
         postInstallationLog "GIT"
