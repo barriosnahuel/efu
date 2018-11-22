@@ -5,7 +5,7 @@ cd "${CURRENT_DIR}"
 
 if ! command -v nvm >/dev/null; then
     preInstallationLog "NVM"
-    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.4/install.sh | bash
+    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
     postInstallationLog "NVM"
 else
     logAlreadyInstalled "NVM"
@@ -15,8 +15,7 @@ fi
 if ! command -v node >/dev/null; then
     preInstallationLog "NodeJS"
 
-    nvm install 6.11.3
-    nvm install 7.10.1
+    nvm install 10
 else
     logAlreadyInstalled "NodeJS"
 fi
