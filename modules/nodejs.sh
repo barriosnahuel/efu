@@ -5,7 +5,8 @@ cd "${CURRENT_DIR}" || (echo "Failed cding into EFU's execution directory, exiti
 
 if ! command -v nvm >/dev/null; then
     preInstallationLog "NVM"
-    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+    logInfo "Remember to add --no-use to your .zshrc as mentioned here: https://github.com/creationix/nvm#install--update-script"
     postInstallationLog "NVM"
 else
     logAlreadyInstalled "NVM"
