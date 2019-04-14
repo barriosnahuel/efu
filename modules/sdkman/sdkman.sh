@@ -1,11 +1,13 @@
 #!/bin/bash
 # Created by Nahuel Barrios on 17/3/16.
 
-cd "${CURRENT_DIR}"
+cd "${CURRENT_DIR}" || (echo "Failed cding into EFU's execution directory, exiting..." && exit)
 
 if ! command -v sdk >/dev/null; then
     preInstallationLog "sdkman"
     export SDKMAN_DIR="$HOME/Coding/xDKs/sdkman" && curl -s get.sdkman.io | bash &&
+
+    # shellcheck source=/dev/null
     source "$HOME/Coding/xDKs/sdkman/bin/sdkman-init.sh"
     postInstallationLog "sdkman"
 else
@@ -14,34 +16,11 @@ fi
 
 logProgramVersion "sdkman" "$(sdk version)"
 
-log "Installing Gradle through sdkman"
-sdk install gradle &&
-
 cp modules/sdkman/gradle.properties ~/.gradle/ &&
-log "Gradle installed and configured successfully. Check ~/.gradle/gradle.properties to see current configuration"
-
-
-log "Installing Apache Ant through sdkman"
-sdk install ant
-
-
-log "Installing Kotlin through sdkman"
-sdk install kotlin
-
-
-log "Installing Groovy through sdkman"
-sdk install groovy
-
-
-log "Installing Grails through sdkman"
-sdk install grails
-
+log "Gradle properties created successfully. Check ~/.gradle/gradle.properties to see current configuration"
 
 # This is required in order to apply previous installs for current terminal session.
+# shellcheck source=/dev/null
 source "$HOME/Coding/xDKs/sdkman/bin/sdkman-init.sh"
 
 logProgramVersion "Gradle" "$(gradle -v)"
-logProgramVersion "Apache Ant" "$(ant -v)"
-logProgramVersion "Kotlin" "$(kotlin -version)"
-logProgramVersion "Groovy" "$(groovy -v)"
-logProgramVersion "Grails" "$(grails -v)"

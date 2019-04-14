@@ -1,12 +1,12 @@
 #!/bin/bash
 # Created by Nahuel Barrios on 25/3/16.
 
-cd "${CURRENT_DIR}"
+cd "${CURRENT_DIR}" || (echo "Failed cding into EFU's execution directory, exiting..." && exit)
 
 if ! command -v heroku >/dev/null; then
     preInstallationLog "Heroku toolbelt"
 
-    if [ "$(isUbuntu "$PLATFORM")" ]; then
+    if isUbuntu "$PLATFORM" ; then
         wget -qO- "https://toolbelt.heroku.com/install-ubuntu.sh" | sh
     else
         brew install heroku-toolbelt

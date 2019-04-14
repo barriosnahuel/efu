@@ -7,7 +7,7 @@ log "Functions loaded OK"
 
 
 log "Checking platform..."
-PLATFORM=$1
+PLATFORM="$1"
 
 
 if ! isUbuntu "$1" && ! isOsx "$1" && ! isLubuntu "$1"; then
@@ -22,6 +22,10 @@ if isOsx "$PLATFORM"; then
     logInfo "Download Mac Fans Control from: http://www.crystalidea.com/macs-fan-control"
 elif isUbuntu "$PLATFORM"; then
     log "Detected platform <Ubuntu>"
+
+    gnome-terminal --working-directory ~/Downloads --tab -- tail -f efu.log &&
+    gnome-terminal --working-directory ~/Downloads --tab -- tail -f summary.efu.log
+
 else
     log "Detected platform <Lubuntu>"
 fi
@@ -43,7 +47,7 @@ log "Coding directories tree created ok"
 
 
 log "Loading properties file..."
-cd "${CURRENT_DIR}"
+cd "${CURRENT_DIR}" || (echo "Failed cding into EFU's execution directory, exiting..." && exit)
 . ./properties.sh
 log "Properties file loaded ok"
 
@@ -54,7 +58,7 @@ log "Common software installed ok"
 
 
 log "Loading $PLATFORM custom installation file..."
-if [ "$isUbuntu" ]; then
+if isUbuntu "$PLATFORM" ; then
     . ./Ubuntu/core.sh
 else
     # This is to show hidden files in Finder (OS X)

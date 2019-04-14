@@ -1,13 +1,13 @@
 #!/bin/bash
 # Created by Nahuel Barrios on 24/3/16.
 
-cd "${CURRENT_DIR}"
+cd "${CURRENT_DIR}" || (echo "Failed cding into EFU's execution directory, exiting..." && exit)
 
 if ! command -v go >/dev/null; then
 
     preInstallationLog "Go language"
 
-    if [ "$(isUbuntu "$PLATFORM")" ]; then
+    if isUbuntu "$PLATFORM" ; then
 
         log "Adding repositories for Go language"
 

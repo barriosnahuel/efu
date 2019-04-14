@@ -1,10 +1,10 @@
 #!/bin/bash
 # Created by Nahuel Barrios on 24/3/16.
 
-cd "${CURRENT_DIR}"
+cd "${CURRENT_DIR}" || (echo "Failed cding into EFU's execution directory, exiting..." && exit)
 
 preInstallationLog "ZSH"
-if [ "$(isUbuntu "$PLATFORM")" ]; then
+if isUbuntu "$PLATFORM" ; then
     sudo apt-get -fy install zsh
 else
     brew install zsh
