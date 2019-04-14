@@ -8,7 +8,7 @@ if ! command -v mvn >/dev/null; then
 
     if isUbuntu "$PLATFORM" ; then
 
-        cd ~/Coding/xDKs/
+        cd ~/Coding/xDKs/ || (echo "Failed cding into xDKs directory, exiting..." && exit)
         downloadAndUncompress "Apache Maven" "http://mirrors.nxnethosting.com/apache/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.zip" &&
 
         # shellcheck disable=SC2016

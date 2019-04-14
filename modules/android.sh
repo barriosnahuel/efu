@@ -69,7 +69,7 @@ preInstallationLog "ClassyShark"
 
 cd ~/Coding/tools/ || (echo "Failed cding into coding tools directory, exiting..." && exit)
 
-mkdir classyshark &&
+mkdir classyshark || (echo "Failed creating into classyshark directory, exiting..." && exit)
 cd classyshark || (echo "Failed cding into classyshark directory, exiting..." && exit)
 downloadAssetFromGitHub "$(getGitHubFirstAssetFromLatestRelease "google/android-classyshark")"
 addToShell "alias classyshark='java -jar ~/Coding/tools/classyshark/ClassyShark.jar &'"
