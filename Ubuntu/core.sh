@@ -32,10 +32,6 @@ if isUbuntu "$PLATFORM"; then
     . ./installAll-15.04.sh
 fi
 
-
-cd ~/Downloads/
-
-
 log "Cleaning up..." &&
 sudo apt-get -f install &&
 sudo apt-get autoremove &&

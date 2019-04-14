@@ -1,7 +1,7 @@
 #!/bin/bash
 # Created by Nahuel Barrios on 17/3/16.
 
-cd "${CURRENT_DIR}" || echo "Failed cding into EFU's execution directory, exiting..." && exit
+cd "${CURRENT_DIR}" || (echo "Failed cding into EFU's execution directory, exiting..." && exit)
 
 log "Configuring Android development environment..." &&
 
@@ -44,7 +44,7 @@ preInstallationLog "Android utilities"
 preInstallationLog "Dex 2 Jar"
 # https://github.com/pxb1988/dex2jar
 
-cd ~/Coding/tools/ || echo "Failed cding into coding tools directory, exiting..." && exit
+cd ~/Coding/tools/ || (echo "Failed cding into coding tools directory, exiting..." && exit)
 DEX2JAR_DOWNLOAD_URL=$(getGitHubFirstAssetFromLatestRelease "pxb1988/dex2jar")
 
 # Get file name from url.
@@ -54,7 +54,7 @@ downloadAssetFromGitHub "$DEX2JAR_DOWNLOAD_URL"
 uncompress "$FILE_NAME"
 
 DEX2JAR_DIRECTORY="dex2jar-$(getFileName "$(dirname "$DEX2JAR_DOWNLOAD_URL")")"
-cd "$DEX2JAR_DIRECTORY" || echo "Failed cding into dex2jar directory, exiting..." && exit
+cd "$DEX2JAR_DIRECTORY" || (echo "Failed cding into dex2jar directory, exiting..." && exit)
 chmod +x ./*
 addToShell "alias d2j='~/Coding/tools/$DEX2JAR_DIRECTORY/d2j-dex2jar.sh'"
 
@@ -67,9 +67,10 @@ postInstallationLog "Dex 2 Jar"
 preInstallationLog "ClassyShark"
 # https://github.com/google/android-classyshark/
 
-cd ~/Coding/tools/
-mkdir classyshark
-cd classyshark
+cd ~/Coding/tools/ || (echo "Failed cding into coding tools directory, exiting..." && exit)
+
+mkdir classyshark &&
+cd classyshark || (echo "Failed cding into classyshark directory, exiting..." && exit)
 downloadAssetFromGitHub "$(getGitHubFirstAssetFromLatestRelease "google/android-classyshark")"
 addToShell "alias classyshark='java -jar ~/Coding/tools/classyshark/ClassyShark.jar &'"
 logInfo "[Android Utilities]: 'classyshark' alias created."
@@ -80,7 +81,7 @@ preInstallationLog "Pidcat Android Logcat decorator"
 # https://github.com/JakeWharton/pidcat
 
 if isUbuntu "$PLATFORM" ; then
-    cd ~/Coding/tools/
+    cd ~/Coding/tools/ || (echo "Failed cding into coding tools directory, exiting..." && exit)
     curl -H "Accept: application/vnd.github.v3.raw" \
          -LO https://api.github.com/repos/JakeWharton/pidcat/contents/pidcat.py
     addToShell "alias pidcat='python ~/Coding/tools/pidcat.py'"
