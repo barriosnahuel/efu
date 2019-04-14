@@ -38,7 +38,6 @@ With a little of your interaction, EFU will:
   - GIT
   - Go language
   - [Google Drive command line client](https://github.com/odeke-em/drive)
-  - Gradle  
   - Google App Engine SDK
   - Heroku toolbelt
   - Maven  

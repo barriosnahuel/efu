@@ -22,5 +22,3 @@ log "Gradle properties created successfully. Check ~/.gradle/gradle.properties t
 # This is required in order to apply previous installs for current terminal session.
 # shellcheck source=/dev/null
 source "$HOME/Coding/xDKs/sdkman/bin/sdkman-init.sh"
-
-logProgramVersion "Gradle" "$(gradle -v)"
