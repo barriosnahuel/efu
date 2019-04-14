@@ -12,9 +12,7 @@ else
 
     log "Setting up Java environment variables..."
     addToShell "export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home"
-
-    # shellcheck disable=SC2016
-    addToShell 'export PATH=$JAVA_HOME/bin:$PATH'
+    addToShell "export PATH=\$JAVA_HOME/bin:\$PATH"
 fi
 
 logProgramVersion "Java" "$(java version)"
