@@ -10,7 +10,7 @@ script:
   - shellcheck createDirectoriesTree.sh
   - shellcheck -e SC1091 common.sh
   - shellcheck -e SC1091 install.sh
-  - shellcheck modules/sdkman/sdkman.sh
+  - shellcheck -e SC1090 modules/sdkman/sdkman.sh
   - shellcheck modules/android.sh
   - shellcheck modules/gimp.sh
   - shellcheck modules/git.sh
