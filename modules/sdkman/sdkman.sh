@@ -19,23 +19,6 @@ logProgramVersion "sdkman" "$(sdk version)"
 cp modules/sdkman/gradle.properties ~/.gradle/ &&
 log "Gradle properties created successfully. Check ~/.gradle/gradle.properties to see current configuration"
 
-
-log "Installing Apache Ant through sdkman"
-sdk install ant
-
-
-log "Installing Kotlin through sdkman"
-sdk install kotlin
-
-
-log "Installing Groovy through sdkman"
-sdk install groovy
-
-
-log "Installing Grails through sdkman"
-sdk install grails
-
-
 # This is required in order to apply previous installs for current terminal session.
 source "$HOME/Coding/xDKs/sdkman/bin/sdkman-init.sh"
 
