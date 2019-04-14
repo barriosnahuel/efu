@@ -132,11 +132,15 @@ uncompress(){
 addToShell() {
     if [ -f ~/.bashrc ]; then
         echo "$1" >> ~/.bashrc &&
+
+        # shellcheck source=/dev/null
         . ~/.bashrc
     fi
 
     if [ -f ~/.zshrc ]; then
         echo "$1" >> ~/.zshrc &&
+
+        # shellcheck source=/dev/null
         . ~/.zshrc
     fi
 }
