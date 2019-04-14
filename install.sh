@@ -47,7 +47,7 @@ log "Coding directories tree created ok"
 
 
 log "Loading properties file..."
-cd "${CURRENT_DIR}" || exit
+cd "${CURRENT_DIR}" || echo "Failed cding into EFU's execution directory, exiting..." && exit
 . ./properties.sh
 log "Properties file loaded ok"
 

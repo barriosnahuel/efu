@@ -1,7 +1,7 @@
 #!/bin/bash
 # Created by Nahuel Barrios on 15/09/17.
 
-cd "${CURRENT_DIR}"
+cd "${CURRENT_DIR}" || echo "Failed cding into EFU's execution directory, exiting..." && exit
 
 if ! command -v rvm >/dev/null; then
     preInstallationLog "RVM"
