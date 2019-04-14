@@ -47,7 +47,7 @@ log "Coding directories tree created ok"
 
 
 log "Loading properties file..."
-cd "${CURRENT_DIR}"
+cd "${CURRENT_DIR}" || exit
 . ./properties.sh
 log "Properties file loaded ok"
 
@@ -58,7 +58,7 @@ log "Common software installed ok"
 
 
 log "Loading $PLATFORM custom installation file..."
-if [ "$isUbuntu" ]; then
+if isUbuntu "$PLATFORM" ; then
     . ./Ubuntu/core.sh
 else
     # This is to show hidden files in Finder (OS X)

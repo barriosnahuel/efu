@@ -1,11 +1,13 @@
 #!/bin/bash
 # Created by Nahuel Barrios on 17/3/16.
 
-cd "${CURRENT_DIR}"
+cd "${CURRENT_DIR}" || exit
 
 if ! command -v sdk >/dev/null; then
     preInstallationLog "sdkman"
     export SDKMAN_DIR="$HOME/Coding/xDKs/sdkman" && curl -s get.sdkman.io | bash &&
+
+    # shellcheck source=/dev/null
     source "$HOME/Coding/xDKs/sdkman/bin/sdkman-init.sh"
     postInstallationLog "sdkman"
 else
