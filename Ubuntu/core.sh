@@ -29,6 +29,7 @@ sudo apt-get -fy install subdownloader gmountiso freemind soundconverter steam p
 
 
 if isUbuntu "$PLATFORM"; then
+    # shellcheck source=installAll-15.04.sh
     . ./installAll-15.04.sh
 fi
 
