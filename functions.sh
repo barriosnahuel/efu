@@ -1,5 +1,6 @@
 #!/bin/sh
 # Created by Nahuel Barrios on 15/04/15.
+# shellcheck disable=SC1090
 
 log() {
     echo "EFU ==> $1 $2 $3" &&

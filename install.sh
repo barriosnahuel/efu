@@ -1,5 +1,6 @@
 #!/bin/bash
 # Created by Nahuel Barrios on 17/3/16.
+# shellcheck disable=SC1091
 
 . ./functions.sh
 log "To see the installation log run the following in a new tab of your command line: tail –f ~/Downloads/efu.log"

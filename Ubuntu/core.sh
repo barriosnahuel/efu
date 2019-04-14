@@ -1,6 +1,6 @@
 #!/bin/bash
 # Created by Nahuel Barrios on 27/3/16.
-
+# shellcheck disable=SC1091
 
 preInstallationLog "Gnome System Tools"
 sudo apt-get -fy install gnome-system-tools

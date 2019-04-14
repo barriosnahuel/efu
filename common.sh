@@ -2,6 +2,7 @@
 ####
 # Created by Nahuel Barrios on 17/3/16.
 ####
+# shellcheck disable=SC1091
 
 if isOsx "$PLATFORM"; then
     . modules/homebrew.sh
