@@ -20,10 +20,7 @@ cp modules/sdkman/gradle.properties ~/.gradle/ &&
 log "Gradle properties created successfully. Check ~/.gradle/gradle.properties to see current configuration"
 
 # This is required in order to apply previous installs for current terminal session.
+# shellcheck source=/dev/null
 source "$HOME/Coding/xDKs/sdkman/bin/sdkman-init.sh"
 
 logProgramVersion "Gradle" "$(gradle -v)"
-logProgramVersion "Apache Ant" "$(ant -v)"
-logProgramVersion "Kotlin" "$(kotlin -version)"
-logProgramVersion "Groovy" "$(groovy -v)"
-logProgramVersion "Grails" "$(grails -v)"
