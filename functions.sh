@@ -130,17 +130,15 @@ uncompress(){
 }
 
 addToShell() {
+# shellcheck disable=SC1090
+
     if [ -f ~/.bashrc ]; then
         echo "$1" >> ~/.bashrc &&
-
-        # shellcheck disable=SC1090
         . ~/.bashrc
     fi
 
     if [ -f ~/.zshrc ]; then
         echo "$1" >> ~/.zshrc &&
-
-        # shellcheck source=/dev/null
         . ~/.zshrc
     fi
 }
