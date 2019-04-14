@@ -130,8 +130,6 @@ uncompress(){
 }
 
 addToShell() {
-# shellcheck disable=SC1090
-
     if [ -f ~/.bashrc ]; then
         echo "$1" >> ~/.bashrc &&
         . ~/.bashrc

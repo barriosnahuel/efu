@@ -6,10 +6,10 @@ before_script:
   - sudo apt-get install -qq shellcheck
 
 script:
-  - shellcheck functions.sh
+  - shellcheck -e sc1090 functions.sh
   - shellcheck createDirectoriesTree.sh
-  - shellcheck common.sh
-  - shellcheck install.sh
+  - shellcheck -e sc1091 common.sh
+  - shellcheck -e sc1091 install.sh
   - shellcheck modules/sdkman/sdkman.sh
   - shellcheck modules/android.sh
   - shellcheck modules/gimp.sh
@@ -18,7 +18,7 @@ script:
   - shellcheck modules/google-app-engine.sh
   - shellcheck modules/google-drive.sh
   - shellcheck modules/heroku.sh
-  - shellcheck modules/homebrew.sh
+  - shellcheck -e sc1091 modules/homebrew.sh
   - shellcheck modules/java.sh
   - shellcheck modules/maven.sh
   - shellcheck modules/mixxx.sh
@@ -27,7 +27,7 @@ script:
   - shellcheck modules/ssh.sh
   - shellcheck modules/sublime-text.sh
   - shellcheck modules/tomcat.sh
-  - shellcheck Ubuntu/core.sh
+  - shellcheck -e sc1091 Ubuntu/core.sh
   - shellcheck Ubuntu/installAll-15.04.sh
 
 notifications:
