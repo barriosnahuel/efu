@@ -133,7 +133,7 @@ addToShell() {
     if [ -f ~/.bashrc ]; then
         echo "$1" >> ~/.bashrc &&
 
-        # shellcheck source=/dev/null
+        # shellcheck disable=1090
         . ~/.bashrc
     fi
 
