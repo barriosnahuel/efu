@@ -1,9 +1,15 @@
 v2.2.0
 ## Added
 - History changelog to let user view the diff.
+- Fit POSIX standards in if statements.
+
+## Changed
+- Upgraded NVM and NodeJS.
+- README improvements.
 
 ## Fixed
 - Default theme not applied. #51
+- Terminal tabs not opened automatically. #79
 
 ## Removed
 - Many software which is specific for a kind of user, in favor of each user specific needs.
