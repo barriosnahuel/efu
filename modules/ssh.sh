@@ -1,7 +1,7 @@
 #!/bin/bash
 # Created by Nahuel Barrios on 25/3/16.
 
-cd "${CURRENT_DIR}"
+cd "${CURRENT_DIR}" || (echo "Failed cding into EFU's execution directory, exiting..." && exit)
 
 logInfo "Generating a new SSH Key for $USER_EMAIL" &&
 
@@ -15,7 +15,7 @@ eval "$(ssh-agent-s)" &&
 ssh-add ~/.ssh/id_rsa &&
 
 
-if [ "$(isUbuntu "$PLATFORM")" ]; then
+if isUbuntu "$PLATFORM" ; then
 
     if ! command -v xclip >/dev/null; then
         preInstallationLog "xclip"

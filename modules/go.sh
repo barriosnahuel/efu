@@ -1,13 +1,13 @@
 #!/bin/bash
 # Created by Nahuel Barrios on 24/3/16.
 
-cd "${CURRENT_DIR}"
+cd "${CURRENT_DIR}" || (echo "Failed cding into EFU's execution directory, exiting..." && exit)
 
 if ! command -v go >/dev/null; then
 
     preInstallationLog "Go language"
 
-    if [ "$(isUbuntu "$PLATFORM")" ]; then
+    if isUbuntu "$PLATFORM" ; then
 
         log "Adding repositories for Go language"
 
@@ -18,11 +18,8 @@ if ! command -v go >/dev/null; then
         brew install go
     fi
 
-    # shellcheck disable=SC2016
-    addToShell 'export GOPATH=$HOME/Coding/xDKs/gopath'
-
-    # shellcheck disable=SC2016
-    addToShell 'export PATH=/usr/local/go/bin:$GOPATH/bin:$PATH'
+    addToShell "export GOPATH=\$HOME/Coding/xDKs/gopath"
+    addToShell "export PATH=/usr/local/go/bin:\$GOPATH/bin:$PATH"
 
     postInstallationLog "Go language"
 else

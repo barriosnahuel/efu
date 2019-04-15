@@ -1,11 +1,11 @@
 #!/bin/bash
 # Created by Nahuel Barrios on 17/3/16.
 
-cd "${CURRENT_DIR}"
+cd "${CURRENT_DIR}" || (echo "Failed cding into EFU's execution directory, exiting..." && exit)
 
 if ! command -v git >/dev/null; then
 
-    if [ "$(isUbuntu "$PLATFORM")" ]; then
+    if isUbuntu "$PLATFORM" ; then
         preInstallationLog "GIT"
         sudo apt-get -fy install git
         postInstallationLog "GIT"

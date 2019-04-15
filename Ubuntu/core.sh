@@ -1,6 +1,6 @@
 #!/bin/bash
 # Created by Nahuel Barrios on 27/3/16.
-
+# shellcheck disable=SC1091
 
 preInstallationLog "Gnome System Tools"
 sudo apt-get -fy install gnome-system-tools
@@ -29,12 +29,9 @@ sudo apt-get -fy install subdownloader gmountiso freemind soundconverter steam p
 
 
 if isUbuntu "$PLATFORM"; then
+    # shellcheck source=installAll-15.04.sh
     . ./installAll-15.04.sh
 fi
-
-
-cd ~/Downloads/
-
 
 log "Cleaning up..." &&
 sudo apt-get -f install &&

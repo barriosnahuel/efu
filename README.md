@@ -16,25 +16,12 @@ EFU (Easy-Fast-Upgradable): The SH script you need to finish your Ubuntu/MacOS X
 2. `cd` into downloaded directory.
 3. Edit `properties.sh` with your custom info. Properties are required in order tu setup GIT.
 4. `sh install.sh [osx | ubuntu | lubuntu]`
+
+On OS X, also:
 5. In a new tab of your terminal: `tail –f ~/Downloads/efu.log`
 6. Once finished, take a look to: `~/Downloads/summary.efu.log`
 
-### Ubuntu PRO tip!
-If you want to run EFU on **Ubuntu**, you can just:
-
-1. Download [latest release](https://github.com/barriosnahuel/efu/releases) on your `~/Downloads` directory.
-2. `cd` into downloaded directory.
-3. Edit `properties.sh` with your custom info. Properties are required in order tu setup GIT.
-4. 
-```shell
-gnome-terminal --working-directory ~/Downloads/ \
---tab -e "sh install.sh ubuntu" \
---tab -e "tail -f efu.log" \
---tab -e "tail -f summary.efu.log" \
-; exit`
-```
-
-And this will open a new terminal with 3 tabs:
+So you will have 3 tabs:
 - One for the main script: `install.sh` ⇐ *You should check this tab because it will ask you for some things.*
 - One for `efu.log` output. ⇐ *Full script output.*
 - One for `summary.efu.log` output. ⇐ *Most cases this will be enough.*
@@ -47,17 +34,11 @@ With a little of your interaction, EFU will:
     - [ClassyShark](https://github.com/google/android-classyshark/)
     - [Dex2Jar](https://github.com/pxb1988/dex2jar)
     - [Pidcat](https://github.com/JakeWharton/pidcat)
-  - Ant
   - Gimp
   - GIT
   - Go language
   - [Google Drive command line client](https://github.com/odeke-em/drive)
-  - Gradle  
-  - Grails
-  - Groovy
-  - Google App Engine SDK
   - Heroku toolbelt
-  - Kotlin
   - Maven  
   - [Mixxx](http://www.mixxx.org/): DJ software
   - NodeJS 
