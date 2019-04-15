@@ -2,6 +2,7 @@ v2.2.0
 ## Added
 - History changelog to let user view the diff.
 - Fit POSIX standards in if statements.
+- jq JSON beautifer. #84
 
 ## Changed
 - Upgraded NVM and NodeJS.
