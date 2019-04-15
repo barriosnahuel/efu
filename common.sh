@@ -62,9 +62,6 @@ fi
 # shellcheck source=modules/gimp.sh
 . modules/gimp.sh
 
-# shellcheck source=modules/google-app-engine.sh
-. modules/google-app-engine.sh
-
 # Remember that heroku.sh requires Homebrew.sh.
 # shellcheck source=modules/heroku.sh
 . modules/heroku.sh

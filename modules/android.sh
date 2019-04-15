@@ -24,14 +24,9 @@ fi
 
 log "Configuring Android SDK environment variables..."
 
-# shellcheck disable=SC2016
-addToShell 'export ANDROID_HOME=$HOME/Coding/xDKs/android-sdk'
-
-# shellcheck disable=SC2016
-addToShell 'export PATH=$ANDROID_HOME/tools:$PATH'
-
-# shellcheck disable=SC2016
-addToShell 'export PATH=$ANDROID_HOME/platform-tools:$PATH'
+addToShell "export ANDROID_HOME=\$HOME/Coding/xDKs/android-sdk"
+addToShell "export PATH=\$ANDROID_HOME/tools:\$PATH"
+addToShell "export PATH=\$ANDROID_HOME/platform-tools:\$PATH"
 
 # This is to be able to use the hierarchy viewer
 addToShell "export ANDROID_HVPROTO=ddm"

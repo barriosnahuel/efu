@@ -8,8 +8,7 @@ preInstallationLog "Homebrew"
 if ! command -v brew >/dev/null; then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-    # shellcheck disable=SC2016
-    addToShell 'export PATH="/usr/local/bin:$PATH"'
+    addToShell "export PATH=/usr/local/bin:\$PATH"
 else
   logAlreadyInstalled "Homebrew"
 fi

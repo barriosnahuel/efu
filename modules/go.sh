@@ -18,11 +18,8 @@ if ! command -v go >/dev/null; then
         brew install go
     fi
 
-    # shellcheck disable=SC2016
-    addToShell 'export GOPATH=$HOME/Coding/xDKs/gopath'
-
-    # shellcheck disable=SC2016
-    addToShell 'export PATH=/usr/local/go/bin:$GOPATH/bin:$PATH'
+    addToShell "export GOPATH=\$HOME/Coding/xDKs/gopath"
+    addToShell "export PATH=/usr/local/go/bin:\$GOPATH/bin:$PATH"
 
     postInstallationLog "Go language"
 else
