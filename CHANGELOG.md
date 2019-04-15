@@ -13,6 +13,7 @@ v2.2.0
 
 ## Removed
 - Many software which is specific for a kind of user, in favor of each user specific needs.
+- 'command-not-found' plugin from Oh-My-Zsh #82.
 
 For more info, view changes through the [milestone](https://github.com/barriosnahuel/efu/issues?q=milestone%3Av2.2.0+is%3Aclosed)
 
