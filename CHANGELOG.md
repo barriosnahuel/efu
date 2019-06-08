@@ -8,13 +8,15 @@
 - Intellij IDEA and Android Studio download links changed to JetBrains toolbox.
 - Minor things in README to make it clearer.
 - Google Drive client for OS X now is only suggested via the official download page.
+- Tomcat to v9.0.20.
 
 ## Fixed
 - GIT properties now are configured ok. #66
 - Directories tree now is fully created.
 - `tail` command in README as well as logs.
 - Fallback when cding because currently it's not exiting right.
-- Not going back to EFU's execution directory after installing Android utilities. 
+- Not going back to EFU's execution directory after installing Android utilities.
+- Tomcat installation was breaking the script. 
 
 ## Removed
 - Deprecated links and graphics from README.
