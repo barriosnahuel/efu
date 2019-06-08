@@ -1,6 +1,7 @@
 # v2.3.0
 ## Added
 - Finder relaunch automatically.
+- Comments in Android related env vars in .bashrc and .zshrc.
 
 ## Changed
 - Order modules by priority at `common.sh`.

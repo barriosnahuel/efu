@@ -29,6 +29,7 @@ addToShell "export PATH=\$ANDROID_HOME/tools:\$PATH"
 addToShell "export PATH=\$ANDROID_HOME/platform-tools:\$PATH"
 
 # This is to be able to use the hierarchy viewer
+addToShell "# This is to be able to use the hierarchy viewer"
 addToShell "export ANDROID_HVPROTO=ddm"
 
 log "Successfully added Android environment variables."
