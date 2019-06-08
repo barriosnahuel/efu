@@ -3,24 +3,22 @@
 
 enterDirOrExit "${CURRENT_DIR}"
 
-if ! command -v drive >/dev/null; then
+if isUbuntu "$PLATFORM" ; then
+    if ! command -v drive >/dev/null; then
 
-    preInstallationLog "Google Drive client"
-
-    if isUbuntu "$PLATFORM" ; then
+        preInstallationLog "Google Drive client"
         log "Adding repositories for Google Drive client..."
 
         sudo add-apt-repository ppa:twodopeshaggy/drive
         sudo apt-get update
         sudo apt-get -fy install drive
+
+        postInstallationLog "Google Drive client"
     else
-        go get -u github.com/odeke-em/drive/cmd/drive
+        logAlreadyInstalled "Google Drive Client"
     fi
 
-    postInstallationLog "Google Drive client"
+    logProgramVersion "Google Drive client" "$(drive version)"
 else
-    logAlreadyInstalled "Google Drive Client"
+  logInfo "Remember to download the Google Drive client from: https://www.google.com/drive/download/"
 fi
-
-logInfo "See https://github.com/odeke-em/drive#usage to mount your Google Drive directory on your local filesystem"
-logProgramVersion "Google Drive client" "$(drive version)"

@@ -32,7 +32,6 @@ With a little of your interaction, EFU will:
   - Gimp
   - GIT
   - Go language
-  - [Google Drive command line client](https://github.com/odeke-em/drive)
   - Heroku toolbelt
   - Maven  
   - [Mixxx](http://www.mixxx.org/): DJ software
@@ -44,6 +43,7 @@ With a little of your interaction, EFU will:
   - Homebrew (OS X only)
 - Install (and setup) many software (Ubuntu only):
   - Common packages to compress and uncompress common files
+  - Google Drive command line client
   - Dropbox
   - GParted with NTFS support
   - Mega sync client

@@ -7,6 +7,7 @@
 - Setup Finder to show hidden files at the beginning in favor of future errors.
 - Intellij IDEA and Android Studio download links changed to JetBrains toolbox.
 - Minor things in README to make it clearer.
+- Google Drive client for OS X now is only suggested via the official download page.
 
 ## Fixed
 - GIT properties now are configured ok. #66
