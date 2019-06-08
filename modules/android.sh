@@ -67,3 +67,5 @@ logInfo "[Android Utilities]: run 'pidcat your.application.package' to see an im
 postInstallationLog "Pidcat Android Logcat decorator"
 
 postInstallationLog "Android utilities"
+
+enterDirOrExit "${CURRENT_DIR}"

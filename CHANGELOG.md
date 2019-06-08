@@ -12,7 +12,8 @@
 - GIT properties now are configured ok. #66
 - Directories tree now is fully created.
 - `tail` command in README as well as logs.
-- Fallback when cding because currently it's not exiting right. 
+- Fallback when cding because currently it's not exiting right.
+- Not going back to EFU's execution directory after installing Android utilities. 
 
 ## Removed
 - Deprecated links and graphics from README.
