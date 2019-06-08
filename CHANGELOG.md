@@ -4,6 +4,7 @@
 
 ## Fixed
 - GIT properties now are configured ok. #66
+- Directories tree now is fully created.
 
 # v2.2.0
 ## Added
