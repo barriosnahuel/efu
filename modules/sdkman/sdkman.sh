@@ -2,7 +2,7 @@
 # Created by Nahuel Barrios on 17/3/16.
 # shellcheck disable=SC1090
 
-cd "${CURRENT_DIR}" || (echo "Failed cding into EFU's execution directory, exiting..." && exit)
+enterDirOrExit "${CURRENT_DIR}"
 
 if ! command -v sdk >/dev/null; then
     preInstallationLog "sdkman"

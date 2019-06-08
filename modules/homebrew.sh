@@ -2,7 +2,7 @@
 # Created by Nahuel Barrios on 18/3/16.
 # shellcheck disable=SC1091
 
-cd "${CURRENT_DIR}" || (echo "Failed cding into EFU's execution directory, exiting..." && exit)
+enterDirOrExit "${CURRENT_DIR}"
 
 preInstallationLog "Homebrew"
 if ! command -v brew >/dev/null; then

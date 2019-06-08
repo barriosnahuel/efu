@@ -11,10 +11,12 @@
 ## Fixed
 - GIT properties now are configured ok. #66
 - Directories tree now is fully created.
-- Fix `tail` command in README as well as logs.
+- `tail` command in README as well as logs.
+- Fallback when cding because currently it's not exiting right. 
 
 ## Removed
 - Deprecated links and graphics from README.
+- Dex2Jar Android utility in favor of user specific needs.
 
 # v2.2.0
 ## Added

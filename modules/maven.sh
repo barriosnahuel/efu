@@ -1,14 +1,14 @@
 #!/bin/bash
 # Created by Nahuel Barrios on 25/3/16.
 
-cd "${CURRENT_DIR}" || (echo "Failed cding into EFU's execution directory, exiting..." && exit)
+enterDirOrExit "${CURRENT_DIR}"
 
 if ! command -v mvn >/dev/null; then
     preInstallationLog "Apache Maven"
 
     if isUbuntu "$PLATFORM" ; then
 
-        cd ~/Coding/xDKs/ || (echo "Failed cding into xDKs directory, exiting..." && exit)
+        enterDirOrExit ~/Coding/xDKs/
         downloadAndUncompress "Apache Maven" "http://mirrors.nxnethosting.com/apache/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.zip" &&
 
         addToShell "export M2_HOME=\$HOME/Coding/xDKs/apache-maven-3.3.9"

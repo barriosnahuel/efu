@@ -1,7 +1,7 @@
 #!/bin/bash
 # Created by Nahuel Barrios on 24/3/16.
 
-cd "${CURRENT_DIR}" || (echo "Failed cding into EFU's execution directory, exiting..." && exit)
+enterDirOrExit "${CURRENT_DIR}"
 
 if ! command -v drive >/dev/null; then
 

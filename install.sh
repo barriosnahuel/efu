@@ -52,7 +52,7 @@ if isOsx "$PLATFORM" ; then
 fi
 
 log "Loading properties file..."
-cd "${CURRENT_DIR}" || (echo "Failed cding into EFU's execution directory, exiting..." && exit)
+enterDirOrExit "${CURRENT_DIR}"
 . ./properties.sh
 log "Properties file loaded ok"
 
