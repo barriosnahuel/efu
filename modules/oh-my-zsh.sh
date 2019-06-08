@@ -3,15 +3,22 @@
 
 enterDirOrExit "${CURRENT_DIR}"
 
-preInstallationLog "ZSH"
-if isUbuntu "$PLATFORM" ; then
-    sudo apt-get -fy install zsh
+if ! command -v zsh >/dev/null; then
+    preInstallationLog "ZSH"
+
+    if isUbuntu "$PLATFORM" ; then
+        sudo apt-get -fy install zsh
+    else
+        brew install zsh
+    fi
+
+    postInstallationLog "ZSH"
 else
-    brew install zsh
+    chsh -s "$(which zsh)"
+    logAlreadyInstalled "ZSH"
 fi
 
-chsh -s "$(which zsh)" &&
-postInstallationLog "ZSH"
+logProgramVersion "ZSH" "$(zsh --version)"
 
 # shellcheck disable=SC2016
 log 'Default shell changed to "zsh", to revert change just run: "chsh -s $(which bash)"'
