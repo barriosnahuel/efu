@@ -1,3 +1,7 @@
+# v2.3.0
+## Changed
+- Order modules by priority at `common.sh`.
+
 # v2.2.0
 ## Added
 - History changelog to let user view the diff.

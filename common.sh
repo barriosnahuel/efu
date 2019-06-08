@@ -26,19 +26,19 @@ if isLubuntu "$PLATFORM"; then
     return 0
 fi
 
-# Remember that jq.sh requires Homebrew.sh.
-# shellcheck source=modules/jq.sh
-. modules/jq.sh
-
-# Remember that oh-my-zsh.sh requires Homebrew.sh.
-# shellcheck source=modules/oh-my-zsh.sh
-. modules/oh-my-zsh.sh
-
 # shellcheck source=modules/git.sh
 . modules/git.sh
 
 # shellcheck source=modules/ssh.sh
 . modules/ssh.sh
+
+# Remember that oh-my-zsh.sh requires Homebrew.sh.
+# shellcheck source=modules/oh-my-zsh.sh
+. modules/oh-my-zsh.sh
+
+# Remember that jq.sh requires Homebrew.sh.
+# shellcheck source=modules/jq.sh
+. modules/jq.sh
 
 # shellcheck source=modules/nodejs.sh
 . modules/nodejs.sh
