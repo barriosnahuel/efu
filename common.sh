@@ -74,7 +74,7 @@ fi
 
 # sdkman at the end because SDKMAN_DIR environment variable must be at the end to work.
 # shellcheck source=modules/sdkman.sh
-. modules/sdkman/sdkman.sh
+. modules/sdkman.sh
 
 # Remember that maven.sh requires sdkman.sh.
 # shellcheck source=modules/maven.sh

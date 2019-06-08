@@ -25,6 +25,7 @@
 - Deprecated links and graphics from README.
 - Dex2Jar Android utility in favor of user specific needs.
 - Go language in favor of user's specific needs.
+- Global Gradle properties in favor of per project optimized settings.
 
 # v2.2.0
 ## Added

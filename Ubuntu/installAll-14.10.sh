@@ -167,8 +167,6 @@ mv gradle-2.2.1 ~/Coding/xDKs &&
 mv gradle-2.2.1-bin.zip ~/Coding/xDKs &&
 echo 'export GRADLE_HOME=$HOME/Coding/xDKs/gradle-2.2.1' >> ~/.bashrc &&
 echo 'export PATH=$GRADLE_HOME/bin:$PATH' >> ~/.bashrc &&
-echo "org.gradle.daemon=true" >> ~/.gradle/gradle.properties &&
-echo "org.gradle.parallel=true" >> ~/.gradle/gradle.properties &&
 echo "==> - EFU: Successfully added Gradle to path environment variable."
 
 echo "==> - EFU: Installing Intellij IDEA Ultimate Edition..." &&
