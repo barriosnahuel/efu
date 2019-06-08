@@ -14,7 +14,6 @@ script:
   - shellcheck modules/android.sh
   - shellcheck modules/gimp.sh
   - shellcheck modules/git.sh
-  - shellcheck modules/go.sh
   - shellcheck modules/google-drive.sh
   - shellcheck modules/heroku.sh
   - shellcheck modules/homebrew.sh

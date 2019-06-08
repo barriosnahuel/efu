@@ -31,7 +31,6 @@ With a little of your interaction, EFU will:
     - [Pidcat](https://github.com/JakeWharton/pidcat)
   - Gimp
   - GIT
-  - Go language
   - Heroku toolbelt
   - Maven  
   - [Mixxx](http://www.mixxx.org/): DJ software

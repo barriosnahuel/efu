@@ -52,10 +52,6 @@ fi
 # shellcheck source=modules/sublime-text.sh
 . modules/sublime-text.sh
 
-# Remember that go.sh requires Homebrew.sh.
-# shellcheck source=modules/go.sh
-. modules/go.sh
-
 # Remember that nodejs.sh requires go.sh.
 # shellcheck source=modules/google-drive.sh
 . modules/google-drive.sh
