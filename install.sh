@@ -3,7 +3,7 @@
 # shellcheck disable=SC1091
 
 . ./functions.sh
-log "To see the installation log run the following in a new tab of your command line: tail –f ~/Downloads/efu.log"
+log "To see the installation log run the following in a new tab of your command line: tail ~/Downloads/efu.log -f"
 log "Functions loaded OK"
 
 
@@ -31,9 +31,7 @@ else
     log "Detected platform <Lubuntu>"
 fi
 
-
-logInfo "Download latest JetBrains Intellij IDEA EAP from: https://confluence.jetbrains.com/display/IDEADEV/EAP"
-logInfo "Download latest Android Studio from: http://tools.android.com/download/studio/canary/latest"
+logInfo "Remember to download the JetBrains toolbox to use either Intellij IDEA, Android Studio or any other IDE. https://www.jetbrains.com/toolbox/app/"
 logInfo "Remember to download the following plugins for both IDEA/Android Studio: .gitignore; MultiMarkDown; IDETalk; WakaTime"
 logInfo "Download JDownloader2 from: http://jdownloader.org/download/index"
 
@@ -46,6 +44,12 @@ log "Creating coding directories tree"
 . ./createDirectoriesTree.sh
 log "Coding directories tree created ok"
 
+if isOsx "$PLATFORM" ; then
+    log "Setting up Finder app to show hidden files by default"
+    # This is to show hidden files in Finder (OS X)
+    defaults write com.apple.finder AppleShowAllFiles YES
+    killall Finder
+fi
 
 log "Loading properties file..."
 cd "${CURRENT_DIR}" || (echo "Failed cding into EFU's execution directory, exiting..." && exit)
@@ -58,12 +62,9 @@ log "Loading common software installation"
 log "Common software installed ok"
 
 
-log "Loading $PLATFORM custom installation file..."
 if isUbuntu "$PLATFORM" ; then
+    log "Loading $PLATFORM custom installation file..."
     . ./Ubuntu/core.sh
-else
-    # This is to show hidden files in Finder (OS X)
-    defaults write com.apple.finder AppleShowAllFiles YES
 fi
 
 

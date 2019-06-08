@@ -1,10 +1,20 @@
 # v2.3.0
+## Added
+- Finder relaunch automatically.
+
 ## Changed
 - Order modules by priority at `common.sh`.
+- Setup Finder to show hidden files at the beginning in favor of future errors.
+- Intellij IDEA and Android Studio download links changed to JetBrains toolbox.
+- Minor things in README to make it clearer.
 
 ## Fixed
 - GIT properties now are configured ok. #66
 - Directories tree now is fully created.
+- Fix `tail` command in README as well as logs.
+
+## Removed
+- Deprecated links and graphics from README.
 
 # v2.2.0
 ## Added
