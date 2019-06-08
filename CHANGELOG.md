@@ -16,7 +16,8 @@
 - `tail` command in README as well as logs.
 - Fallback when cding because currently it's not exiting right.
 - Not going back to EFU's execution directory after installing Android utilities.
-- Tomcat installation was breaking the script. 
+- Tomcat installation was breaking the script.
+- `java` command execution on OS X without having it installed.
 
 ## Removed
 - Deprecated links and graphics from README.
