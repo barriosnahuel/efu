@@ -2,6 +2,9 @@
 ## Changed
 - Order modules by priority at `common.sh`.
 
+## Fixed
+- GIT properties now are configured ok. #66
+
 # v2.2.0
 ## Added
 - History changelog to let user view the diff.

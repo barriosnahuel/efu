@@ -14,13 +14,14 @@ if ! command -v git >/dev/null; then
         xcode-select --install
         postInstallationLog "Mac OS X Command line tools"
     fi
-
-    git config --global user.name "$USER_FULL_NAME" &&
-    git config --global user.email "$USER_EMAIL" &&
-    git config --global push.default simple &&
-    log "GIT configured successfully."
 else
     logAlreadyInstalled "git"
 fi
+
+git config --global user.name "$USER_FULL_NAME" &&
+git config --global user.email "$USER_EMAIL" &&
+git config --global push.default matching &&
+git config --global core.autocrlf &&
+log "GIT configured successfully."
 
 logProgramVersion "GIT" "$(git version)"
