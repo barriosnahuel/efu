@@ -1,4 +1,33 @@
-v2.2.0
+# v2.3.0
+## Added
+- Finder relaunch automatically.
+- Comments in Android related env vars in .bashrc and .zshrc.
+
+## Changed
+- Order modules by priority at `common.sh`.
+- Setup Finder to show hidden files at the beginning in favor of future errors.
+- Intellij IDEA and Android Studio download links changed to JetBrains toolbox.
+- Minor things in README to make it clearer.
+- Google Drive client for OS X now is only suggested via the official download page.
+- Tomcat to v9.0.20.
+- Install ZSH only when isn't already installed.
+
+## Fixed
+- GIT properties now are configured ok. #66
+- Directories tree now is fully created.
+- `tail` command in README as well as logs.
+- Fallback when cding because currently it's not exiting right.
+- Not going back to EFU's execution directory after installing Android utilities.
+- Tomcat installation was breaking the script.
+- `java` command execution on OS X without having it installed.
+
+## Removed
+- Deprecated links and graphics from README.
+- Dex2Jar Android utility in favor of user specific needs.
+- Go language in favor of user's specific needs.
+- Global Gradle properties in favor of per project optimized settings.
+
+# v2.2.0
 ## Added
 - History changelog to let user view the diff.
 - Fit POSIX standards in if statements.

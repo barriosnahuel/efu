@@ -153,3 +153,10 @@ getGitHubFirstAssetFromLatestRelease(){
 downloadAssetFromGitHub(){
     curl -LOk "$1"
 }
+
+enterDirOrExit(){
+    if ! cd "$1"; then
+        echo "Failed cding into $1, exiting..."
+        exit 1
+    fi
+}

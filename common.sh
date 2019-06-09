@@ -26,19 +26,19 @@ if isLubuntu "$PLATFORM"; then
     return 0
 fi
 
-# Remember that jq.sh requires Homebrew.sh.
-# shellcheck source=modules/jq.sh
-. modules/jq.sh
-
-# Remember that oh-my-zsh.sh requires Homebrew.sh.
-# shellcheck source=modules/oh-my-zsh.sh
-. modules/oh-my-zsh.sh
-
 # shellcheck source=modules/git.sh
 . modules/git.sh
 
 # shellcheck source=modules/ssh.sh
 . modules/ssh.sh
+
+# Remember that oh-my-zsh.sh requires Homebrew.sh.
+# shellcheck source=modules/oh-my-zsh.sh
+. modules/oh-my-zsh.sh
+
+# Remember that jq.sh requires Homebrew.sh.
+# shellcheck source=modules/jq.sh
+. modules/jq.sh
 
 # shellcheck source=modules/nodejs.sh
 . modules/nodejs.sh
@@ -51,10 +51,6 @@ fi
 
 # shellcheck source=modules/sublime-text.sh
 . modules/sublime-text.sh
-
-# Remember that go.sh requires Homebrew.sh.
-# shellcheck source=modules/go.sh
-. modules/go.sh
 
 # Remember that nodejs.sh requires go.sh.
 # shellcheck source=modules/google-drive.sh
@@ -78,7 +74,7 @@ fi
 
 # sdkman at the end because SDKMAN_DIR environment variable must be at the end to work.
 # shellcheck source=modules/sdkman.sh
-. modules/sdkman/sdkman.sh
+. modules/sdkman.sh
 
 # Remember that maven.sh requires sdkman.sh.
 # shellcheck source=modules/maven.sh

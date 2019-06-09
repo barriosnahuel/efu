@@ -2,7 +2,7 @@
 # Created by Nahuel Barrios on 17/3/16.
 # shellcheck disable=SC1090
 
-cd "${CURRENT_DIR}" || (echo "Failed cding into EFU's execution directory, exiting..." && exit)
+enterDirOrExit "${CURRENT_DIR}"
 
 if ! command -v sdk >/dev/null; then
     preInstallationLog "sdkman"
@@ -16,9 +16,6 @@ else
 fi
 
 logProgramVersion "sdkman" "$(sdk version)"
-
-cp modules/sdkman/gradle.properties ~/.gradle/ &&
-log "Gradle properties created successfully. Check ~/.gradle/gradle.properties to see current configuration"
 
 # This is required in order to apply previous installs for current terminal session.
 source "$HOME/Coding/xDKs/sdkman/bin/sdkman-init.sh"

@@ -8,21 +8,16 @@ EFU (Easy-Fast-Upgradable): The SH script you need to finish your Ubuntu/MacOS X
 [![stable](https://img.shields.io/badge/stability-stable-green.svg)](https://nodejs.org/api/documentation.html#documentation_stability_index)
 [![Build Status](https://travis-ci.org/barriosnahuel/efu.svg?branch=master)](https://travis-ci.org/barriosnahuel/efu)
 
-## Issues: [![Stories ready to be worked on](https://badge.waffle.io/barriosnahuel/efu.png?label=ready&title=Ready)](https://waffle.io/barriosnahuel/efu) [![Stories in progress](https://badge.waffle.io/barriosnahuel/efu.png?label=in progress&title=In Progress)](https://waffle.io/barriosnahuel/efu)
-
-
 ## Use it
 1. Download [latest release](https://github.com/barriosnahuel/efu/releases).
 2. `cd` into downloaded directory.
 3. Edit `properties.sh` with your custom info. Properties are required in order tu setup GIT.
 4. `sh install.sh [osx | ubuntu | lubuntu]`
-
-On OS X, also:
-5. In a new tab of your terminal: `tail –f ~/Downloads/efu.log`
-6. Once finished, take a look to: `~/Downloads/summary.efu.log`
+5. *\[OS X only]* In a new tab of your terminal: `tail ~/Downloads/efu.log –f`
+6. *\[OS X only]* In a new tab of your terminal: `tail ~/Downloads/summary.efu.log -f`
 
 So you will have 3 tabs:
-- One for the main script: `install.sh` ⇐ *You should check this tab because it will ask you for some things.*
+- One for the main script you're running: `install.sh` ⇐ *You should check this tab because it will ask you for some things.*
 - One for `efu.log` output. ⇐ *Full script output.*
 - One for `summary.efu.log` output. ⇐ *Most cases this will be enough.*
 
@@ -36,8 +31,6 @@ With a little of your interaction, EFU will:
     - [Pidcat](https://github.com/JakeWharton/pidcat)
   - Gimp
   - GIT
-  - Go language
-  - [Google Drive command line client](https://github.com/odeke-em/drive)
   - Heroku toolbelt
   - Maven  
   - [Mixxx](http://www.mixxx.org/): DJ software
@@ -49,6 +42,7 @@ With a little of your interaction, EFU will:
   - Homebrew (OS X only)
 - Install (and setup) many software (Ubuntu only):
   - Common packages to compress and uncompress common files
+  - Google Drive command line client
   - Dropbox
   - GParted with NTFS support
   - Mega sync client
