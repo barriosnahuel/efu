@@ -155,10 +155,8 @@ downloadAssetFromGitHub(){
 }
 
 enterDirOrExit(){
-    cd "$1"
-
-    if [ $? != 0 ]; then
+    if ! cd "$1"; then
         echo "Failed cding into $1, exiting..."
-        exit $?
+        exit 1
     fi
 }
