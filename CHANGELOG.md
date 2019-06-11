@@ -11,6 +11,7 @@
 - Google Drive client for OS X now is only suggested via the official download page.
 - Tomcat to v9.0.20.
 - Install ZSH only when isn't already installed.
+- Java installed through sdkman.
 
 ## Fixed
 - GIT properties now are configured ok. #66
