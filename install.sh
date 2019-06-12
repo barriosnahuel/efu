@@ -2,7 +2,20 @@
 # Created by Nahuel Barrios on 17/3/16.
 # shellcheck disable=SC1091
 
+###
+# Clear previous log files
+##
+if [ -f ~/Downloads/efu.log ]; then
+    rm ~/Downloads/efu.log
+fi
+
+if [ -f ~/Downloads/summary.efu.log ]; then
+    rm ~/Downloads/summary.efu.log
+fi
+
+
 . ./functions.sh
+logSummary "Running EFU script at: $(date +%Y-%m-%d_%H-%M-%S)"
 logSummary "To see the installation log run the following in a new tab of your command line: tail ~/Downloads/efu.log -f"
 logInfo "Functions loaded OK"
 
