@@ -8,7 +8,8 @@ if ! command -v sdk >/dev/null; then
     preInstallationLog "sdkman"
     export SDKMAN_DIR="$HOME/Coding/xDKs/sdkman" && curl -s get.sdkman.io | bash &&
 
-    source "$HOME/Coding/xDKs/sdkman/bin/sdkman-init.sh"
+    # This is required in order to apply previous installs for current terminal session.
+    source "$SDKMAN_DIR/bin/sdkman-init.sh"
 
     postInstallationLog "sdkman"
 else
@@ -16,6 +17,3 @@ else
 fi
 
 logProgramVersion "sdkman" "$(sdk version)"
-
-# This is required in order to apply previous installs for current terminal session.
-source "$HOME/Coding/xDKs/sdkman/bin/sdkman-init.sh"
