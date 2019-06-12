@@ -31,6 +31,10 @@ postInstallationLog "Oh-My-ZSH"
 addToShell "# DEFAULT_USER env var is used to prevent showing the user@machine in some ZSH themes. i.e.: agnoster"
 addToShell "export DEFAULT_USER=$MACHINE_USER"
 
+logInfo "Adding custom GIT info to the terminal"
+cp modules/oh-my-zsh/custom-git.zsh ~/.oh-my-zsh/custom/ &&
+logSummary "Custom GIT info to the terminal added ok"
+
 sed -i -e 's/plugins=(git)/plugins=(git git-extras common-aliases dirhistory)/' ~/.zshrc &&
 logSummary "Added some plugins to Oh-My-ZSH: git, git-extras, common-aliases, dirhistory."
 
