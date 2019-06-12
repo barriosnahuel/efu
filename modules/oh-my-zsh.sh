@@ -28,6 +28,8 @@ preInstallationLog "Oh-My-ZSH"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 postInstallationLog "Oh-My-ZSH"
 
+addToShell "# DEFAULT_USER env var is used to prevent showing the user@machine in some ZSH themes. i.e.: agnoster"
+addToShell "export DEFAULT_USER=$MACHINE_USER"
 
 sed -i -e 's/plugins=(git)/plugins=(git git-extras common-aliases dirhistory)/' ~/.zshrc &&
 logSummary "Added some plugins to Oh-My-ZSH: git, git-extras, common-aliases, dirhistory."

@@ -11,7 +11,7 @@ EFU (Easy-Fast-Upgradable): The SH script you need to finish your Ubuntu/MacOS X
 ## Use it
 1. Download [latest release](https://github.com/barriosnahuel/efu/releases).
 2. `cd` into downloaded directory.
-3. Edit `properties.sh` with your custom info. Properties are required in order tu setup GIT.
+3. Edit `properties.sh` with your custom info.
 4. `sh install.sh [osx | ubuntu | lubuntu]`
 5. *\[OS X only]* In a new tab of your terminal: `tail ~/Downloads/efu.log –f`
 6. *\[OS X only]* In a new tab of your terminal: `tail ~/Downloads/summary.efu.log -f`
