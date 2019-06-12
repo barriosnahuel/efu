@@ -4,12 +4,16 @@
 enterDirOrExit "${CURRENT_DIR}"
 
 if isUbuntu "$PLATFORM" ; then
-    log "Adding repositories for Sublime Text 3..."
+    preInstallationLog "Sublime Text 3"
+
+    logInfo "Adding repositories for Sublime Text 3..."
     sudo add-apt-repository ppa:webupd8team/sublime-text-3 -y
     sudo apt-get update
 
-    log "Instaling Sublime Text 3"
+    logInfo "Instaling Sublime Text 3"
     sudo apt-get -fy install sublime-text-installer
+
+    postInstallationLog "Sublime Text 3"
 else
-    logInfo "Download Sublime Text from: https://www.sublimetext.com/3"
+    logSummary "Download Sublime Text from: https://www.sublimetext.com/3"
 fi

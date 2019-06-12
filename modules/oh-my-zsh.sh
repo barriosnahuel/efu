@@ -21,7 +21,7 @@ fi
 logProgramVersion "ZSH" "$(zsh --version)"
 
 # shellcheck disable=SC2016
-log 'Default shell changed to "zsh", to revert change just run: "chsh -s $(which bash)"'
+logSummary "Default shell changed to 'zsh', to revert change just run: 'chsh -s \$(which bash)'"
 
 
 preInstallationLog "Oh-My-ZSH"
@@ -30,7 +30,7 @@ postInstallationLog "Oh-My-ZSH"
 
 
 sed -i -e 's/plugins=(git)/plugins=(git git-extras common-aliases dirhistory)/' ~/.zshrc &&
-logInfo "Added some plugins to Oh-My-ZSH: git, git-extras, common-aliases, dirhistory."
+logSummary "Added some plugins to Oh-My-ZSH: git, git-extras, common-aliases, dirhistory."
 
 sed -i -e 's/ZSH_THEME="robbyrussell"/ZSH_THEME="avit"/' ~/.zshrc &&
-logInfo 'ZSH Theme changed to "avit", to view more themes go to: https://github.com/robbyrussell/oh-my-zsh/wiki/themes'
+logSummary 'ZSH Theme changed to "avit", to view more themes go to: https://github.com/robbyrussell/oh-my-zsh/wiki/themes'

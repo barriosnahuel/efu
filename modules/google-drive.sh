@@ -7,7 +7,7 @@ if isUbuntu "$PLATFORM" ; then
     if ! command -v drive >/dev/null; then
 
         preInstallationLog "Google Drive client"
-        log "Adding repositories for Google Drive client..."
+        logInfo "Adding repositories for Google Drive client..."
 
         sudo add-apt-repository ppa:twodopeshaggy/drive
         sudo apt-get update
@@ -20,5 +20,5 @@ if isUbuntu "$PLATFORM" ; then
 
     logProgramVersion "Google Drive client" "$(drive version)"
 else
-  logInfo "Remember to download the Google Drive client from: https://www.google.com/drive/download/"
+  logSummary "Remember to download the Google Drive client from: https://www.google.com/drive/download/"
 fi

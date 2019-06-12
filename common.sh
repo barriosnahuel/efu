@@ -7,19 +7,19 @@
 if isOsx "$PLATFORM"; then
     . modules/homebrew.sh
 else
-    log "Installing gdebi package manager..."
+    logInfo "Installing gdebi package manager..."
     sudo apt-get -fy install gdebi
 
-    log "Updating software sources. Required after adding ppa repositories."
+    logInfo "Updating software sources. Required after adding ppa repositories."
     sudo apt-get update
 
-    log "Fixing current packages..."
+    logInfo "Fixing current packages..."
     sudo apt-get -f install
 
-    log "Removing packages that are not necessary to prevent conflicts..."
+    logInfo "Removing packages that are not necessary to prevent conflicts..."
     sudo apt-get autoremove
 
-    log "#### Software repositories and packages updated ok ####"
+    logSummary "Software repositories and packages updated ok"
 fi
 
 if isLubuntu "$PLATFORM"; then
