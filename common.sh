@@ -19,7 +19,7 @@ else
     logInfo "Removing packages that are not necessary to prevent conflicts..."
     sudo apt-get autoremove
 
-    logInfo "#### Software repositories and packages updated ok ####"
+    logSummary "Software repositories and packages updated ok"
 fi
 
 if isLubuntu "$PLATFORM"; then

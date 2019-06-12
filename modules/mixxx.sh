@@ -14,5 +14,5 @@ if isUbuntu "$PLATFORM" ; then
 
     postInstallationLog "Mixxx DJ Software"
 else
-    logInfo "Download Mixxx from: http://www.mixxx.org/download/"
+    logSummary "Download Mixxx from: http://www.mixxx.org/download/"
 fi

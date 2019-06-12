@@ -38,7 +38,7 @@ preInstallationLog(){
 }
 
 postInstallationLog(){
-    logInfo "$1 installed ok"
+    logSummary "$1 installed ok"
 }
 
 isUbuntu(){

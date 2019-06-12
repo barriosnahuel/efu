@@ -26,6 +26,7 @@ sudo apt-get -fy install rhythmbox rhythmbox-plugin-rhythmweb rhythmbox-plugin-e
 
 preInstallationLog "Subdownloader, GMountISO, Freemind (a mind maps editor), Sound Converter, Steam client (will update on first run) and PlayOnLinux"
 sudo apt-get -fy install subdownloader gmountiso freemind soundconverter steam playonlinux
+postInstallationLog "Subdownloader, GMountISO, Freemind (a mind maps editor), Sound Converter, Steam client (will update on first run) and PlayOnLinux"
 
 
 if isUbuntu "$PLATFORM"; then

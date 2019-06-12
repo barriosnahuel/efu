@@ -13,12 +13,12 @@ if ! command -v heroku >/dev/null; then
     fi
     postInstallationLog "Heroku toolbelt"
 
-    logInfo "Please login to Heroku with your account."
+    logWarn "Please login to Heroku with your account."
     heroku login &&
-    logInfo "Adding existent public keys to Heroku to be able to run commands..." &&
+    logWarn "Adding existent public keys to Heroku to be able to run commands..." &&
     heroku keys:add
 
-    logInfo "Heroku account configured successfully."
+    logSummary "Heroku account configured successfully."
 else
     logAlreadyInstalled "Heroku toolbelt"
 fi

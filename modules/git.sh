@@ -15,13 +15,13 @@ if ! command -v git >/dev/null; then
         postInstallationLog "Mac OS X Command line tools"
     fi
 else
-    logAlreadyInstalled "git"
+    logAlreadyInstalled "GIT"
 fi
 
 git config --global user.name "$USER_FULL_NAME" &&
 git config --global user.email "$USER_EMAIL" &&
 git config --global push.default matching &&
 git config --global core.autocrlf &&
-logInfo "GIT configured successfully."
+logSummary "GIT configured successfully."
 
 logProgramVersion "GIT" "$(git version)"

@@ -10,5 +10,5 @@ if isUbuntu "$PLATFORM" ; then
     postInstallationLog "Gimp (with some plugins)"
 
 else
-    logInfo "Download Gimp from: https://www.gimp.org/downloads/"
+    logSummary "Download Gimp from: https://www.gimp.org/downloads/"
 fi

@@ -19,7 +19,7 @@ if isUbuntu "$PLATFORM" ; then
     addToShell "# This is to stop getting warning messages about iBus daemon. Taken from https://youtrack.jetbrains.com/issue/IDEA-78860"
     addToShell "export IBUS_ENABLE_SYNC_MODE=1"
 else
-    logInfo "Download Android File Transfer from: https://www.android.com/filetransfer"
+    logSummary "Download Android File Transfer from: https://www.android.com/filetransfer"
 fi
 
 logInfo "Configuring Android SDK environment variables..."
@@ -32,15 +32,15 @@ addToShell "export PATH=\$ANDROID_HOME/platform-tools:\$PATH"
 addToShell "# This is to be able to use the hierarchy viewer"
 addToShell "export ANDROID_HVPROTO=ddm"
 
-logInfo "Successfully added Android environment variables."
+logSummary "Successfully added Android environment variables."
 
 
-preInstallationLog "Android utilities"
+logSummary "Remember you can use Dex2Jar tool: https://github.com/pxb1988/dex2jar"
 
-logInfo "Remember you can use Dex2Jar tool: https://github.com/pxb1988/dex2jar"
-
-preInstallationLog "ClassyShark"
+###
 # https://github.com/google/android-classyshark/
+##
+preInstallationLog "ClassyShark"
 
 enterDirOrExit ~/Coding/tools/
 
@@ -48,12 +48,14 @@ mkdir classyshark
 enterDirOrExit classyshark
 downloadAssetFromGitHub "$(getGitHubFirstAssetFromLatestRelease "google/android-classyshark")"
 addToShell "alias classyshark='java -jar ~/Coding/tools/classyshark/ClassyShark.jar &'"
-logInfo "[Android Utilities]: 'classyshark' alias created."
+logSummary "'classyshark' alias created ok"
 postInstallationLog "ClassyShark"
 
 
-preInstallationLog "Pidcat Android Logcat decorator"
+###
 # https://github.com/JakeWharton/pidcat
+##
+preInstallationLog "Pidcat Android Logcat decorator"
 
 if isUbuntu "$PLATFORM" ; then
     enterDirOrExit ~/Coding/tools/
@@ -64,9 +66,7 @@ else
     brew install pidcat
 fi
 
-logInfo "[Android Utilities]: run 'pidcat your.application.package' to see an improved logcat. More info at https://github.com/JakeWharton/pidcat"
 postInstallationLog "Pidcat Android Logcat decorator"
-
-postInstallationLog "Android utilities"
+logSummary "Run 'pidcat your.application.package' to see an improved logcat. More info at https://github.com/JakeWharton/pidcat"
 
 enterDirOrExit "${CURRENT_DIR}"

@@ -20,5 +20,5 @@ if isUbuntu "$PLATFORM" ; then
 
     logProgramVersion "Google Drive client" "$(drive version)"
 else
-  logInfo "Remember to download the Google Drive client from: https://www.google.com/drive/download/"
+  logSummary "Remember to download the Google Drive client from: https://www.google.com/drive/download/"
 fi

@@ -16,6 +16,6 @@ enterDirOrExit ~/Coding/servers/"$TOMCAT_DIRECTORY"/bin
 chmod +x catalina.sh &&
 
 postInstallationLog "Apache Tomcat"
-logInfo "Apache Tomcat configured successfully. Now you can run: 'sh startup.sh' and 'sh shutdown.sh'"
+logSummary "Now you can run: 'sh startup.sh' and 'sh shutdown.sh' to start/stop Apache Tomcat."
 
 enterDirOrExit "${CURRENT_DIR}"
