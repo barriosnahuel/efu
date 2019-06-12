@@ -1,7 +1,7 @@
 #!/bin/bash
 # Created by Nahuel Barrios on 25/3/16.
 
-cd "${CURRENT_DIR}" || (echo "Failed cding into EFU's execution directory, exiting..." && exit)
+enterDirOrExit "${CURRENT_DIR}"
 
 if ! command -v heroku >/dev/null; then
     preInstallationLog "Heroku toolbelt"
@@ -13,12 +13,12 @@ if ! command -v heroku >/dev/null; then
     fi
     postInstallationLog "Heroku toolbelt"
 
-    log "Please login to Heroku with your account."
+    logWarn "Please login to Heroku with your account."
     heroku login &&
-    log "Adding existent public keys to Heroku to be able to run commands..." &&
+    logWarn "Adding existent public keys to Heroku to be able to run commands..." &&
     heroku keys:add
 
-    log "Heroku account configured successfully."
+    logSummary "Heroku account configured successfully."
 else
     logAlreadyInstalled "Heroku toolbelt"
 fi

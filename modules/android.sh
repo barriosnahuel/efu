@@ -1,9 +1,9 @@
 #!/bin/bash
 # Created by Nahuel Barrios on 17/3/16.
 
-cd "${CURRENT_DIR}" || (echo "Failed cding into EFU's execution directory, exiting..." && exit)
+enterDirOrExit "${CURRENT_DIR}"
 
-log "Configuring Android development environment..." &&
+logInfo "Configuring Android development environment..." &&
 
 if isUbuntu "$PLATFORM" ; then
 
@@ -13,77 +13,60 @@ if isUbuntu "$PLATFORM" ; then
 
     sudo apt-get -fy install ubuntu-make &&
     umake android &&
-    log "Android SDK installed successfully"
+    logInfo "Android SDK installed successfully"
 
     # This is to stop getting warning messages about iBus daemon. Taken from https://youtrack.jetbrains.com/issue/IDEA-78860
     addToShell "# This is to stop getting warning messages about iBus daemon. Taken from https://youtrack.jetbrains.com/issue/IDEA-78860"
     addToShell "export IBUS_ENABLE_SYNC_MODE=1"
 else
-    logInfo "Download Android File Transfer from: https://www.android.com/filetransfer"
+    logSummary "Download Android File Transfer from: https://www.android.com/filetransfer"
 fi
 
-log "Configuring Android SDK environment variables..."
+logInfo "Configuring Android SDK environment variables..."
 
 addToShell "export ANDROID_HOME=\$HOME/Coding/xDKs/android-sdk"
 addToShell "export PATH=\$ANDROID_HOME/tools:\$PATH"
 addToShell "export PATH=\$ANDROID_HOME/platform-tools:\$PATH"
 
 # This is to be able to use the hierarchy viewer
+addToShell "# This is to be able to use the hierarchy viewer"
 addToShell "export ANDROID_HVPROTO=ddm"
 
-log "Successfully added Android environment variables."
+logSummary "Successfully added Android environment variables."
 
 
-preInstallationLog "Android utilities"
+logSummary "Remember you can use Dex2Jar tool: https://github.com/pxb1988/dex2jar"
 
-preInstallationLog "Dex 2 Jar"
-# https://github.com/pxb1988/dex2jar
-
-cd ~/Coding/tools/ || (echo "Failed cding into coding tools directory, exiting..." && exit)
-DEX2JAR_DOWNLOAD_URL=$(getGitHubFirstAssetFromLatestRelease "pxb1988/dex2jar")
-
-# Get file name from url.
-FILE_NAME=$(getFileName "$DEX2JAR_DOWNLOAD_URL") &&
-
-downloadAssetFromGitHub "$DEX2JAR_DOWNLOAD_URL"
-uncompress "$FILE_NAME"
-
-DEX2JAR_DIRECTORY="dex2jar-$(getFileName "$(dirname "$DEX2JAR_DOWNLOAD_URL")")"
-cd "$DEX2JAR_DIRECTORY" || (echo "Failed cding into dex2jar directory, exiting..." && exit)
-chmod +x ./*
-addToShell "alias d2j='~/Coding/tools/$DEX2JAR_DIRECTORY/d2j-dex2jar.sh'"
-
-echo "Usage: d2j-dex2jar.sh -f path/to/your-apk.apk" >> USAGE.txt
-echo "More info at: https://github.com/pxb1988/dex2jar" >> USAGE.txt
-logInfo "[Android Utilities]: 'd2j' alias created."
-postInstallationLog "Dex 2 Jar"
-
-
-preInstallationLog "ClassyShark"
+###
 # https://github.com/google/android-classyshark/
+##
+preInstallationLog "ClassyShark"
 
-cd ~/Coding/tools/ || (echo "Failed cding into coding tools directory, exiting..." && exit)
+enterDirOrExit ~/Coding/tools/
 
-mkdir classyshark || (echo "Failed creating into classyshark directory, exiting..." && exit)
-cd classyshark || (echo "Failed cding into classyshark directory, exiting..." && exit)
+mkdir classyshark
+enterDirOrExit classyshark
 downloadAssetFromGitHub "$(getGitHubFirstAssetFromLatestRelease "google/android-classyshark")"
 addToShell "alias classyshark='java -jar ~/Coding/tools/classyshark/ClassyShark.jar &'"
-logInfo "[Android Utilities]: 'classyshark' alias created."
+logSummary "'classyshark' alias created ok"
 postInstallationLog "ClassyShark"
 
 
-preInstallationLog "Pidcat Android Logcat decorator"
+###
 # https://github.com/JakeWharton/pidcat
+##
+preInstallationLog "Pidcat Android Logcat decorator"
 
 if isUbuntu "$PLATFORM" ; then
-    cd ~/Coding/tools/ || (echo "Failed cding into coding tools directory, exiting..." && exit)
+    enterDirOrExit ~/Coding/tools/
     curl -H "Accept: application/vnd.github.v3.raw" \
          -LO https://api.github.com/repos/JakeWharton/pidcat/contents/pidcat.py
     addToShell "alias pidcat='python ~/Coding/tools/pidcat.py'"
 else
     brew install pidcat
 fi
-logInfo "[Android Utilities]: run 'pidcat your.application.package' to see an improved logcat. More info at https://github.com/JakeWharton/pidcat"
-postInstallationLog "Pidcat Android Logcat decorator"
 
-postInstallationLog "Android utilities"
+postInstallationLog "Pidcat Android Logcat decorator"
+logSummary "Run 'pidcat your.application.package' to see an improved logcat. More info at https://github.com/JakeWharton/pidcat"
+
+enterDirOrExit "${CURRENT_DIR}"

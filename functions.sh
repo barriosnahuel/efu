@@ -2,36 +2,43 @@
 # Created by Nahuel Barrios on 15/04/15.
 # shellcheck disable=SC1090
 
-log() {
-    echo "EFU ==> $1 $2 $3" &&
-    echo "EFU ==> $1 $2 $3" >> ~/Downloads/efu.log
+logError () {
+    echo "ERROR - EFU: $1 $2 $3"
+    echo "ERROR - EFU: $1 $2 $3" >> ~/Downloads/efu.log
+    echo "ERROR - EFU: $1 $2 $3" >> ~/Downloads/summary.efu.log
 }
 
-logError() {
-    echo "EFU ==> ERROR: $1 $2 $3" &&
-    echo "EFU ==> ERROR: $1 $2 $3" >> ~/Downloads/efu.log
+logWarn () {
+    echo "WARN  - EFU: $1 $2 $3"
+    echo "WARN  - EFU: $1 $2 $3" >> ~/Downloads/efu.log
+    echo "WARN  - EFU: $1 $2 $3" >> ~/Downloads/summary.efu.log
 }
 
 logInfo (){
-    log "$1 $2 $3"
-    echo "EFU ==> $1 $2 $3" >> ~/Downloads/summary.efu.log
+    echo "INFO  - EFU: $1 $2 $3"
+    echo "INFO  - EFU: $1 $2 $3" >> ~/Downloads/efu.log
+}
+
+logSummary (){
+    echo "INFO  - EFU: $1 $2 $3"
+    echo "INFO  - EFU: $1 $2 $3" >> ~/Downloads/summary.efu.log
 }
 
 logAlreadyInstalled (){
-    log "'$1' already installed. Skipping installation..."
+    logWarn "'$1' already installed. Skipping installation..."
 }
 
 logProgramVersion (){
-    log "$1 $2 $3"
-    echo "EFU ==> Installed $1 $2 $3" >> ~/Downloads/summary.efu.log
+    logInfo "$1" "$2" "$3"
+    logSummary "Installed $1 $2 $3" >> ~/Downloads/summary.efu.log
 }
 
 preInstallationLog(){
-    log "Installing $1..."
+    logInfo "Installing $1..."
 }
 
 postInstallationLog(){
-    log "$1 installed ok"
+    logSummary "$1 installed ok"
 }
 
 isUbuntu(){
@@ -118,7 +125,7 @@ downloadAndUncompress() {
 ##  Parameters:
 # 1. File name (without path).
 uncompress(){
-    log "Uncompressing $1"
+    logInfo "Uncompressing $1"
 
     # Use the file extension to use unzip or tar to uncompress the file.
     if [ "$(getFileExtension "$1")" = "zip" ]; then
@@ -127,7 +134,7 @@ uncompress(){
         tar -zxf "$1"
     fi
 
-    log "$1 uncompressed successfully."
+    logInfo "$1 uncompressed successfully."
 }
 
 addToShell() {
@@ -152,4 +159,11 @@ getGitHubFirstAssetFromLatestRelease(){
 # 1. Url to the browser download url.
 downloadAssetFromGitHub(){
     curl -LOk "$1"
+}
+
+enterDirOrExit(){
+    if ! cd "$1"; then
+        echo "Failed cding into $1, exiting..."
+        exit 1
+    fi
 }

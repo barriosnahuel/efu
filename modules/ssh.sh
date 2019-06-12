@@ -1,9 +1,9 @@
 #!/bin/bash
 # Created by Nahuel Barrios on 25/3/16.
 
-cd "${CURRENT_DIR}" || (echo "Failed cding into EFU's execution directory, exiting..." && exit)
+enterDirOrExit "${CURRENT_DIR}"
 
-logInfo "Generating a new SSH Key for $USER_EMAIL" &&
+logWarn "Generating a new SSH Key for $USER_EMAIL" &&
 
 # Creates a new ssh key, using the provided email as a label
 ssh-keygen -t rsa -C "$USER_EMAIL" &&
@@ -14,6 +14,7 @@ eval "$(ssh-agent-s)" &&
 # Finally add the new key.
 ssh-add ~/.ssh/id_rsa &&
 
+logSummary "SSH key added for $USER_EMAIL"
 
 if isUbuntu "$PLATFORM" ; then
 
@@ -26,10 +27,10 @@ if isUbuntu "$PLATFORM" ; then
     fi
 
     xclip -sel clip < ~/.ssh/id_rsa.pub
-    logInfo "SSH Key copied to clipboard. If don't, just run: 'xclip -sel clip < ~/.ssh/id_rsa.pub'"
+    logSummary "SSH Key copied to clipboard. If don't, just run: 'xclip -sel clip < ~/.ssh/id_rsa.pub'"
 else
 
     # shellcheck disable=SC2002
     cat ~/.ssh/id_rsa.pub | pbcopy
-    logInfo "SSH Key copied to clipboard. If not, just run: 'cat ~/.ssh/id_rsa.pub | pbcopy'"
+    logSummary "SSH Key copied to clipboard. If not, just run: 'cat ~/.ssh/id_rsa.pub | pbcopy'"
 fi

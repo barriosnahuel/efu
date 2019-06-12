@@ -2,12 +2,25 @@
 # Created by Nahuel Barrios on 17/3/16.
 # shellcheck disable=SC1091
 
+###
+# Clear previous log files
+##
+if [ -f ~/Downloads/efu.log ]; then
+    rm ~/Downloads/efu.log
+fi
+
+if [ -f ~/Downloads/summary.efu.log ]; then
+    rm ~/Downloads/summary.efu.log
+fi
+
+
 . ./functions.sh
-log "To see the installation log run the following in a new tab of your command line: tail –f ~/Downloads/efu.log"
-log "Functions loaded OK"
+logSummary "Running EFU script at: $(date +%Y-%m-%d_%H-%M-%S)"
+logSummary "To see the installation log run the following in a new tab of your command line: tail ~/Downloads/efu.log -f"
+logInfo "Functions loaded OK"
 
 
-log "Checking platform..."
+logInfo "Checking platform..."
 PLATFORM="$1"
 
 
@@ -18,56 +31,58 @@ fi
 
 
 if isOsx "$PLATFORM"; then
-    log "Detected platform <OS X>"
-    logInfo "Download Transmission torrents client from: https://www.transmissionbt.com/download"
-    logInfo "Download Mac Fans Control from: http://www.crystalidea.com/macs-fan-control"
+    logSummary "Detected platform <OS X>"
+    logSummary "Download Transmission torrents client from: https://www.transmissionbt.com/download"
+    logSummary "Download Mac Fans Control from: http://www.crystalidea.com/macs-fan-control"
 elif isUbuntu "$PLATFORM"; then
-    log "Detected platform <Ubuntu>"
+    logSummary "Detected platform <Ubuntu>"
 
     gnome-terminal --working-directory ~/Downloads --tab -- tail -f efu.log &&
     gnome-terminal --working-directory ~/Downloads --tab -- tail -f summary.efu.log
 
 else
-    log "Detected platform <Lubuntu>"
+    logSummary "Detected platform <Lubuntu>"
 fi
 
-
-logInfo "Download latest JetBrains Intellij IDEA EAP from: https://confluence.jetbrains.com/display/IDEADEV/EAP"
-logInfo "Download latest Android Studio from: http://tools.android.com/download/studio/canary/latest"
-logInfo "Remember to download the following plugins for both IDEA/Android Studio: .gitignore; MultiMarkDown; IDETalk; WakaTime"
-logInfo "Download JDownloader2 from: http://jdownloader.org/download/index"
+logSummary "Remember to download the JetBrains toolbox to use either Intellij IDEA, Android Studio or any other IDE. https://www.jetbrains.com/toolbox/app/"
+logSummary "Remember to download the following plugins for both IDEA/Android Studio: .gitignore; MultiMarkDown; IDETalk; WakaTime"
+logSummary "Download JDownloader2 from: http://jdownloader.org/download/index"
 
 
 # Required because we're moving away from current directory when creating directories or uncompressing software =(
 CURRENT_DIR="$( cd "$( dirname "$0" )" && pwd )"
 
 
-log "Creating coding directories tree"
+logInfo "Creating coding directories tree"
 . ./createDirectoriesTree.sh
-log "Coding directories tree created ok"
+logSummary "Coding directories tree created ok"
 
-
-log "Loading properties file..."
-cd "${CURRENT_DIR}" || (echo "Failed cding into EFU's execution directory, exiting..." && exit)
-. ./properties.sh
-log "Properties file loaded ok"
-
-
-log "Loading common software installation"
-. ./common.sh
-log "Common software installed ok"
-
-
-log "Loading $PLATFORM custom installation file..."
-if isUbuntu "$PLATFORM" ; then
-    . ./Ubuntu/core.sh
-else
+if isOsx "$PLATFORM" ; then
+    logInfo "Setting up Finder app to show hidden files by default"
     # This is to show hidden files in Finder (OS X)
-    defaults write com.apple.finder AppleShowAllFiles YES
+    defaults write com.apple.finder AppleShowAllFiles YES &&
+    killall Finder &&
+    logSummary "Finder is showing hidden files now."
+fi
+
+logInfo "Loading properties file..."
+enterDirOrExit "${CURRENT_DIR}"
+. ./properties.sh
+logInfo "Properties file loaded ok"
+
+
+logInfo "Loading common software installation"
+. ./common.sh
+logInfo "Common software installed ok"
+
+
+if isUbuntu "$PLATFORM" ; then
+    logInfo "Loading $PLATFORM custom installation file..."
+    . ./Ubuntu/core.sh
 fi
 
 
 logInfo "#### Installation of your favorite software has finished ####"
 logInfo "Thanks for using me! -- Don't forget to fork me on Github: http://github.com/barriosnahuel/efu"
 logInfo "To see the installation log run the following on the command line: 'tail –f ~/Downloads/efu.log'"
-log "[Important] You should also take a look to: '~/Downloads/summary.efu.log'"
+logInfo "[Important] You should also take a look to: '~/Downloads/summary.efu.log'"

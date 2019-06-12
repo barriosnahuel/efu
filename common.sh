@@ -7,38 +7,38 @@
 if isOsx "$PLATFORM"; then
     . modules/homebrew.sh
 else
-    log "Installing gdebi package manager..."
+    logInfo "Installing gdebi package manager..."
     sudo apt-get -fy install gdebi
 
-    log "Updating software sources. Required after adding ppa repositories."
+    logInfo "Updating software sources. Required after adding ppa repositories."
     sudo apt-get update
 
-    log "Fixing current packages..."
+    logInfo "Fixing current packages..."
     sudo apt-get -f install
 
-    log "Removing packages that are not necessary to prevent conflicts..."
+    logInfo "Removing packages that are not necessary to prevent conflicts..."
     sudo apt-get autoremove
 
-    log "#### Software repositories and packages updated ok ####"
+    logSummary "Software repositories and packages updated ok"
 fi
 
 if isLubuntu "$PLATFORM"; then
     return 0
 fi
 
-# Remember that jq.sh requires Homebrew.sh.
-# shellcheck source=modules/jq.sh
-. modules/jq.sh
-
-# Remember that oh-my-zsh.sh requires Homebrew.sh.
-# shellcheck source=modules/oh-my-zsh.sh
-. modules/oh-my-zsh.sh
-
 # shellcheck source=modules/git.sh
 . modules/git.sh
 
 # shellcheck source=modules/ssh.sh
 . modules/ssh.sh
+
+# Remember that oh-my-zsh.sh requires Homebrew.sh.
+# shellcheck source=modules/oh-my-zsh.sh
+. modules/oh-my-zsh/oh-my-zsh.sh
+
+# Remember that jq.sh requires Homebrew.sh.
+# shellcheck source=modules/jq.sh
+. modules/jq.sh
 
 # shellcheck source=modules/nodejs.sh
 . modules/nodejs.sh
@@ -52,16 +52,9 @@ fi
 # shellcheck source=modules/sublime-text.sh
 . modules/sublime-text.sh
 
-# Remember that go.sh requires Homebrew.sh.
-# shellcheck source=modules/go.sh
-. modules/go.sh
-
 # Remember that nodejs.sh requires go.sh.
 # shellcheck source=modules/google-drive.sh
 . modules/google-drive.sh
-
-# shellcheck source=modules/java.sh
-. modules/java.sh
 
 # shellcheck source=modules/gimp.sh
 . modules/gimp.sh
@@ -78,7 +71,11 @@ fi
 
 # sdkman at the end because SDKMAN_DIR environment variable must be at the end to work.
 # shellcheck source=modules/sdkman.sh
-. modules/sdkman/sdkman.sh
+. modules/sdkman.sh
+
+# Remember that java.sh requires sdkman.sh.
+# shellcheck source=modules/java.sh
+. modules/java.sh
 
 # Remember that maven.sh requires sdkman.sh.
 # shellcheck source=modules/maven.sh

@@ -1,7 +1,7 @@
 #!/bin/bash
 # Created by Nahuel Barrios on 24/3/16.
 
-cd "${CURRENT_DIR}" || (echo "Failed cding into EFU's execution directory, exiting..." && exit)
+enterDirOrExit "${CURRENT_DIR}"
 
 if ! command -v nvm >/dev/null; then
     preInstallationLog "NVM"
@@ -35,7 +35,7 @@ logProgramVersion "NVM" "$(nvm version)"
 logProgramVersion "Node" "$(node -v)"
 logProgramVersion "NPM" "$(npm -v)"
 
-log "Installing (globally) via the NPM package manager: 'mocha', 'bower' and 'express-generator' modules"
+logInfo "Installing (globally) via the NPM package manager: 'mocha', 'bower' and 'express-generator' modules"
 npm install -g mocha bower express-generator
 
 logProgramVersion "Mocha" "$(mocha --version)"

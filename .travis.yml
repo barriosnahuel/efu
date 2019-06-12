@@ -10,11 +10,10 @@ script:
   - shellcheck createDirectoriesTree.sh
   - shellcheck common.sh
   - shellcheck install.sh
-  - shellcheck modules/sdkman/sdkman.sh
+  - shellcheck modules/sdkman.sh
   - shellcheck modules/android.sh
   - shellcheck modules/gimp.sh
   - shellcheck modules/git.sh
-  - shellcheck modules/go.sh
   - shellcheck modules/google-drive.sh
   - shellcheck modules/heroku.sh
   - shellcheck modules/homebrew.sh
@@ -22,7 +21,7 @@ script:
   - shellcheck modules/maven.sh
   - shellcheck modules/mixxx.sh
   - shellcheck modules/nodejs.sh
-  - shellcheck modules/oh-my-zsh.sh
+  - shellcheck modules/oh-my-zsh/oh-my-zsh.sh
   - shellcheck modules/ssh.sh
   - shellcheck modules/sublime-text.sh
   - shellcheck modules/tomcat.sh
