@@ -2,6 +2,7 @@
 ## Added
 - Finder relaunch automatically.
 - Comments in Android related env vars in .bashrc and .zshrc.
+- ERROR/WARN/INFO preffix for logs.
 
 ## Changed
 - Order modules by priority at `common.sh`.
@@ -12,6 +13,7 @@
 - Tomcat to v9.0.20.
 - Install ZSH only when isn't already installed.
 - Java installed through sdkman.
+- Log files are cleaned on each run.
 
 ## Fixed
 - GIT properties now are configured ok. #66
@@ -21,12 +23,14 @@
 - Not going back to EFU's execution directory after installing Android utilities.
 - Tomcat installation was breaking the script.
 - `java` command execution on OS X without having it installed.
+- Missing logs on summary.
 
 ## Removed
 - Deprecated links and graphics from README.
 - Dex2Jar Android utility in favor of user specific needs.
 - Go language in favor of user's specific needs.
 - Global Gradle properties in favor of per project optimized settings.
+- Duplicated logs.
 
 # v2.2.0
 ## Added
