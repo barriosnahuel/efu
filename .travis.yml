@@ -21,7 +21,7 @@ script:
   - shellcheck modules/maven.sh
   - shellcheck modules/mixxx.sh
   - shellcheck modules/nodejs.sh
-  - shellcheck modules/oh-my-zsh.sh
+  - shellcheck modules/oh-my-zsh/oh-my-zsh.sh
   - shellcheck modules/ssh.sh
   - shellcheck modules/sublime-text.sh
   - shellcheck modules/tomcat.sh

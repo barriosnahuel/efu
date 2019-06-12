@@ -4,6 +4,7 @@
 - Comments in Android related env vars in .bashrc and .zshrc.
 - ERROR/WARN/INFO preffix for logs.
 - `DEFAULT_USER` environment variable. #74
+- GIT remote to the oh-my-zsh info. #80
 
 ## Changed
 - Order modules by priority at `common.sh`.

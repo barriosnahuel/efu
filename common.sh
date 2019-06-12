@@ -34,7 +34,7 @@ fi
 
 # Remember that oh-my-zsh.sh requires Homebrew.sh.
 # shellcheck source=modules/oh-my-zsh.sh
-. modules/oh-my-zsh.sh
+. modules/oh-my-zsh/oh-my-zsh.sh
 
 # Remember that jq.sh requires Homebrew.sh.
 # shellcheck source=modules/jq.sh
