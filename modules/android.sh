@@ -3,7 +3,7 @@
 
 enterDirOrExit "${CURRENT_DIR}"
 
-log "Configuring Android development environment..." &&
+logInfo "Configuring Android development environment..." &&
 
 if isUbuntu "$PLATFORM" ; then
 
@@ -13,7 +13,7 @@ if isUbuntu "$PLATFORM" ; then
 
     sudo apt-get -fy install ubuntu-make &&
     umake android &&
-    log "Android SDK installed successfully"
+    logInfo "Android SDK installed successfully"
 
     # This is to stop getting warning messages about iBus daemon. Taken from https://youtrack.jetbrains.com/issue/IDEA-78860
     addToShell "# This is to stop getting warning messages about iBus daemon. Taken from https://youtrack.jetbrains.com/issue/IDEA-78860"
@@ -22,7 +22,7 @@ else
     logInfo "Download Android File Transfer from: https://www.android.com/filetransfer"
 fi
 
-log "Configuring Android SDK environment variables..."
+logInfo "Configuring Android SDK environment variables..."
 
 addToShell "export ANDROID_HOME=\$HOME/Coding/xDKs/android-sdk"
 addToShell "export PATH=\$ANDROID_HOME/tools:\$PATH"
@@ -32,7 +32,7 @@ addToShell "export PATH=\$ANDROID_HOME/platform-tools:\$PATH"
 addToShell "# This is to be able to use the hierarchy viewer"
 addToShell "export ANDROID_HVPROTO=ddm"
 
-log "Successfully added Android environment variables."
+logInfo "Successfully added Android environment variables."
 
 
 preInstallationLog "Android utilities"

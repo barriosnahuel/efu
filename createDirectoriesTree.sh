@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Created by Nahuel Barrios on 15/04/15. Contact me at: Barrios.Nahuel@gmail.com
 
-log "#### Creating directories tree ####"
+logInfo "#### Creating directories tree ####"
 
 cd ~/ &&
 mkdir .gradle

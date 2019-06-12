@@ -7,7 +7,7 @@ downloadAndInstall "GetDeb" http://archive.getdeb.net/install_deb/getdeb-reposit
 downloadAndInstall "PlayDeb" http://archive.getdeb.net/install_deb/playdeb_0.3-1~getdeb1_all.deb
 
 
-log "Installing Dropbox, MongoDB and WebP command line tools..."
+logInfo "Installing Dropbox, MongoDB and WebP command line tools..."
 sudo apt-get -fy install nautilus-dropbox mongodb curl webp
 
 

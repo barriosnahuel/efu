@@ -22,6 +22,6 @@ git config --global user.name "$USER_FULL_NAME" &&
 git config --global user.email "$USER_EMAIL" &&
 git config --global push.default matching &&
 git config --global core.autocrlf &&
-log "GIT configured successfully."
+logInfo "GIT configured successfully."
 
 logProgramVersion "GIT" "$(git version)"

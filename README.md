@@ -62,3 +62,7 @@ With a little of your interaction, EFU will:
 ## Contributing
 
 The repo uses [this branching model](http://nvie.com/posts/a-successful-git-branching-model/).
+
+### Testing
+
+Manually running tests from `test.sh` by: `sh test.sh`

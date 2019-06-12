@@ -35,7 +35,7 @@ logProgramVersion "NVM" "$(nvm version)"
 logProgramVersion "Node" "$(node -v)"
 logProgramVersion "NPM" "$(npm -v)"
 
-log "Installing (globally) via the NPM package manager: 'mocha', 'bower' and 'express-generator' modules"
+logInfo "Installing (globally) via the NPM package manager: 'mocha', 'bower' and 'express-generator' modules"
 npm install -g mocha bower express-generator
 
 logProgramVersion "Mocha" "$(mocha --version)"

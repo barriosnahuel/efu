@@ -13,14 +13,14 @@ else
   logAlreadyInstalled "Homebrew"
 fi
 
-log "Updating Homebrew formulas..."
+logInfo "Updating Homebrew formulas..."
 brew update
 
-log "Verifying the Homebrew installation..."
+logInfo "Verifying the Homebrew installation..."
 if brew doctor; then
   postInstallationLog "Homebrew"
 else
-  log "Your Homebrew installation reported some errors or warnings."
+  logInfo "Your Homebrew installation reported some errors or warnings."
   logError "Review the Homebrew messages to see if any action is needed."
 fi
 
