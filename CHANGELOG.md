@@ -2,6 +2,7 @@
 ## Added
 - GIT diff-so-fancy to use `git diff` the right way. #70
 - `~/Coding/tools` directory to PATH.
+- Link to Audacity download on OS X.
 
 ## Changed
 - Always install latest Ruby even if it's already installed.
