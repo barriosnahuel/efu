@@ -84,3 +84,7 @@ logSummary "Added ~/Coding/tools to PATH"
 # Remember that maven.sh requires sdkman.sh.
 # shellcheck source=modules/maven.sh
 . modules/maven.sh
+
+if isOsx "$PLATFORM"; then
+    logSummary "Remember to download Audacity for audio edition from: https://www.audacityteam.org/download/mac/"
+fi
