@@ -1,4 +1,8 @@
 # v2.4.0
+## Added
+- GIT diff-so-fancy to use `git diff` the right way. #70
+- `~/Coding/tools` directory to PATH.
+
 ## Changed
 - Always install latest Ruby even if it's already installed.
 
