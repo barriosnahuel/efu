@@ -26,6 +26,10 @@ if isLubuntu "$PLATFORM"; then
     return 0
 fi
 
+addToShell "# Add user custom directory to PATH. Needed at least for diff-so-fancy, and future tools"
+addToShell "export PATH=~/Coding/tools:\$PATH"
+logSummary "Added ~/Coding/tools to PATH"
+
 # shellcheck source=modules/git.sh
 . modules/git.sh
 
