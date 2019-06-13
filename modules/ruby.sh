@@ -16,17 +16,10 @@ else
     logAlreadyInstalled "RVM"
 fi
 
-
-if ! command -v ruby >/dev/null; then
-    preInstallationLog "Ruby"
-
-    rvm install ruby
-
-    postInstallationLog "Ruby"
-else
-    logAlreadyInstalled "Ruby"
-fi
-
-
 logProgramVersion "RVM" "$(rvm version)"
+
+
+# Always install latest ruby available even if it's already installed.
+rvm install ruby
+
 logProgramVersion "Ruby" "$(ruby -version)"

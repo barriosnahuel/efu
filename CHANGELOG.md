@@ -1,3 +1,7 @@
+# v2.4.0
+## Changed
+- Always install latest Ruby even if it's already installed.
+
 # v2.3.0
 ## Added
 - Finder relaunch automatically.
