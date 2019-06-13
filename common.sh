@@ -26,6 +26,10 @@ if isLubuntu "$PLATFORM"; then
     return 0
 fi
 
+addToShell "# Add user custom directory to PATH. Needed at least for diff-so-fancy, and future tools"
+addToShell "export PATH=~/Coding/tools:\$PATH"
+logSummary "Added ~/Coding/tools to PATH"
+
 # shellcheck source=modules/git.sh
 . modules/git.sh
 
@@ -80,3 +84,7 @@ fi
 # Remember that maven.sh requires sdkman.sh.
 # shellcheck source=modules/maven.sh
 . modules/maven.sh
+
+if isOsx "$PLATFORM"; then
+    logSummary "Remember to download Audacity for audio edition from: https://www.audacityteam.org/download/mac/"
+fi

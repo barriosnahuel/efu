@@ -1,3 +1,13 @@
+# v2.4.0
+## Added
+- GIT diff-so-fancy to use `git diff` the right way. #70
+- `~/Coding/tools` directory to PATH.
+- Link to Audacity download on OS X.
+- Log at summary to remember the user to add Android Build Tools to PATH manually. #43
+
+## Changed
+- Always install latest Ruby even if it's already installed.
+
 # v2.3.0
 ## Added
 - Finder relaunch automatically.

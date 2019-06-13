@@ -24,6 +24,9 @@ fi
 
 logInfo "Configuring Android SDK environment variables..."
 
+addToShell "###"
+addToShell "# Android SDK env vars"
+addToShell "##"
 addToShell "export ANDROID_HOME=\$HOME/Coding/xDKs/android-sdk"
 addToShell "export PATH=\$ANDROID_HOME/tools:\$PATH"
 addToShell "export PATH=\$ANDROID_HOME/platform-tools:\$PATH"
@@ -31,8 +34,10 @@ addToShell "export PATH=\$ANDROID_HOME/platform-tools:\$PATH"
 # This is to be able to use the hierarchy viewer
 addToShell "# This is to be able to use the hierarchy viewer"
 addToShell "export ANDROID_HVPROTO=ddm"
+addToShell ""
 
 logSummary "Successfully added Android environment variables."
+logSummary "Remember to manually add \$ANDROID_HOME/build-tools/major.minor.patch after installing Android Studio."
 
 
 logSummary "Remember you can use Dex2Jar tool: https://github.com/pxb1988/dex2jar"
