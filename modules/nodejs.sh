@@ -1,5 +1,6 @@
 #!/bin/bash
 # Created by Nahuel Barrios on 24/3/16.
+# shellcheck disable=SC1090
 
 enterDirOrExit "${CURRENT_DIR}"
 
