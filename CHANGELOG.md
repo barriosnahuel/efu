@@ -1,3 +1,8 @@
+# v2.4.1
+## Fixed
+- Duplicated logs.
+- NodeJS and npm installation.
+
 # v2.4.0
 ## Added
 - GIT diff-so-fancy to use `git diff` the right way. #70

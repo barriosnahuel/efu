@@ -1,12 +1,18 @@
 #!/bin/bash
 # Created by Nahuel Barrios on 24/3/16.
+# shellcheck disable=SC1090
 
 enterDirOrExit "${CURRENT_DIR}"
 
 if ! command -v nvm >/dev/null; then
     preInstallationLog "NVM"
     curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
-    logInfo "Remember to add --no-use to your .zshrc as mentioned here: https://github.com/creationix/nvm#install--update-script"
+
+    # Required to be able to call > nvm XXX on current terminal session.
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
     postInstallationLog "NVM"
 else
     logAlreadyInstalled "NVM"

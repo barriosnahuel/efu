@@ -20,7 +20,7 @@ logInfo (){
 }
 
 logSummary (){
-    echo "INFO  - EFU: $1 $2 $3"
+    logInfo "$1 $2 $3"
     echo "INFO  - EFU: $1 $2 $3" >> ~/Downloads/summary.efu.log
 }
 
@@ -29,8 +29,7 @@ logAlreadyInstalled (){
 }
 
 logProgramVersion (){
-    logInfo "$1" "$2" "$3"
-    logSummary "Installed $1 $2 $3" >> ~/Downloads/summary.efu.log
+    logSummary "Installed $1 $2 $3"
 }
 
 preInstallationLog(){
