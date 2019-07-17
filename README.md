@@ -4,6 +4,7 @@ EFU (Easy-Fast-Upgradable): The SH script you need to finish your Ubuntu/MacOS X
 
 ## Project status
 [![GitHub version](https://badge.fury.io/gh/barriosnahuel%2Fefu.svg)](http://github.com/barriosnahuel/efu/releases)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/011979e103b14efbb00573f2fc47795d)](https://www.codacy.com/app/barrios.nahuel/efu?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=barriosnahuel/efu&amp;utm_campaign=Badge_Grade)
 [![Semver](http://img.shields.io/SemVer/2.0.0.png)](http://semver.org/spec/v2.0.0.html)
 [![stable](https://img.shields.io/badge/stability-stable-green.svg)](https://nodejs.org/api/documentation.html#documentation_stability_index)
 [![Build Status](https://travis-ci.org/barriosnahuel/efu.svg?branch=master)](https://travis-ci.org/barriosnahuel/efu)
