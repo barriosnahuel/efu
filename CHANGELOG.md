@@ -1,3 +1,7 @@
+# v2.4.2
+## Fixed
+- SSH installation failure because of a typo.
+
 # v2.4.1
 ## Fixed
 - Duplicated logs.
