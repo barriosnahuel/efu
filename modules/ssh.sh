@@ -9,7 +9,7 @@ logWarn "Generating a new SSH Key for $USER_EMAIL" &&
 ssh-keygen -t rsa -C "$USER_EMAIL" &&
 
 # Start the ssh-agent in the background
-eval "$(ssh-agent-s)" &&
+eval "$(ssh-agent -s)" &&
 
 # Finally add the new key.
 ssh-add ~/.ssh/id_rsa &&
