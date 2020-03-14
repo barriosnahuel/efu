@@ -14,7 +14,7 @@ if ! command -v zsh >/dev/null; then
 
     postInstallationLog "ZSH"
 else
-    chsh -s "$(which zsh)"
+    chsh -s "$(command -v zsh)"
     logAlreadyInstalled "ZSH"
 fi
 
