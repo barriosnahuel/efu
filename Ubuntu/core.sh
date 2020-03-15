@@ -29,11 +29,6 @@ sudo apt-get -fy install curl subdownloader gmountiso soundconverter steam playo
 postInstallationLog "Subdownloader, GMountISO, Freemind (a mind maps editor), Sound Converter, Steam client (will update on first run) and PlayOnLinux"
 
 
-if isUbuntu "$PLATFORM"; then
-    # shellcheck source=installAll-15.04.sh
-    . ./installAll-15.04.sh
-fi
-
 logInfo "Cleaning up..." &&
 sudo apt-get -f install &&
 sudo apt-get autoremove &&
