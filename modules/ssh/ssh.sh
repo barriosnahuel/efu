@@ -9,14 +9,21 @@ logWarn "Generating a new SSH Key for $USER_EMAIL" &&
 ssh-keygen -t rsa -C "$USER_EMAIL" &&
 
 # Start the ssh-agent in the background
-eval "$(ssh-agent -s)" &&
+eval "$(ssh-agent-s)" &&
 
 # Finally add the new key.
-ssh-add ~/.ssh/id_rsa &&
+if isOsx "$PLATFORM" ; then
 
-logSummary "SSH key added for $USER_EMAIL"
+    cp config ~/.ssh/ &&
+    ssh-add -K ~/.ssh/id_rsa &&
 
-if isUbuntu "$PLATFORM" ; then
+    # shellcheck disable=SC2002
+    cat ~/.ssh/id_rsa.pub | pbcopy
+    logSummary "SSH Key copied to clipboard. If not, just run: 'cat ~/.ssh/id_rsa.pub | pbcopy'"
+
+else
+
+    ssh-add ~/.ssh/id_rsa &&
 
     if ! command -v xclip >/dev/null; then
         preInstallationLog "xclip"
@@ -28,9 +35,5 @@ if isUbuntu "$PLATFORM" ; then
 
     xclip -sel clip < ~/.ssh/id_rsa.pub
     logSummary "SSH Key copied to clipboard. If don't, just run: 'xclip -sel clip < ~/.ssh/id_rsa.pub'"
-else
-
-    # shellcheck disable=SC2002
-    cat ~/.ssh/id_rsa.pub | pbcopy
-    logSummary "SSH Key copied to clipboard. If not, just run: 'cat ~/.ssh/id_rsa.pub | pbcopy'"
 fi
+logSummary "SSH key added for $USER_EMAIL"
