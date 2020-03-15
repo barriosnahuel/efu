@@ -10,6 +10,8 @@
 - SSH installation failure because of a typo. #87
 - SSH setup on OS X now will store credentials on keychain. #73
 
+See all changes through the version's milestone: [v2.5.0](https://github.com/barriosnahuel/efu/milestone/13?closed=1).
+
 # v2.4.1
 ## Fixed
 - Duplicated logs.
