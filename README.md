@@ -28,7 +28,8 @@ Tip: For CMD lovers...
 curl -OJ https://codeload.github.com/barriosnahuel/efu/zip/v2.4.2 \
 && unzip efu-2.4.2.zip \
 && rm -rf efu-2.4.2.zip \
-&& cd efu-2.4.2
+&& cd efu-2.4.2 \
+&& sh install.sh ubuntu
 ```
 
 ## What does EFU do for me?
