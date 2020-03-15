@@ -31,7 +31,7 @@ postInstallationLog "Subdownloader, GMountISO, Freemind (a mind maps editor), So
 
 logInfo "Cleaning up..." &&
 sudo apt-get -f install &&
-sudo apt-get autoremove &&
+sudo apt-get -y autoremove &&
 sudo apt-get -y autoclean &&
 sudo apt-get -y clean
 
