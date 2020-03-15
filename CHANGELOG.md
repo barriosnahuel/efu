@@ -9,6 +9,7 @@
 
 ## Removed
 - Heroku toolbelt.
+- Freemind because it's no longer being developed.
 
 # v2.5.0
 ## Added
