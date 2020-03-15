@@ -1,4 +1,11 @@
-# v2.4.2
+# v2.5.0
+## Added
+- Add curl to core Ubuntu/Lubuntu module. #113
+- Add basic script in README to download and execute EFU. #112
+
+## Changed
+- Current logged user is taken automatically and there's no need to declare it on `properties.sh` #112
+
 ## Fixed
 - SSH installation failure because of a typo. #87
 - SSH setup on OS X now will store credentials on keychain. #73
