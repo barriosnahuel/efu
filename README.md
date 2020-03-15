@@ -25,10 +25,10 @@ So you will have 3 tabs:
 Tip: For CMD lovers...
 
 ```
-wget --content-disposition https://codeload.github.com/barriosnahuel/efu/zip/v2.5.0 \
-&& unzip efu-2.5.0.zip \
-&& rm -rf efu-2.5.0.zip \
-&& cd efu-2.5.0 \
+wget --content-disposition https://codeload.github.com/barriosnahuel/efu/zip/v2.6.0 \
+&& unzip efu-2.6.0.zip \
+&& rm -rf efu-2.6.0.zip \
+&& cd efu-2.6.0 \
 && sh install.sh ubuntu
 ```
 
