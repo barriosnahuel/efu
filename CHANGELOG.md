@@ -1,4 +1,7 @@
 # v2.6.0
+## Changed
+- Apache Tomcat upgrade to v9.0.31.
+
 ## Fixed
 - Typo in log messages.
 - Sublime Text APT repository.
