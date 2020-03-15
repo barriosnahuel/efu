@@ -71,15 +71,15 @@ enterDirOrExit "${CURRENT_DIR}"
 logInfo "Properties file loaded ok"
 
 
-logInfo "Loading common software installation"
-. ./common.sh
-logInfo "Common software installed ok"
-
-
 if isUbuntu "$PLATFORM" ; then
     logInfo "Loading $PLATFORM custom installation file..."
     . ./Ubuntu/core.sh
 fi
+
+
+logInfo "Loading common software installation"
+. ./common.sh
+logInfo "Common software installed ok"
 
 
 logInfo "#### Installation of your favorite software has finished ####"

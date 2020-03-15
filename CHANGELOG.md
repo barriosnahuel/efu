@@ -5,6 +5,7 @@
 ## Fixed
 - Typo in log messages.
 - Sublime Text APT repository.
+- Ubuntu core software now it's installed ok and before custom software.
 
 ## Removed
 - Heroku toolbelt.
