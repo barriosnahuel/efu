@@ -25,7 +25,6 @@ script:
   - shellcheck modules/sublime-text.sh
   - shellcheck modules/tomcat.sh
   - shellcheck Ubuntu/core.sh
-  - shellcheck Ubuntu/installAll-15.04.sh
 
 notifications:
   email:
