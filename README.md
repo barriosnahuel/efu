@@ -22,6 +22,16 @@ So you will have 3 tabs:
 - One for `efu.log` output. ⇐ *Full script output.*
 - One for `summary.efu.log` output. ⇐ *Most cases this will be enough.*
 
+Tip: For CMD lovers...
+
+```
+curl -OJ https://codeload.github.com/barriosnahuel/efu/zip/v2.4.2 \
+&& unzip efu-2.4.2.zip \
+&& rm -rf efu-2.4.2.zip \
+&& cd efu-2.4.2 \
+&& sh install.sh ubuntu
+```
+
 ## What does EFU do for me?
 With a little of your interaction, EFU will:
 - Create a directories tree under ~/Coding for coders.

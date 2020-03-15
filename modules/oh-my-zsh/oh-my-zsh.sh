@@ -29,7 +29,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 postInstallationLog "Oh-My-ZSH"
 
 addToShell "# DEFAULT_USER env var is used to prevent showing the user@machine in some ZSH themes. i.e.: agnoster"
-addToShell "export DEFAULT_USER=$MACHINE_USER"
+addToShell "export DEFAULT_USER=$USER"
 
 logInfo "Adding custom GIT info to the terminal"
 cp modules/oh-my-zsh/custom-git.zsh ~/.oh-my-zsh/custom/ &&
