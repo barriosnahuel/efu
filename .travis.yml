@@ -22,7 +22,7 @@ script:
   - shellcheck modules/mixxx.sh
   - shellcheck modules/nodejs.sh
   - shellcheck modules/oh-my-zsh/oh-my-zsh.sh
-  - shellcheck modules/ssh.sh
+  - shellcheck modules/ssh/ssh.sh
   - shellcheck modules/sublime-text.sh
   - shellcheck modules/tomcat.sh
   - shellcheck Ubuntu/core.sh
