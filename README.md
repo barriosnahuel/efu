@@ -25,7 +25,7 @@ So you will have 3 tabs:
 Tip: For CMD lovers...
 
 ```
-curl -OJ https://codeload.github.com/barriosnahuel/efu/zip/v2.4.2 \
+wget --content-disposition https://codeload.github.com/barriosnahuel/efu/zip/v2.4.2 \
 && unzip efu-2.4.2.zip \
 && rm -rf efu-2.4.2.zip \
 && cd efu-2.4.2 \
