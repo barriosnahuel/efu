@@ -73,10 +73,10 @@ else
     rm -f google-chrome-stable_current_i386.deb
 fi
 
-echo "==> - EFU: Instaling latest Rhythmbox and its plugins..."
+echo "==> - EFU: Installing latest Rhythmbox and its plugins..."
 sudo apt-get -fy install rhythmbox rhythmbox-plugin-rhythmweb rhythmbox-plugin-equalizer rhythmbox-plugin-opencontainingfolder rhythmbox-plugin-llyrics
 
-echo "==> - EFU: Instaling Sublime Text 3, GIT, MongoDB, Curl and WebP command line tools..."
+echo "==> - EFU: Installing Sublime Text 3, GIT, MongoDB, Curl and WebP command line tools..."
 sudo apt-get -fy install sublime-text-installer git-core mongodb curl webp
 
 echo "==> - EFU: Installing packages to compress and extract different kind of files..."

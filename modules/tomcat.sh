@@ -6,8 +6,7 @@ enterDirOrExit "${CURRENT_DIR}"
 preInstallationLog "Apache Tomcat"
 
 enterDirOrExit ~/Coding/servers/
-
-TOMCAT_DOWNLOAD_URL=http://apache.dattatec.com/tomcat/tomcat-9/v9.0.20/bin/apache-tomcat-9.0.20.zip
+TOMCAT_DOWNLOAD_URL=https://downloads.apache.org/tomcat/tomcat-9/v9.0.31/bin/apache-tomcat-9.0.31.zip
 downloadAndUncompress "Apache Tomcat" "$TOMCAT_DOWNLOAD_URL"
 
 TOMCAT_DIRECTORY=$(getFileNameWithoutExtension "$(getFileName "$TOMCAT_DOWNLOAD_URL")")

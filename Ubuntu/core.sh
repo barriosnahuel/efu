@@ -20,12 +20,12 @@ logInfo "Adding repositories for Rhythmbox and its plugins..."
 sudo add-apt-repository ppa:fossfreedom/rhythmbox -y
 sudo add-apt-repository ppa:fossfreedom/rhythmbox-plugins -y
 sudo apt-get update
-logInfo "Instaling latest Rhythmbox and its plugins..."
+logInfo "Installing latest Rhythmbox and its plugins..."
 sudo apt-get -fy install rhythmbox rhythmbox-plugin-rhythmweb rhythmbox-plugin-equalizer rhythmbox-plugin-opencontainingfolder rhythmbox-plugin-llyrics
 
 
-preInstallationLog "Curl, Subdownloader, GMountISO, Freemind (a mind maps editor), Sound Converter, Steam client (will update on first run) and PlayOnLinux"
-sudo apt-get -fy install curl subdownloader gmountiso freemind soundconverter steam playonlinux
+preInstallationLog "Curl, Subdownloader, GMountISO, Sound Converter, Steam client (will update on first run) and PlayOnLinux"
+sudo apt-get -fy install curl subdownloader gmountiso soundconverter steam playonlinux
 postInstallationLog "Subdownloader, GMountISO, Freemind (a mind maps editor), Sound Converter, Steam client (will update on first run) and PlayOnLinux"
 
 

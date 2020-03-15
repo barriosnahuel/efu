@@ -1,3 +1,16 @@
+# v2.6.0
+## Changed
+- Apache Tomcat upgrade to v9.0.31.
+
+## Fixed
+- Typo in log messages.
+- Sublime Text APT repository.
+- Ubuntu core software now it's installed ok and before custom software.
+
+## Removed
+- Heroku toolbelt.
+- Freemind because it's no longer being developed.
+
 # v2.5.0
 ## Added
 - Add curl to core Ubuntu/Lubuntu module. #113
