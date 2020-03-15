@@ -15,7 +15,7 @@ eval "$(ssh-agent-s)" &&
 if isOsx "$PLATFORM" ; then
 
     cp config ~/.ssh/ &&
-    ssh-add -K ~/.ssh/id_rsa &&
+    ssh-add -K ~/.ssh/id_rsa
 
     # shellcheck disable=SC2002
     cat ~/.ssh/id_rsa.pub | pbcopy
