@@ -33,7 +33,7 @@ logSummary "Added ~/Coding/tools to PATH"
 # shellcheck source=modules/git.sh
 . modules/git.sh
 
-# shellcheck source=modules/ssh.sh
+# shellcheck source=modules/ssh/ssh.sh
 . modules/ssh/ssh.sh
 
 # Remember that oh-my-zsh.sh requires Homebrew.sh.
