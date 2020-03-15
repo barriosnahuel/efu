@@ -1,6 +1,7 @@
 # v2.4.2
 ## Fixed
-- SSH installation failure because of a typo.
+- SSH installation failure because of a typo. #87
+- SSH setup on OS X now will store credentials on keychain. #73
 
 # v2.4.1
 ## Fixed
