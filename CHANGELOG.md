@@ -2,6 +2,9 @@
 ## Fixed
 - Stop trying to run script for Ubuntu 15.04.
 
+## Removed
+- Legacy Ubuntu scripts.
+
 # v2.6.0
 ## Changed
 - Apache Tomcat upgrade to v9.0.31.
