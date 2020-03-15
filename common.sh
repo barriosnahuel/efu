@@ -63,10 +63,6 @@ logSummary "Added ~/Coding/tools to PATH"
 # shellcheck source=modules/gimp.sh
 . modules/gimp.sh
 
-# Remember that heroku.sh requires Homebrew.sh.
-# shellcheck source=modules/heroku.sh
-. modules/heroku.sh
-
 # shellcheck source=modules/tomcat.sh
 . modules/tomcat.sh
 

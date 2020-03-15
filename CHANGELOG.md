@@ -3,6 +3,9 @@
 - Typo in log messages.
 - Sublime Text APT repository.
 
+## Removed
+- Heroku toolbelt.
+
 # v2.5.0
 ## Added
 - Add curl to core Ubuntu/Lubuntu module. #113
