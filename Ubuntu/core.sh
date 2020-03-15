@@ -20,7 +20,7 @@ logInfo "Adding repositories for Rhythmbox and its plugins..."
 sudo add-apt-repository ppa:fossfreedom/rhythmbox -y
 sudo add-apt-repository ppa:fossfreedom/rhythmbox-plugins -y
 sudo apt-get update
-logInfo "Instaling latest Rhythmbox and its plugins..."
+logInfo "Installing latest Rhythmbox and its plugins..."
 sudo apt-get -fy install rhythmbox rhythmbox-plugin-rhythmweb rhythmbox-plugin-equalizer rhythmbox-plugin-opencontainingfolder rhythmbox-plugin-llyrics
 
 

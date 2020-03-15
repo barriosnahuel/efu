@@ -10,7 +10,7 @@ if isUbuntu "$PLATFORM" ; then
     sudo add-apt-repository ppa:webupd8team/sublime-text-3 -y
     sudo apt-get update
 
-    logInfo "Instaling Sublime Text 3"
+    logInfo "Installing Sublime Text 3"
     sudo apt-get -fy install sublime-text-installer
 
     postInstallationLog "Sublime Text 3"
