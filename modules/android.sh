@@ -3,18 +3,7 @@
 
 enterDirOrExit "${CURRENT_DIR}"
 
-logInfo "Configuring Android development environment..." &&
-
 if isUbuntu "$PLATFORM" ; then
-
-    logInfo "Adding repositories for Ubuntu Make..."
-    sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make -y
-    sudo apt-get update
-
-    sudo apt-get -fy install ubuntu-make &&
-    umake android &&
-    logInfo "Android SDK installed successfully"
-
     # This is to stop getting warning messages about iBus daemon. Taken from https://youtrack.jetbrains.com/issue/IDEA-78860
     addToShell "# This is to stop getting warning messages about iBus daemon. Taken from https://youtrack.jetbrains.com/issue/IDEA-78860"
     addToShell "export IBUS_ENABLE_SYNC_MODE=1"
@@ -24,6 +13,7 @@ fi
 
 logInfo "Configuring Android SDK environment variables..."
 
+addToShell ""
 addToShell "###"
 addToShell "# Android SDK env vars"
 addToShell "##"
@@ -32,6 +22,7 @@ addToShell "export PATH=\$ANDROID_HOME/tools:\$PATH"
 addToShell "export PATH=\$ANDROID_HOME/platform-tools:\$PATH"
 
 # This is to be able to use the hierarchy viewer
+addToShell ""
 addToShell "# This is to be able to use the hierarchy viewer"
 addToShell "export ANDROID_HVPROTO=ddm"
 addToShell ""
@@ -73,5 +64,13 @@ fi
 
 postInstallationLog "Pidcat Android Logcat decorator"
 logSummary "Run 'pidcat your.application.package' to see an improved logcat. More info at https://github.com/JakeWharton/pidcat"
+
+
+preInstallationLog "Android Device Connect (https://gist.github.com/barriosnahuel/bd8aa6966ff9e7e2b1ce3be0b2d87dcb)" &&
+enterDirOrExit ~/Coding/tools &&
+curl -o cloner.sh https://gist.githubusercontent.com/barriosnahuel/bd8aa6966ff9e7e2b1ce3be0b2d87dcb/raw &&
+addToShell "alias ac='sh ~/Coding/tools/android-device-connect.sh'"
+postInstallationLog "Android Device Connect (https://gist.github.com/barriosnahuel/bd8aa6966ff9e7e2b1ce3be0b2d87dcb)"
+
 
 enterDirOrExit "${CURRENT_DIR}"

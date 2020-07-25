@@ -10,20 +10,17 @@ script:
   - shellcheck createDirectoriesTree.sh
   - shellcheck common.sh
   - shellcheck install.sh
-  - shellcheck modules/sdkman.sh
   - shellcheck modules/android.sh
   - shellcheck modules/gimp.sh
   - shellcheck modules/git.sh
   - shellcheck modules/google-drive.sh
   - shellcheck modules/homebrew.sh
   - shellcheck modules/java.sh
-  - shellcheck modules/maven.sh
   - shellcheck modules/mixxx.sh
   - shellcheck modules/nodejs.sh
   - shellcheck modules/oh-my-zsh/oh-my-zsh.sh
   - shellcheck modules/ssh/ssh.sh
   - shellcheck modules/sublime-text.sh
-  - shellcheck modules/tomcat.sh
   - shellcheck Ubuntu/core.sh
 
 notifications:

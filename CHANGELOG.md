@@ -1,3 +1,17 @@
+# v2.7.0
+## Added
+- Add `cloner.sh` alias when installing GIT.
+- Add `android-device-connect.sh` alias when installing Android.
+
+## Changed
+- JDK now is just a download link in the summary log.
+- Android Studio no longer installed from umake in Ubuntu/Lubuntu.
+
+## Removed
+- Tomcat installation. 
+- Maven installation.
+- SdkMan installation.
+
 # v2.6.1
 ## Fixed
 - Stop trying to run script for Ubuntu 15.04.
