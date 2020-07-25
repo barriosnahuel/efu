@@ -1,7 +1,8 @@
 # v2.7.0
 ## Added
-- Add `cloner.sh` alias when installing GIT.
-- Add `android-device-connect.sh` alias when installing Android.
+- `cloner.sh` alias when installing GIT.
+- `android-device-connect.sh` alias when installing Android.
+- `nahu.zsh-theme` when installing oh-my-zsh.
 
 ## Changed
 - JDK now is just a download link in the summary log.
