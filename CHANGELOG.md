@@ -1,8 +1,11 @@
 # v2.7.0
+## Changed
+- JDK now is just a download link in the summary log.
+- Android Studio no longer installed from umake in Ubuntu/Lubuntu.
+
 ## Removed
 - Tomcat installation. 
 - Maven installation.
-- JDK installation.
 - SdkMan installation.
 
 # v2.6.1
