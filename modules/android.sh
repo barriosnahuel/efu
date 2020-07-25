@@ -24,6 +24,7 @@ fi
 
 logInfo "Configuring Android SDK environment variables..."
 
+addToShell ""
 addToShell "###"
 addToShell "# Android SDK env vars"
 addToShell "##"
@@ -32,6 +33,7 @@ addToShell "export PATH=\$ANDROID_HOME/tools:\$PATH"
 addToShell "export PATH=\$ANDROID_HOME/platform-tools:\$PATH"
 
 # This is to be able to use the hierarchy viewer
+addToShell ""
 addToShell "# This is to be able to use the hierarchy viewer"
 addToShell "export ANDROID_HVPROTO=ddm"
 addToShell ""
