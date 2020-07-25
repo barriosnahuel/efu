@@ -1,3 +1,7 @@
+# v2.7.0
+## Removed
+- Tomcat installation. 
+
 # v2.6.1
 ## Fixed
 - Stop trying to run script for Ubuntu 15.04.

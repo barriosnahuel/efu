@@ -23,7 +23,6 @@ script:
   - shellcheck modules/oh-my-zsh/oh-my-zsh.sh
   - shellcheck modules/ssh/ssh.sh
   - shellcheck modules/sublime-text.sh
-  - shellcheck modules/tomcat.sh
   - shellcheck Ubuntu/core.sh
 
 notifications:
