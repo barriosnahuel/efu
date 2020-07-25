@@ -65,4 +65,12 @@ fi
 postInstallationLog "Pidcat Android Logcat decorator"
 logSummary "Run 'pidcat your.application.package' to see an improved logcat. More info at https://github.com/JakeWharton/pidcat"
 
+
+preInstallationLog "Android Device Connect (https://gist.github.com/barriosnahuel/bd8aa6966ff9e7e2b1ce3be0b2d87dcb)" &&
+enterDirOrExit ~/Coding/tools &&
+curl -o cloner.sh https://gist.githubusercontent.com/barriosnahuel/bd8aa6966ff9e7e2b1ce3be0b2d87dcb/raw &&
+addToShell "alias ac='sh ~/Coding/tools/android-device-connect.sh'"
+postInstallationLog "Android Device Connect (https://gist.github.com/barriosnahuel/bd8aa6966ff9e7e2b1ce3be0b2d87dcb)"
+
+
 enterDirOrExit "${CURRENT_DIR}"
