@@ -73,4 +73,9 @@ addToShell "alias ac='sh ~/Coding/tools/android-device-connect.sh'"
 postInstallationLog "Android Device Connect (https://gist.github.com/barriosnahuel/bd8aa6966ff9e7e2b1ce3be0b2d87dcb)"
 
 
+addToShell "alias deep='adb shell am start -a android.intent.action.VIEW -c android.intent.category.BROWSABLE -d'"
+addToShell "alias stop='./gradlew --stop'"
+addToShell "alias deep='adb shell am start -a android.intent.action.VIEW -c android.intent.category.BROWSABLE -d'"
+addToShell "alias aaa='adb shell dumpsys activity activities | sed -En -e \"/Stack #/p\" -e \"/Running activities/,/Run #0/p\"'"
+
 enterDirOrExit "${CURRENT_DIR}"
