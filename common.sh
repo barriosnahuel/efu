@@ -63,9 +63,6 @@ logSummary "Added ~/Coding/tools to PATH"
 # shellcheck source=modules/gimp.sh
 . modules/gimp.sh
 
-# shellcheck source=modules/tomcat.sh
-. modules/tomcat.sh
-
 # shellcheck source=modules/mixxx.sh
 . modules/mixxx.sh
 
