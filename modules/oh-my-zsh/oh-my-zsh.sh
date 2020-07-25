@@ -38,5 +38,12 @@ logSummary "Custom GIT info to the terminal added ok"
 sed -i -e 's/plugins=(git)/plugins=(git git-extras common-aliases dirhistory)/' ~/.zshrc &&
 logSummary "Added some plugins to Oh-My-ZSH: git, git-extras, common-aliases, dirhistory."
 
-sed -i -e 's/ZSH_THEME="robbyrussell"/ZSH_THEME="avit"/' ~/.zshrc &&
+
+preInstallationLog "nahu.zsh-theme (https://gist.github.com/barriosnahuel/ebabe673ec474f277aa6f2371eeaf372)" &&
+enterDirOrExit ~/.oh-my-zsh/themes &&
+curl -o nahu.zsh-theme https://gist.githubusercontent.com/barriosnahuel/ebabe673ec474f277aa6f2371eeaf372/raw &&
+sed -i -e 's/ZSH_THEME="robbyrussell"/ZSH_THEME="nahu"/' ~/.zshrc &&
+postInstallationLog "nahu.zsh-theme (https://gist.github.com/barriosnahuel/ebabe673ec474f277aa6f2371eeaf372)"
+
+
 logSummary 'ZSH Theme changed to "avit", to view more themes go to: https://github.com/robbyrussell/oh-my-zsh/wiki/themes'
