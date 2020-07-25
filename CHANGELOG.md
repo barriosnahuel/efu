@@ -3,6 +3,7 @@
 - `cloner.sh` alias when installing GIT.
 - `android-device-connect.sh` alias when installing Android.
 - `nahu.zsh-theme` when installing oh-my-zsh.
+- Many useful aliases for the command line.
 
 ## Changed
 - JDK now is just a download link in the summary log.
