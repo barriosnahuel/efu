@@ -1,6 +1,7 @@
 # v2.7.0
 ## Removed
 - Tomcat installation. 
+- Maven installation. 
 
 # v2.6.1
 ## Fixed

@@ -17,7 +17,6 @@ script:
   - shellcheck modules/google-drive.sh
   - shellcheck modules/homebrew.sh
   - shellcheck modules/java.sh
-  - shellcheck modules/maven.sh
   - shellcheck modules/mixxx.sh
   - shellcheck modules/nodejs.sh
   - shellcheck modules/oh-my-zsh/oh-my-zsh.sh
