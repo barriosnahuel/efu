@@ -7,7 +7,6 @@ cd ~/ &&
 mkdir .gradle
 mkdir Coding
 cd Coding &&
-mkdir IDEs
 mkdir xDKs
 mkdir tools
 mkdir workspace-mine
