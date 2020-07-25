@@ -23,4 +23,4 @@ else
   logError "Your Homebrew installation reported some errors or warnings, review the Homebrew messages to see if any action is needed."
 fi
 
-logProgramVersion "Homebrew" "$(brew --version)"
+logProgramVersion "" "$(brew --version)"
