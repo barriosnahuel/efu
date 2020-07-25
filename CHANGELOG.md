@@ -1,4 +1,7 @@
 # v2.7.0
+## Added
+- Add `cloner.sh` when installing GIT.
+
 ## Changed
 - JDK now is just a download link in the summary log.
 - Android Studio no longer installed from umake in Ubuntu/Lubuntu.
