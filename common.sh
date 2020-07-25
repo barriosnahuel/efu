@@ -66,11 +66,6 @@ logSummary "Added ~/Coding/tools to PATH"
 # shellcheck source=modules/mixxx.sh
 . modules/mixxx.sh
 
-# sdkman at the end because SDKMAN_DIR environment variable must be at the end to work.
-# shellcheck source=modules/sdkman.sh
-. modules/sdkman.sh
-
-# Remember that java.sh requires sdkman.sh.
 # shellcheck source=modules/java.sh
 . modules/java.sh
 

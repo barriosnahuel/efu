@@ -1,7 +1,9 @@
 # v2.7.0
 ## Removed
 - Tomcat installation. 
-- Maven installation. 
+- Maven installation.
+- JDK installation.
+- SdkMan installation.
 
 # v2.6.1
 ## Fixed
