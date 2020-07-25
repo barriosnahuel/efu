@@ -1,6 +1,7 @@
 # v2.7.0
 ## Added
-- Add `cloner.sh` when installing GIT.
+- Add `cloner.sh` alias when installing GIT.
+- Add `android-device-connect.sh` alias when installing Android.
 
 ## Changed
 - JDK now is just a download link in the summary log.
