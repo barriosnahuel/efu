@@ -4,6 +4,7 @@
 - `android-device-connect.sh` alias when installing Android.
 - `nahu.zsh-theme` when installing oh-my-zsh.
 - Many useful aliases for the command line.
+- Java SDK env vars to `.zshrc` as well as `.bashrc`.
 
 ## Changed
 - JDK now is just a download link in the summary log.
