@@ -56,7 +56,6 @@ logSummary "Added ~/Coding/tools to PATH"
 # shellcheck source=modules/sublime-text.sh
 . modules/sublime-text.sh
 
-# Remember that nodejs.sh requires go.sh.
 # shellcheck source=modules/google-drive.sh
 . modules/google-drive.sh
 
