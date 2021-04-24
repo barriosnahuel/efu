@@ -33,7 +33,6 @@ fi
 if isOsx "$PLATFORM"; then
     logSummary "Detected platform <OS X>"
     logSummary "Download Transmission torrents client from: https://www.transmissionbt.com/download"
-    logSummary "Download Mac Fans Control from: http://www.crystalidea.com/macs-fan-control"
 elif isUbuntu "$PLATFORM"; then
     logSummary "Detected platform <Ubuntu>"
 
