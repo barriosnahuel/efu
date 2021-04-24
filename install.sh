@@ -62,6 +62,9 @@ if isOsx "$PLATFORM" ; then
     defaults write com.apple.finder AppleShowAllFiles YES &&
     killall Finder &&
     logSummary "Finder is showing hidden files now."
+
+    # This is to change default screenshots directory.
+    defaults write com.apple.screencapture location ~/Downloads
 fi
 
 logInfo "Loading properties file..."
