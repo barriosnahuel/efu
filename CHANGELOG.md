@@ -14,6 +14,7 @@
 - Tomcat installation. 
 - Maven installation.
 - SdkMan installation.
+- Mac Fans control link suggestion.
 
 # v2.6.1
 ## Fixed
