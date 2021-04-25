@@ -14,8 +14,8 @@ mkdir workspace-test
 mkdir workspace-work
 
 addToShell ""
-addToShell "================================"
-addToShell "=========== Aliases ============"
-addToShell "================================"
+addToShell "###"
+addToShell "# Aliases"
+addToShell "##"
 addToShell "alias mine='cd ~/Coding/workspace-mine'"
 addToShell "alias work='cd ~/Coding/workspace-work'"
