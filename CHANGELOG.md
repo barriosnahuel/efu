@@ -19,6 +19,7 @@
 # v2.6.1
 ## Fixed
 - Stop trying to run script for Ubuntu 15.04.
+- Stop asking user confirmation before running `apt-get autoremove`.
 
 ## Removed
 - Legacy Ubuntu scripts.
