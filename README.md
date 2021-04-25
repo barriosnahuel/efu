@@ -42,11 +42,8 @@ With a little of your interaction, EFU will:
     - [Pidcat](https://github.com/JakeWharton/pidcat)
   - Gimp
   - GIT
-  - Maven
   - [Mixxx](http://www.mixxx.org/): DJ software
-  - NodeJS 
-  - [sdkman](http://sdkman.io/)
-  - Tomcat  
+  - NodeJS
   - ZSH and [Oh-My-ZSH](https://github.com/robbyrussell/oh-my-zsh)
 - Install (and setup) many software (OS X only):
   - Homebrew (OS X only)
@@ -66,7 +63,6 @@ With a little of your interaction, EFU will:
   - Java 7 and 8
   - [JDownloader](http://jdownloader.org/home/index)
   - JetBrains [Intellij IDEA](https://www.jetbrains.com/idea/) (EAP)
-  - [Macs Fan Control](http://www.crystalidea.com/macs-fan-control)
   - Transmission torrents client
 
 ## Contributing

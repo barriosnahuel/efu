@@ -48,6 +48,18 @@ git config --global color.diff.whitespace "red reverse"   &&
 
 postInstallationLog "GIT diff-so-fancy utility"
 
+
+preInstallationLog "GIT cloner (https://gist.github.com/barriosnahuel/93e6a955cf64478ac886dc0d06aeb37a)" &&
+enterDirOrExit ~/Coding/tools &&
+curl -o cloner.sh https://gist.githubusercontent.com/barriosnahuel/93e6a955cf64478ac886dc0d06aeb37a/raw &&
+
+addToShell ""
+addToShell "alias clone='sh ~/Coding/tools/cloner.sh'"
+addToShell "alias remote='git rev-parse --abbrev-ref --symbolic-full-name @{u}'"
+
+postInstallationLog "GIT cloner (https://gist.github.com/barriosnahuel/93e6a955cf64478ac886dc0d06aeb37a)"
+
+
 logSummary "GIT configured successfully."
 
 logProgramVersion "GIT" "$(git version)"

@@ -26,6 +26,7 @@ if isLubuntu "$PLATFORM"; then
     return 0
 fi
 
+addToShell ""
 addToShell "# Add user custom directory to PATH. Needed at least for diff-so-fancy, and future tools"
 addToShell "export PATH=~/Coding/tools:\$PATH"
 logSummary "Added ~/Coding/tools to PATH"
@@ -56,30 +57,17 @@ logSummary "Added ~/Coding/tools to PATH"
 # shellcheck source=modules/sublime-text.sh
 . modules/sublime-text.sh
 
-# Remember that nodejs.sh requires go.sh.
 # shellcheck source=modules/google-drive.sh
 . modules/google-drive.sh
 
 # shellcheck source=modules/gimp.sh
 . modules/gimp.sh
 
-# shellcheck source=modules/tomcat.sh
-. modules/tomcat.sh
-
 # shellcheck source=modules/mixxx.sh
 . modules/mixxx.sh
 
-# sdkman at the end because SDKMAN_DIR environment variable must be at the end to work.
-# shellcheck source=modules/sdkman.sh
-. modules/sdkman.sh
-
-# Remember that java.sh requires sdkman.sh.
 # shellcheck source=modules/java.sh
 . modules/java.sh
-
-# Remember that maven.sh requires sdkman.sh.
-# shellcheck source=modules/maven.sh
-. modules/maven.sh
 
 if isOsx "$PLATFORM"; then
     logSummary "Remember to download Audacity for audio edition from: https://www.audacityteam.org/download/mac/"

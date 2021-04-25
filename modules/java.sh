@@ -4,13 +4,14 @@
 enterDirOrExit "${CURRENT_DIR}"
 
 if ! command -v java >/dev/null; then
-    preInstallationLog "Java"
+  logSummary "Remember to download the Java Development Toolkit (JDK) from: https://www.oracle.com/ar/java/technologies/javase-downloads.html"
 
-    sdk install java
+  addToShell "###"
+  addToShell "# Java SDK env vars"
+  addToShell "##"
+  addToShell "export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_261.jdk/Contents/Home"
 
-    postInstallationLog "Java"
 else
-    logAlreadyInstalled "Java"
+  logAlreadyInstalled "Java"
+  logProgramVersion "Java" "$(java -version)"
 fi
-
-logProgramVersion "Java" "$(java -version)"

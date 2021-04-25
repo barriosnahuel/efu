@@ -7,10 +7,15 @@ cd ~/ &&
 mkdir .gradle
 mkdir Coding
 cd Coding &&
-mkdir IDEs
 mkdir xDKs
-mkdir servers
 mkdir tools
 mkdir workspace-mine
 mkdir workspace-test
 mkdir workspace-work
+
+addToShell ""
+addToShell "###"
+addToShell "# Aliases"
+addToShell "##"
+addToShell "alias mine='cd ~/Coding/workspace-mine'"
+addToShell "alias work='cd ~/Coding/workspace-work'"

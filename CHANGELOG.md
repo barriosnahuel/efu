@@ -1,3 +1,21 @@
+# v2.7.0
+## Added
+- `cloner.sh` alias when installing GIT.
+- `android-device-connect.sh` alias when installing Android.
+- `nahu.zsh-theme` when installing oh-my-zsh.
+- Many useful aliases for the command line.
+- Java SDK env vars to `.zshrc` as well as `.bashrc`.
+
+## Changed
+- JDK now is just a download link in the summary log.
+- Android Studio no longer installed from umake in Ubuntu/Lubuntu.
+
+## Removed
+- Tomcat installation. 
+- Maven installation.
+- SdkMan installation.
+- Mac Fans control link suggestion.
+
 # v2.6.1
 ## Fixed
 - Stop trying to run script for Ubuntu 15.04.

@@ -33,7 +33,6 @@ fi
 if isOsx "$PLATFORM"; then
     logSummary "Detected platform <OS X>"
     logSummary "Download Transmission torrents client from: https://www.transmissionbt.com/download"
-    logSummary "Download Mac Fans Control from: http://www.crystalidea.com/macs-fan-control"
 elif isUbuntu "$PLATFORM"; then
     logSummary "Detected platform <Ubuntu>"
 
@@ -63,6 +62,9 @@ if isOsx "$PLATFORM" ; then
     defaults write com.apple.finder AppleShowAllFiles YES &&
     killall Finder &&
     logSummary "Finder is showing hidden files now."
+
+    # This is to change default screenshots directory.
+    defaults write com.apple.screencapture location ~/Downloads
 fi
 
 logInfo "Loading properties file..."
