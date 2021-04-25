@@ -47,3 +47,5 @@ postInstallationLog "nahu.zsh-theme (https://gist.github.com/barriosnahuel/ebabe
 
 
 logSummary 'ZSH Theme changed to "avit", to view more themes go to: https://github.com/robbyrussell/oh-my-zsh/wiki/themes'
+
+enterDirOrExit "${CURRENT_DIR}"
