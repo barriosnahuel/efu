@@ -1,3 +1,11 @@
+# v2.7.1
+## Changed
+- Homebrew installation script upgraded to bash version.
+- JDK moved before Android setup.
+
+## Fixed
+- Minor logging fixes
+
 # v2.7.0
 ## Added
 - `cloner.sh` alias when installing GIT.
