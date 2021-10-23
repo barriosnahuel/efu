@@ -51,6 +51,9 @@ logSummary "Added ~/Coding/tools to PATH"
 # shellcheck source=modules/ruby.sh
 . modules/ruby.sh
 
+# shellcheck source=modules/java.sh
+. modules/java.sh
+
 # shellcheck source=modules/android.sh
 . modules/android.sh
 
@@ -65,9 +68,6 @@ logSummary "Added ~/Coding/tools to PATH"
 
 # shellcheck source=modules/mixxx.sh
 . modules/mixxx.sh
-
-# shellcheck source=modules/java.sh
-. modules/java.sh
 
 if isOsx "$PLATFORM"; then
     logSummary "Remember to download Audacity for audio edition from: https://www.audacityteam.org/download/mac/"
