@@ -7,8 +7,8 @@
 - Java SDK env vars to `.zshrc` as well as `.bashrc`.
 
 ## Changed
-- JDK now is just a download link in the summary log.
 - Android Studio no longer installed from umake in Ubuntu/Lubuntu.
+- JDK now is just a download link in the summary log.
 
 ## Removed
 - Tomcat installation. 
