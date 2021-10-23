@@ -28,6 +28,7 @@ preInstallationLog "Oh-My-ZSH"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 postInstallationLog "Oh-My-ZSH"
 
+addToShell ""
 addToShell "# DEFAULT_USER env var is used to prevent showing the user@machine in some ZSH themes. i.e.: agnoster"
 addToShell "export DEFAULT_USER=$USER"
 
@@ -45,7 +46,8 @@ curl -o nahu.zsh-theme https://gist.githubusercontent.com/barriosnahuel/ebabe673
 sed -i -e 's/ZSH_THEME="robbyrussell"/ZSH_THEME="nahu"/' ~/.zshrc &&
 postInstallationLog "nahu.zsh-theme (https://gist.github.com/barriosnahuel/ebabe673ec474f277aa6f2371eeaf372)"
 
+logSummary 'Remember to download Ubuntu Mono font family from: https://fonts.google.com/specimen/Ubuntu+Mono?query=ubuntu (17pt font size for iTerm, 210x60)'
 
-logSummary 'ZSH Theme changed to "avit", to view more themes go to: https://github.com/robbyrussell/oh-my-zsh/wiki/themes'
+logSummary 'ZSH Theme changed to a custom "nahu" theme, to view more themes go to: https://github.com/robbyrussell/oh-my-zsh/wiki/themes'
 
 enterDirOrExit "${CURRENT_DIR}"

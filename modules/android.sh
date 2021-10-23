@@ -15,7 +15,7 @@ logInfo "Configuring Android SDK environment variables..."
 
 addToShell ""
 addToShell "###"
-addToShell "# Android SDK env vars"
+addToShell "# Android SDK env vars & aliases"
 addToShell "##"
 addToShell "export ANDROID_HOME=\$HOME/Coding/xDKs/android-sdk"
 addToShell "export PATH=\$ANDROID_HOME/tools:\$PATH"
