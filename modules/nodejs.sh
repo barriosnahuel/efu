@@ -6,7 +6,7 @@ enterDirOrExit "${CURRENT_DIR}"
 
 if ! command -v nvm >/dev/null; then
     preInstallationLog "NVM"
-    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 
     # Required to be able to call > nvm XXX on current terminal session.
     export NVM_DIR="$HOME/.nvm"
@@ -22,7 +22,7 @@ fi
 if ! command -v node >/dev/null; then
     preInstallationLog "NodeJS"
 
-    nvm install 10
+    nvm install 17
 else
     logAlreadyInstalled "NodeJS"
 fi
@@ -30,14 +30,14 @@ fi
 
 if ! command -v npm >/dev/null; then
     preInstallationLog "NPM"
-    curl -L https://www.npmjs.com/install.sh | sh
+    nvm install-latest-npm
     postInstallationLog "NPM"
 else
     logAlreadyInstalled "NPM"
 fi
 
 
-logProgramVersion "NVM" "$(nvm version)"
+logProgramVersion "NVM" "$(nvm --version)"
 logProgramVersion "Node" "$(node -v)"
 logProgramVersion "NPM" "$(npm -v)"
 

@@ -1,4 +1,7 @@
 # v2.7.2
+## Changed
+- NodeJS & NVM versions upgraded to 17 and 0.39.0 respectively.
+
 ## Fixed
 - Homebrew installation script & env vars.
 
