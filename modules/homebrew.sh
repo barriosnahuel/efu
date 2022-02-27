@@ -6,9 +6,9 @@ enterDirOrExit "${CURRENT_DIR}"
 
 preInstallationLog "Homebrew"
 if ! command -v brew >/dev/null; then
-    /bin/bash -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-    addToShell "export PATH=/usr/local/bin:\$PATH"
+    addToShell "export PATH=/opt/homebrew/bin:\$PATH"
 else
   logAlreadyInstalled "Homebrew"
 fi

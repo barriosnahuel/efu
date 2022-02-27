@@ -1,3 +1,7 @@
+# v2.7.2
+## Fixed
+- Homebrew installation script & env vars.
+
 # v2.7.1
 ## Changed
 - Homebrew installation script upgraded to bash version.
