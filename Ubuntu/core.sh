@@ -2,6 +2,29 @@
 # Created by Nahuel Barrios on 27/3/16.
 # shellcheck disable=SC1091
 
+
+sudo apt-get upgrade
+
+########### Chrome https://ubuntuupdates.org/ppa/google_chrome?dist=stable
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
+sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+
+
+
+########### Spotify https://www.spotify.com/us/download/linux/
+sudo apt-get install curl
+curl -sS https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
+echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+
+
+
+sudo apt-get update 
+sudo apt-get install google-chrome-stable
+sudo apt-get install spotify-client
+
+
+
+
 preInstallationLog "Gnome System Tools"
 sudo apt-get -fy install gnome-system-tools
 postInstallationLog "Gnome System Tools"
