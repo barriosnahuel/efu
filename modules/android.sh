@@ -41,6 +41,8 @@ logSummary "Remember you can use Dex2Jar tool: https://github.com/pxb1988/dex2ja
 ##
 preInstallationLog "Android CLI"
 
+sudo mkdir -p /usr/local/bin
+
 if isUbuntu "$PLATFORM" ; then
     curl -fsSL https://dl.google.com/android/cli/latest/linux_x86_64/install.sh | bash
 else
