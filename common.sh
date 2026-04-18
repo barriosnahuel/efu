@@ -26,20 +26,17 @@ if isLubuntu "$PLATFORM"; then
     return 0
 fi
 
-addToShell ""
-addToShell "# Add user custom directory to PATH. Needed at least for diff-so-fancy, and future tools"
-addToShell "export PATH=~/Coding/tools:\$PATH"
-logSummary "Added ~/Coding/tools to PATH"
+# shellcheck source=modules/git/git.sh
+. modules/git/git.sh
 
-# shellcheck source=modules/git.sh
-. modules/git.sh
+# shellcheck source=modules/git/github.sh
+. modules/git/github.sh
 
-# shellcheck source=modules/ssh/ssh.sh
-. modules/ssh/ssh.sh
+# shellcheck source=modules/terminal/shell-aliases.sh
+. modules/terminal/shell-aliases.sh
 
-# Remember that oh-my-zsh.sh requires Homebrew.sh.
-# shellcheck source=modules/oh-my-zsh.sh
-. modules/oh-my-zsh/oh-my-zsh.sh
+# shellcheck source=modules/terminal/starship.sh
+. modules/terminal/starship.sh
 
 # Remember that jq.sh requires Homebrew.sh.
 # shellcheck source=modules/jq.sh
@@ -68,6 +65,9 @@ logSummary "Added ~/Coding/tools to PATH"
 
 # shellcheck source=modules/mixxx.sh
 . modules/mixxx.sh
+
+# shellcheck source=modules/claude.sh
+. modules/claude.sh
 
 if isOsx "$PLATFORM"; then
     logSummary "Remember to download Audacity for audio edition from: https://www.audacityteam.org/download/mac/"
