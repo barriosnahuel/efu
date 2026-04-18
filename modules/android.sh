@@ -17,7 +17,7 @@ addToShell ""
 addToShell "###"
 addToShell "# Android SDK env vars & aliases"
 addToShell "##"
-addToShell "export ANDROID_HOME=\$HOME/Coding/xDKs/android-sdk"
+addToShell "export ANDROID_HOME=\$HOME/Library/Android/sdk"
 addToShell "export PATH=\$ANDROID_HOME/tools:\$PATH"
 addToShell "export PATH=\$ANDROID_HOME/platform-tools:\$PATH"
 
@@ -33,17 +33,34 @@ logSummary "Remember to manually add \$ANDROID_HOME/build-tools/major.minor.patc
 
 logSummary "Remember you can use Dex2Jar tool: https://github.com/pxb1988/dex2jar"
 
+
+###
+# Android CLI - https://developer.android.com/tools/agents/android-cli/archive
+# macOS: https://dl.google.com/android/cli/latest/darwin_arm64/install.sh
+# Linux: https://dl.google.com/android/cli/latest/linux_x86_64/install.sh
+##
+preInstallationLog "Android CLI"
+
+if isUbuntu "$PLATFORM" ; then
+    curl -fsSL https://dl.google.com/android/cli/latest/linux_x86_64/install.sh | bash
+else
+    curl -fsSL https://dl.google.com/android/cli/latest/darwin_arm64/install.sh | bash
+fi
+
+postInstallationLog "Android CLI"
+
+
 ###
 # https://github.com/google/android-classyshark/
 ##
 preInstallationLog "ClassyShark"
 
-enterDirOrExit ~/Coding/tools/
+enterDirOrExit ~/Workspace/tools/
 
 mkdir classyshark
 enterDirOrExit classyshark
 downloadAssetFromGitHub "$(getGitHubFirstAssetFromLatestRelease "google/android-classyshark")"
-addToShell "alias classyshark='java -jar ~/Coding/tools/classyshark/ClassyShark.jar &'"
+addToShell "alias classyshark='java -jar ~/Workspace/tools/classyshark/ClassyShark.jar &'"
 logSummary "'classyshark' alias created ok"
 postInstallationLog "ClassyShark"
 
@@ -54,23 +71,16 @@ postInstallationLog "ClassyShark"
 preInstallationLog "Pidcat Android Logcat decorator"
 
 if isUbuntu "$PLATFORM" ; then
-    enterDirOrExit ~/Coding/tools/
+    enterDirOrExit ~/Workspace/tools/
     curl -H "Accept: application/vnd.github.v3.raw" \
          -LO https://api.github.com/repos/JakeWharton/pidcat/contents/pidcat.py
-    addToShell "alias pidcat='python ~/Coding/tools/pidcat.py'"
+    addToShell "alias pidcat='python ~/Workspace/tools/pidcat.py'"
 else
     brew install pidcat
 fi
 
 postInstallationLog "Pidcat Android Logcat decorator"
 logSummary "Run 'pidcat your.application.package' to see an improved logcat. More info at https://github.com/JakeWharton/pidcat"
-
-
-preInstallationLog "Android Device Connect (https://gist.github.com/barriosnahuel/bd8aa6966ff9e7e2b1ce3be0b2d87dcb)" &&
-enterDirOrExit ~/Coding/tools &&
-curl -o cloner.sh https://gist.githubusercontent.com/barriosnahuel/bd8aa6966ff9e7e2b1ce3be0b2d87dcb/raw &&
-addToShell "alias ac='sh ~/Coding/tools/android-device-connect.sh'"
-postInstallationLog "Android Device Connect (https://gist.github.com/barriosnahuel/bd8aa6966ff9e7e2b1ce3be0b2d87dcb)"
 
 
 addToShell "alias stop='./gradlew --stop'"
