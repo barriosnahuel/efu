@@ -22,7 +22,7 @@ git config --global user.name "$USER_FULL_NAME" &&
 git config --global user.email "$USER_EMAIL"
 
 git config --global core.autocrlf input
-
+git config --global push.autoSetupRemote true
 
 logSummary "GIT configured successfully."
 
